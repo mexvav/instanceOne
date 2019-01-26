@@ -1,5 +1,6 @@
 package core;
 
+import core.jpa.ReloadableSessionFactory;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -28,10 +29,10 @@ public class Application {
     public SessionFactory getSessionFactory() {
         StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder();
         serviceRegistryBuilder.applySetting(org.hibernate.cfg.Environment.DATASOURCE, settings.getDataSource());
-        serviceRegistryBuilder.applySettings(settings.getProperties());
+        serviceRegistryBuilder.applySettings(settings.getHibernateProperties());
         StandardServiceRegistry serviceRegistry = serviceRegistryBuilder.build();
 
-        ReloadableSessionFactory sessionFactory = new ReloadableSessionFactory(settings.getProperties(), serviceRegistry);
+        ReloadableSessionFactory sessionFactory = new ReloadableSessionFactory(settings.getHibernateProperties(), serviceRegistry);
         return sessionFactory;
     }
 

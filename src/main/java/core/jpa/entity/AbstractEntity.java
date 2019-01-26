@@ -1,13 +1,9 @@
-package core;
+package core.jpa.entity;
 
 import javax.persistence.*;
 
-/**
- * This is just test entity
- */
-@Entity
-@Table(name = "test_table")
-public class TestEntity {
+@MappedSuperclass
+public abstract class AbstractEntity implements NamedEntity {
 
     @Id
     @GeneratedValue

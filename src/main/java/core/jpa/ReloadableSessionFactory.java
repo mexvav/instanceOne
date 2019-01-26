@@ -1,6 +1,6 @@
-package core;
+package core.jpa;
 
-import core.jpa.EntityRuntime;
+import com.google.common.collect.Sets;
 import org.hibernate.*;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.spi.SessionFactoryOptions;
@@ -29,35 +29,38 @@ public class ReloadableSessionFactory implements SessionFactory {
     private SessionFactory target;
     private Properties properties;
     private StandardServiceRegistry serviceRegistry;
+    private Set<Class<?>> entities;
 
-    public ReloadableSessionFactory(Properties properties, StandardServiceRegistry serviceRegistry){
+    public ReloadableSessionFactory(Properties properties, StandardServiceRegistry serviceRegistry) {
         this.properties = properties;
         this.serviceRegistry = serviceRegistry;
+        scanEntityInProject();
         initSessionFactory();
     }
 
-    private void initSessionFactory()
-    {
+    public Set<Class<?>> getEntities() {
+        if (null == entities) {
+            entities = Sets.newHashSet();
+        }
+        return entities;
+    }
+
+    private void scanEntityInProject() {
+        Reflections reflections = new Reflections("core");
+        Set<Class<?>> entities = reflections.getTypesAnnotatedWith(javax.persistence.Entity.class);
+        getEntities().addAll(entities);
+    }
+
+    private void initSessionFactory() {
         Configuration configuration = new Configuration();
         configuration.addProperties(properties);
+        getEntities().stream().forEach(configuration::addAnnotatedClass);
 
-        //search entity in project
-        Reflections reflections = new Reflections("core");
-        Set<Class<?>> classes = reflections.getTypesAnnotatedWith(javax.persistence.Entity.class);
-        for(Class<?> clazz : classes)
-        {
-            configuration.addAnnotatedClass(clazz);
-        }
-
-        //add generated entity
-        Class test = null;
-        try {
-            test = EntityRuntime.getEntityClass();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        configuration.addAnnotatedClass(test);
         this.target = configuration.buildSessionFactory(serviceRegistry);
+    }
+
+    public void reloadSessionFactory() {
+        initSessionFactory();
     }
 
     @Override
@@ -112,7 +115,7 @@ public class ReloadableSessionFactory implements SessionFactory {
 
     @Override
     public boolean isClosed() {
-        return target. isClosed();
+        return target.isClosed();
     }
 
     @Override
@@ -147,7 +150,7 @@ public class ReloadableSessionFactory implements SessionFactory {
 
     @Override
     public FilterDefinition getFilterDefinition(String s) throws HibernateException {
-        return target.getFilterDefinition(s) ;
+        return target.getFilterDefinition(s);
     }
 
     @Override
