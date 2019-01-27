@@ -1,7 +1,9 @@
 package core.jpa.attribute.type;
 
-public class AttributeStringType extends AttributeSimpleType {
-    public static final String code = "string";
+import java.util.Date;
+
+public class AttributeDateType extends AttributeSimpleType {
+    public static final String code = "date";
 
     @Override
     public String getCode() {
@@ -10,6 +12,6 @@ public class AttributeStringType extends AttributeSimpleType {
 
     @Override
     public Class<?> getAttributeClass() {
-        return String.class;
+        return Date.class;
     }
 }

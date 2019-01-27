@@ -24,6 +24,9 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+/**
+ * Implementation {@link SessionFactory}, allows to load new entity in runtime
+ */
 public class ReloadableSessionFactory implements SessionFactory {
 
     private SessionFactory target;
@@ -45,6 +48,9 @@ public class ReloadableSessionFactory implements SessionFactory {
         return entities;
     }
 
+    /**
+     * Get exists entities
+     */
     private void scanEntityInProject() {
         Reflections reflections = new Reflections("core");
         Set<Class<?>> entities = reflections.getTypesAnnotatedWith(javax.persistence.Entity.class);

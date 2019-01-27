@@ -1,12 +1,10 @@
 package core.jpa;
 
 import com.google.common.collect.Maps;
-import core.Constants;
-import core.jpa.attribute.Attribute;
+import core.jpa.builder.BuilderService;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
 import java.util.Map;
 
 
@@ -14,17 +12,20 @@ import java.util.Map;
 public class EntityService {
     private ReloadableSessionFactory sessionFactory;
     private Map<String, Class<?>> entities;
-    private EntityBuilder entityBuilder;
+    private BuilderService builderService;
 
-    EntityService(SessionFactory sessionFactory, EntityBuilder entityBuilder) {
+    EntityService(SessionFactory sessionFactory, BuilderService builderService) {
         if (sessionFactory instanceof ReloadableSessionFactory) {
             this.sessionFactory = (ReloadableSessionFactory) sessionFactory;
         } else {
             throw new RuntimeException("SessionFactory is not reloadable");
         }
-        this.entityBuilder = entityBuilder;
+        this.builderService = builderService;
     }
 
+    /**
+     * Get created in runtime entities
+     */
     private Map<String, Class<?>> getEntities() {
         if (null == entities) {
             entities = Maps.newHashMap();
@@ -32,20 +33,22 @@ public class EntityService {
         return entities;
     }
 
-    public void createEntity(String name, Collection<Attribute> attributes) {
-        if (getEntities().containsKey(name)) {
+    /**
+     * Create new entity in runtime
+     * @param entityBlank
+     */
+    public void createEntity(EntityBlank entityBlank) {
+        if (getEntities().containsKey(entityBlank.getCode())) {
             return;
         }
-
-        EntityBuilder.EntityParam param = new EntityBuilder.EntityParam(name);
-        param.setTablePrefix(Constants.dbEntityPrefix);
-        param.setAttributes(attributes);
-        Class entity = entityBuilder.build(param);
-
-        getEntities().put(name, entity);
+        Class entity = builderService.buildEntity(entityBlank);
+        getEntities().put(entityBlank.getCode(), entity);
         reloadService();
     }
 
+    /**
+     * Rebuild session factory, load new entity
+     */
     public void reloadService() {
         sessionFactory.getEntities().addAll(entities.values());
         sessionFactory.reloadSessionFactory();
