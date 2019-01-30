@@ -25,7 +25,7 @@ public class MapperJsonToEntityBlank extends MapperAbstract<String, EntityBlank>
 
     @Override
     public EntityBlank transform(String from) {
-        Map<String, Object> transition = getMappingService().mapping(from, Map.class);
+        Map transition = getMappingService().mapping(from, Map.class);
         Collection<Map> attributesTransition = (Collection<Map>) transition.get("attributes");
         Set<Attribute> attributes = attributesTransition.stream()
                 .map(attribute -> getMappingService().mapping(attribute, Attribute.class))

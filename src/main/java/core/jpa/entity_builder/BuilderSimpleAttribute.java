@@ -1,4 +1,4 @@
-package core.jpa.builder;
+package core.jpa.entity_builder;
 
 import core.jpa.RuntimeHelper;
 import core.jpa.attribute.Attribute;

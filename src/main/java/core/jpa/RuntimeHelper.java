@@ -1,6 +1,6 @@
 package core.jpa;
 
-import core.jpa.builder.BuilderService;
+import core.jpa.entity_builder.BuilderService;
 import javassist.*;
 
 import javax.annotation.Nullable;
@@ -26,10 +26,4 @@ public class RuntimeHelper {
             return null;
         }
     }
-
-
-
-
-
-
 }

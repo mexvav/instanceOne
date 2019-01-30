@@ -1,10 +1,12 @@
 package core.mapping;
 
+import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import core.utils.ClassUtils;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Nullable;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
@@ -69,7 +71,7 @@ public class MappingService {
      * @throws RuntimeException
      */
     @Nullable
-    public <F,T>Mapper<F,T> getMapper(final Class<F> from, final Class<T> to){
+    public <F,T> Mapper getMapper(final Class<F> from, final Class<T> to){
         Set<Mapper> suitableMappers = getMappers().stream()
                 .filter(mapper -> mapper.getFromClass().isAssignableFrom(from) &&  mapper.getToClass().isAssignableFrom(to))
                 .collect(Collectors.toSet());
@@ -79,8 +81,22 @@ public class MappingService {
         if(suitableMappers.size() == 1){
             return suitableMappers.iterator().next();
         }
-        //TODO: 27.01.19 Make filter suitable mappers
-        return null;
+
+        Map<Class,Integer> fromClasses = ClassUtils.getHierarchyClass(from);
+        Map<Class,Integer> toClasses = ClassUtils.getHierarchyClass(to);
+
+        return suitableMappers.stream().sorted((m1,m2)-> {
+            int m1FromRate = fromClasses.get(m1.getFromClass());
+            int m1ToRate = toClasses.get(m1.getToClass());
+
+            int m2FromRate = fromClasses.get(m2.getFromClass());
+            int m2ToRate = toClasses.get(m2.getToClass());
+
+            int m1Rate = m1FromRate + m1ToRate;
+            int m2Rate = m2FromRate + m2ToRate;
+
+            return m1Rate - m2Rate;
+        }).findFirst().get();
     }
 
     private Set<Mapper> getMappers(){

@@ -1,6 +1,7 @@
 package core;
 
 import core.jpa.ReloadableSessionFactory;
+import core.jpa.ReloadableSessionFactoryBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
 
 
 @SpringBootApplication
@@ -32,15 +34,16 @@ public class Application {
         serviceRegistryBuilder.applySettings(settings.getHibernateProperties());
         StandardServiceRegistry serviceRegistry = serviceRegistryBuilder.build();
 
-        ReloadableSessionFactory sessionFactory = new ReloadableSessionFactory(settings.getHibernateProperties(), serviceRegistry);
-        return sessionFactory;
+        return new ReloadableSessionFactoryBuilder(settings.getHibernateProperties(), serviceRegistry, "core").build();
     }
 
     @Autowired
     @Bean(name = "transactionManager")
-    public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-        HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
-        return transactionManager;
+    public PlatformTransactionManager getTransactionManager(SessionFactory sessionFactory) {
+        if(sessionFactory instanceof ReloadableSessionFactory){
+            return ((ReloadableSessionFactory)sessionFactory).getPlatformTransactionManager();
+        }
+        return new HibernateTransactionManager(sessionFactory);
     }
 
     public static void main(String[] args) {

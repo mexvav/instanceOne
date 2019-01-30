@@ -2,7 +2,6 @@ package core.mapping;
 
 import com.google.common.collect.Maps;
 import core.jpa.EntityBlank;
-import core.jpa.attribute.Attribute;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;

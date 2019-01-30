@@ -1,6 +1,5 @@
 package core.mapping;
 
-import core.jpa.EntityBlank;
 import core.jpa.attribute.Attribute;
 import org.springframework.stereotype.Component;
 import java.util.Map;
@@ -20,7 +19,7 @@ public class MapperAttributeToJson extends MapperAbstract<Attribute, String> {
 
     @Override
     public String transform(Attribute from) {
-        Map<String, Object> transition = getMappingService().mapping(from, Map.class);
+        Map transition = getMappingService().mapping(from, Map.class);
         return getMappingService().mapping(transition, String.class);
     }
 }

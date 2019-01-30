@@ -16,7 +16,7 @@ public class Constants {
 
     public static final String hibernatePropShowSql = "hibernate.show_sql";
     public static final String hibernatePropDialect = "hibernate.dialect";
-    public static final String hibernatePropCurSCtx = "current_session_context_class";
+    public static final String hibernatePropCurSCtx = "hibernate.current_session_context_class";
     public static final String hibernatePropHbm2ddl = "hibernate.hbm2ddl.auto";
     public static final String hibernatePropMetaDef = "hibernate.temp.use_jdbc_metadata_defaults";
 

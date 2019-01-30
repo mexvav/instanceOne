@@ -1,4 +1,4 @@
-package core.jpa.builder;
+package core.jpa.entity_builder;
 
 import com.google.common.collect.Sets;
 import core.jpa.EntityBlank;
@@ -6,6 +6,7 @@ import core.jpa.RuntimeHelper;
 import core.jpa.attribute.Attribute;
 import core.jpa.attribute.type.AttributeType;
 import core.jpa.entity.AbstractEntity;
+import core.utils.ClassUtils;
 import javassist.*;
 import javassist.bytecode.AnnotationsAttribute;
 import javassist.bytecode.ClassFile;
@@ -17,9 +18,14 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Nullable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Comparator;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Service for build Entity Class - class with annotation Entity
+ */
 @Component
 public class BuilderService {
 
@@ -54,10 +60,17 @@ public class BuilderService {
         }
 
         EntityBuildException(ExceptionCauses cause, String... args) {
-            super(String.format(cause.getCause(), args));
+            super(String.format(cause.getCause(), (Object[]) args));
         }
     }
 
+    /**
+     * Build entity blank to Class
+     *
+     * @param entityBlank - entity blank
+     * @return Class with annotation Entity and Table
+     * @throws EntityBuildException
+     */
     public Class<?> buildEntity(EntityBlank entityBlank) {
         if (entityBlank.getCode().isEmpty()) {
             throw new EntityBuildException(EntityBuildException.ExceptionCauses.NAME_IS_EMPTY);
@@ -68,9 +81,9 @@ public class BuilderService {
 
         CtClass abstractEntity = RuntimeHelper.getCtClass(AbstractEntity.class.getName());
         final CtClass ctClass = RuntimeHelper.getClassPool().makeClass(entityBlank.getCode(), abstractEntity);
-        setEntityNameField(ctClass, entityBlank.getCode());
+        setEntityNameMethod(ctClass, entityBlank.getCode());
         setEntityAnnotations(ctClass, entityBlank.getTableName());
-        entityBlank.getAttributes().stream().forEach(attribute -> buildAttribute(ctClass, attribute));
+        entityBlank.getAttributes().forEach(attribute -> buildAttribute(ctClass, attribute));
 
         try {
             return ctClass.toClass();
@@ -79,21 +92,26 @@ public class BuilderService {
         }
     }
 
-    public static void setEntityNameField(CtClass ctClass, String entityName) {
+    /**
+     * Add getEntityName() method for interface {@link core.jpa.entity.NamedEntity}
+     * @param ctClass - class blank
+     * @param entityName - name of entity
+     */
+    private static void setEntityNameMethod(CtClass ctClass, String entityName) {
         try {
-            CtField fieldEntityName = new CtField(RuntimeHelper.getClassPool().get(String.class.getName()), "entityName", ctClass);
-            fieldEntityName.setModifiers(Modifier.PRIVATE + Modifier.FINAL);
-
-            CtMethod entityNameGetter = CtNewMethod.getter("getEntityName", fieldEntityName);
-
-            ctClass.addField(fieldEntityName, CtField.Initializer.constant(entityName));
-            ctClass.addMethod(entityNameGetter);
-        } catch (CannotCompileException | NotFoundException e) {
+            CtMethod getEntityName = CtNewMethod.make("public String getEntityName(){return \""+ entityName +"\";}", ctClass);
+            ctClass.addMethod(getEntityName);
+        } catch (CannotCompileException  e) {
             e.printStackTrace();
         }
     }
 
-    public static void setEntityAnnotations(CtClass ctClass, String tableName) {
+    /**
+     * Add annotations Entity and Table to class blank
+     * @param ctClass - class blank
+     * @param tableName - param fo annotation Table: @Table(name = tableName)
+     */
+    private static void setEntityAnnotations(CtClass ctClass, String tableName) {
         ClassFile ccFile = ctClass.getClassFile();
         ConstPool constPool = ccFile.getConstPool();
 
@@ -108,7 +126,11 @@ public class BuilderService {
         ccFile.addAttribute(annotationsAttribute);
     }
 
-    public void initAttributeBuilder(BuilderAttribute builder) {
+    /**
+     * Register {@link BuilderAttribute} for create attribute fields in Entity Class
+     * @param builder - builder attribute
+     */
+    void initAttributeBuilder(BuilderAttribute builder) {
         getBuilderAttributes().add(builder);
     }
 
@@ -124,7 +146,7 @@ public class BuilderService {
     private BuilderAttribute getAttributeBuilder(Attribute attribute) {
         AttributeType type = attribute.getType();
         Set<BuilderAttribute> suitableBuilders = getBuilderAttributes().stream()
-                .filter(builder -> builder.getTypeClass().isAssignableFrom(type.getClass()))
+                .filter(builder ->  builder.getTypeClass().isAssignableFrom(type.getClass()))
                 .collect(Collectors.toSet());
         if (suitableBuilders.isEmpty()) {
             return null;
@@ -132,28 +154,16 @@ public class BuilderService {
         if (suitableBuilders.size() == 1) {
             return suitableBuilders.iterator().next();
         }
-        //TODO: 27.01.19 Make filter suitable
-        return null;
+
+        Map<Class, Integer> fromClasses = ClassUtils.getHierarchyClass(type.getClass());
+        return suitableBuilders.stream()
+                .min(Comparator.comparingInt(b -> fromClasses.get(b.getTypeClass()))).get();
     }
 
     private Set<BuilderAttribute> getBuilderAttributes() {
         if (null == builderAttributes) {
             builderAttributes = Sets.newHashSet();
-
-            /*
-            Reflections reflections = new Reflections("core");
-            Set<Class<? extends BuilderAbstractAttribute>> builders = reflections.getSubTypesOf(BuilderAbstractAttribute.class);
-            for (Class<? extends BuilderAttribute> builder : builders) {
-                try {
-                    BuilderAttribute instance = builder.newInstance();
-                    builderAttributes.put(instance.getTypeCode(), instance);
-                } catch (InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }*/
         }
         return builderAttributes;
     }
-
-
 }

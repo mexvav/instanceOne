@@ -1,17 +1,17 @@
 package core.jpa;
 
 import com.google.common.collect.Maps;
-import core.jpa.builder.BuilderService;
+import core.jpa.entity_builder.BuilderService;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-
 @Component
 public class EntityService {
     private ReloadableSessionFactory sessionFactory;
     private Map<String, Class<?>> entities;
+    private Map<String, EntityBlank> entitiesBlank;
     private BuilderService builderService;
 
     EntityService(SessionFactory sessionFactory, BuilderService builderService) {
@@ -24,26 +24,24 @@ public class EntityService {
     }
 
     /**
-     * Get created in runtime entities
-     */
-    private Map<String, Class<?>> getEntities() {
-        if (null == entities) {
-            entities = Maps.newHashMap();
-        }
-        return entities;
-    }
-
-    /**
      * Create new entity in runtime
-     * @param entityBlank
+     * @param entityBlank - entity blank
      */
     public void createEntity(EntityBlank entityBlank) {
         if (getEntities().containsKey(entityBlank.getCode())) {
             return;
         }
+
         Class entity = builderService.buildEntity(entityBlank);
         getEntities().put(entityBlank.getCode(), entity);
-        reloadService();
+        getEntitiesBlank().put(entityBlank.getCode(), entityBlank);
+
+        try{
+            reloadService();
+        }catch (Exception e){
+            getEntities().remove(entityBlank.getCode());
+            getEntitiesBlank().remove(entityBlank.getCode());
+        }
     }
 
     /**
@@ -53,4 +51,30 @@ public class EntityService {
         sessionFactory.getEntities().addAll(entities.values());
         sessionFactory.reloadSessionFactory();
     }
+
+    public EntityBlank getEntityBlank(String code){
+        return getEntitiesBlank().get(code);
+    }
+
+    public Class<?> getEntity(String code){
+        return getEntities().get(code);
+    }
+
+    /**
+     * Get created in runtime entities
+     */
+    private Map<String, Class<?>> getEntities() {
+        if (null == entities) {
+            entities = Maps.newHashMap();
+        }
+        return entities;
+    }
+
+    private Map<String,EntityBlank> getEntitiesBlank(){
+        if (null == entitiesBlank) {
+            entitiesBlank = Maps.newHashMap();
+        }
+        return entitiesBlank;
+    }
+
 }

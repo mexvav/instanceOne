@@ -26,7 +26,7 @@ public class MapperSimpleAttributeTypeToJson extends MapperAbstract<AttributeSim
 
     @Override
     public String transform(AttributeSimpleType from) {
-        Map<String, Object> transition = getMappingService().mapping(from, Map.class);
+        Map transition = getMappingService().mapping(from, Map.class);
         return getMappingService().mapping(transition, String.class);
     }
 }
