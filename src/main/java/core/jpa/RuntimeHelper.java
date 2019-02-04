@@ -1,6 +1,6 @@
 package core.jpa;
 
-import core.jpa.entity_builder.BuilderService;
+import core.jpa.entity.building.BuildingService;
 import javassist.*;
 
 import javax.annotation.Nullable;
@@ -13,7 +13,7 @@ public class RuntimeHelper {
     public static ClassPool getClassPool() {
         if (null == classPool) {
             classPool = ClassPool.getDefault();
-            classPool.appendClassPath(new LoaderClassPath(BuilderService.class.getClassLoader()));
+            classPool.appendClassPath(new LoaderClassPath(BuildingService.class.getClassLoader()));
         }
         return classPool;
     }

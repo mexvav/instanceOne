@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d38d89-65c8-4651-b4a9-82579f3f634d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactoryBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/Builder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAbstract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/utils/ErrorUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/EntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/EntityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/RuntimeHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/RuntimeHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/builder/BuilderAbstractAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderAbstractAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/builder/BuilderAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/builder/BuilderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/builder/BuilderSimpleAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderSimpleAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuilderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAbstractAttribute.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderSimpleAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderSimpleAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperMapToAttributeType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperMapToAttributeType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/BuilderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BuildingServiceTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,14 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/core/BuildingServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -42,39 +46,83 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/core/Application.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/Settings.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-              <folding>
-                <element signature="e#2504#2505#0" expanded="true" />
-                <element signature="e#2566#2567#0" expanded="true" />
-              </folding>
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactoryBuilder.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="57" column="4" lean-forward="true" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2087#2114#0" expanded="true" />
-                <element signature="e#2862#2889#0" expanded="true" />
-                <element signature="e#3043#3044#0" expanded="true" />
-                <element signature="e#3034#3061#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/EntityService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-268">
-              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <state relative-caret-position="105">
+              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.4.RELEASE/spring-core-5.1.4.RELEASE.jar!/org/springframework/util/Assert.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="72" column="46" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/utils/ErrorUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderSimpleAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#596#597#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,12 +134,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>initAttributeBuilder</find>
+      <find>ArrayBlockingQueue</find>
+    </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
@@ -102,57 +154,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/type/AttributeType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/AbstractMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/EntityBlank.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/EntityBlankToJsonMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/utils/StringUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/builder/AbstractAttributeSimpleBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/builder/AttributeDateBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/builder/AttributeIntegerBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/builder/AttributeStringBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/type/AttributeSimpleType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/type/AttributeDateType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/type/AttributeIntegerType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/type/AttributeStringType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/EntityBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/EntityBuilderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/builder/AttributeBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/builder/AbstractAttributeBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/builder/AttributeSimpleBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/builder/BuilderAbstractAttribute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/builder/BuilderEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperSimpleAttributeToJson.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/Mapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperAbstract.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperAttributeToMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperSimpleAttributeTypeToMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperMapToJson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperJsonToMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperMapToAttribute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperMapToSimpleAttributeType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/RestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/RestControllerEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperMapToAttributeType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/utils/ClassUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/FactoryEntityBlank.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/FactoryEntityBlank.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/attribute/Attribute.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/RandomUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/mapping/MappingService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/builder/BuilderSimpleAttribute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/RuntimeHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperAttributeToJson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperEntityBlankToJson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperJsonToEntityBlank.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/mapping/MapperSimpleAttributeTypeToJson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/Settings.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/builder/BuilderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/rest/RestControllerEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/mapping/mappers/MapperJsonToMap2.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/core/MappingServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/mapping/mappers/MapperEntityBlankToJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/EntityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactoryBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/EntityBlank.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderSimpleAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderAbstractAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/NamedEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityBlank.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/NamedEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/builder/BuilderSimpleAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/builder/builders/BuilderSimpleAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/builder/builders/BuilderAbstractAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/interfaces/HasId.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/AbstractEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/builder/BuilderService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/BuilderServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/type/AttributeDateType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/type/AttributeIntegerType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/type/AttributeStringType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/Attribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/EntityDescription.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperAbstract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAbstract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAttributeByType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAbstractAttributeByType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuilderException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderSimpleAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityServiceException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperMapToAttributeType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/Builder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/ErrorUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/BuildingServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -177,11 +229,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="568" />
-    <option name="y" value="27" />
-    <option name="width" value="1352" />
-    <option name="height" value="1052" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="711" />
+    <option name="y" value="25" />
+    <option name="width" value="1209" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -242,16 +294,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="object" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -269,7 +312,120 @@
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
               <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
+              <item name="locks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="sun" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="sun" type="462c0819:PsiDirectoryNode" />
+              <item name="misc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-core-5.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-core-5.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-core:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-core-5.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,7 +434,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548882752623" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549704189848" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -286,11 +442,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="core.Constants.JPA" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="core.jpa.entity.building.builders" />
+      <recent name="core" />
+      <recent name="core.mapping.mappers" />
       <recent name="core.mapping" />
       <recent name="core.jpa.attribute.builder" />
-      <recent name="core.jpa.attribute.type" />
-      <recent name="core" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/core" />
@@ -309,23 +469,80 @@
     </option>
   </component>
   <component name="RunManager" selected="JAR Application.instance-one.core-0.1.jar">
+    <configuration name="BuildingServiceTest.testBuild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instance-one.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.BuildingServiceTest" />
+      <option name="METHOD_NAME" value="testBuild" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MappingServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instance-one.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.MappingServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MappingServiceTest.testInitializeMappers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instance-one.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.MappingServiceTest" />
+      <option name="METHOD_NAME" value="testInitializeMappers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MappingServiceTest.testMappingEntityBlank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instance-one.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.jpa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.MappingServiceTest" />
+      <option name="METHOD_NAME" value="testMappingEntityBlank" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="instance-one.core-0.1.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/instance-one.core-0.1.jar" />
-      <method v="2" />
-    </configuration>
-    <configuration name="instance.core-0.1.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/target/instance.core-0.1.jar" />
-      <method v="2" />
-    </configuration>
-    <configuration name="springBoot-1.0-SNAPSHOT.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/target/springBoot-1.0-SNAPSHOT.jar" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JAR Application.instance-one.core-0.1.jar" />
-        <item itemvalue="JAR Application.instance.core-0.1.jar" />
-        <item itemvalue="JAR Application.springBoot-1.0-SNAPSHOT.jar" />
+        <item itemvalue="JUnit.BuildingServiceTest.testBuild" />
+        <item itemvalue="JUnit.MappingServiceTest.testMappingEntityBlank" />
+        <item itemvalue="JUnit.MappingServiceTest.testInitializeMappers" />
+        <item itemvalue="JUnit.MappingServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -342,6 +559,38 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 01m 39s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 01m 56s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 02m 28s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 05m 19s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 09m 49s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 15m 09s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 28m 34s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 32m 02s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MappingServiceTest_testMappingEntityBlank - 2019.02.06 at 00h 45m 25s.xml">
+      <configuration name="MappingServiceTest.testMappingEntityBlank" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BuilderServiceTest_testBuild - 2019.02.06 at 01h 52m 35s.xml">
+      <configuration name="BuilderServiceTest.testBuild" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -352,10 +601,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="568" y="27" width="1352" height="1052" extended-state="0" />
-    <editor active="true" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19694656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22142462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24971752" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -364,20 +612,20 @@
       <window_info id="Favorites" order="6" side_tool="true" weight="0.3299435" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3315393" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.28417653" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989496" weight="0.3304721" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49789914" visible="true" weight="0.28218883" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3107527" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32882884" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32939914" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5021008" side_tool="true" weight="0.28218883" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32938644" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32939914" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.24958587" />
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.24885496" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.3114504" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.19491993" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -387,16 +635,27 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java</url>
-          <line>65</line>
+          <url>file://$PROJECT_DIR$/src/test/java/core/MappingServiceTest.java</url>
+          <line>20</line>
           <properties />
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/core/Settings.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="this.getClass().getPackage().getName()" language="JAVA" />
+      </configuration>
       <configuration name="JarApplication">
-        <watch expression="ReloadableSessionFactory.class.getDeclaredMethods()" language="JAVA" />
+        <watch expression="Constants.JPA.DB_PROPERTY_DRIVER_CLASS_NAME" language="JAVA" />
+        <watch expression="getProperty(Constants.JPA.DB_PROPERTY_DRIVER_CLASS_NAME)" language="JAVA" />
+        <watch expression="entityClass.getDeclaredFields()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -407,502 +666,545 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>AttributeType.class.getPackage().getName();</expression-string>
+        <expression-string>new Reflections(&quot;core&quot;).getSubTypesOf(MapperAbstract.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>core.mapping.mappers.MapperAbstract</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new Reflections(&quot;core&quot;).getSubTypesOf(MapperEntityBlankToJson.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>core.mapping.mappers.MapperAbstract,core.mapping.mappers.MapperEntityBlankToJson</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new Reflections(&quot;core&quot;).getSubTypesOf(Mapper.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>AttributeType.class.getPackage().toString();</expression-string>
+        <expression-string>new Reflections(&quot;core.mapping.mappers&quot;).getSubTypesOf(MapperAbstract.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>core.mapping.mappers.MapperAbstract</custom-info>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new Reflections(&quot;core.mapping.mappers&quot;).getSubTypesOf(Mapper.class)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>prop</expression-string>
+        <expression-string>new Reflections(&quot;core.mapping&quot;).getSubTypesOf(Mapper.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>reflections.getSubTypesOf(Mapper.class)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getSession().createQuery(&quot;FROM test&quot;).list();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getSession().createQuery(&quot;FROM test&quot;).list()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
     </expressions>
     <expressions id="watch">
       <expression>
+        <expression-string>Constants.JPA.DB_PROPERTY_DRIVER_CLASS_NAME</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getProperty(Constants.JPA.DB_PROPERTY_DRIVER_CLASS_NAME)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.getClass().getPackage().getName()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>entityClass.getDeclaredFields()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>entityClass.getDeclaredMethods()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>entityClass.getFields()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>attribute.getType().getAttributeClass().equals(value.getClass())</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>attribute.getType().getAttributeClass()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>value.getClass()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>ReloadableSessionFactory.class.getDeclaredMethods()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getAttributeBuilders().get(attribute.getType().getTypeCode())</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>attribute.getType().getTypeCode()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>prop.get(&quot;hibernate.ejb.loaded.classes&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Hibernate.isInitialized(test)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getProperty(&quot;jpa.show-sql&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getProperty(&quot;datasource.driver-class-name&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>env.getProperty()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/attribute/type/AttributeType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactoryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-541">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/concurrent/locks/Lock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2071">
+          <caret line="166" column="17" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="305" column="49" selection-start-line="305" selection-start-column="32" selection-end-line="305" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="565" column="36" selection-start-line="565" selection-start-column="36" selection-end-line="565" selection-end-column="36" />
+          <folding>
+            <element signature="e#41392#41393#0" expanded="true" />
+            <element signature="e#41449#41450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/concurrent/locks/ReentrantLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="235" column="30" selection-start-line="235" selection-start-column="30" selection-end-line="235" selection-end-column="30" />
+          <folding>
+            <element signature="e#7116#7117#0" expanded="true" />
+            <element signature="e#7150#7151#0" expanded="true" />
+            <element signature="e#9117#9118#0" expanded="true" />
+            <element signature="e#9144#9145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/concurrent/ArrayBlockingQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/Mapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="6" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAttributeByType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAbstractAttributeByType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/type/AttributeStringType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/type/AttributeType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/LinkedHashSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="152" column="8" lean-forward="true" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
-          <folding>
-            <element signature="e#6162#6163#0" expanded="true" />
-            <element signature="e#6199#6200#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/Comparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="391" column="31" selection-start-line="391" selection-start-column="21" selection-end-line="391" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/27.0.1-jre/guava-27.0.1-jre.jar!/com/google/common/collect/Sets.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="129" column="26" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/utils/ClassUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderAbstractAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderSimpleAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="44" column="32" lean-forward="true" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-          <folding>
-            <element signature="e#795#796#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/AbstractEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperAbstract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/NamedEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperAttributeToJson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="e#107#108#0" expanded="true" />
-            <element signature="e#154#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperAbstract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperAttributeToJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#308#309#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperAttributeToMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="28" />
-          <folding>
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperEntityBlankToJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperJsonToEntityBlank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperJsonToMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperMapToAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperMapToAttributeType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-          <folding>
-            <element signature="e#2232#2233#0" expanded="true" />
-            <element signature="e#2284#2285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperMapToJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperMapToSimpleAttributeType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperSimpleAttributeTypeToJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MapperSimpleAttributeTypeToMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-          <folding>
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#548#549#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/RuntimeHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/mapping/MappingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javassist/javassist/3.12.1.GA/javassist-3.12.1.GA.jar!/javassist/CtClass.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="207" column="15" lean-forward="true" selection-start-line="207" selection-start-column="15" selection-end-line="207" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javassist/javassist/3.12.1.GA/javassist-3.12.1.GA.jar!/javassist/CtNewMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity_builder/BuilderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="73" column="58" lean-forward="true" selection-start-line="73" selection-start-column="58" selection-end-line="73" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/EntityBlank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityDescription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/SessionFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="1755" selection-start-line="1755" selection-end-line="1755" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/internal/SessionFactoryImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="434" column="49" lean-forward="true" selection-start-line="434" selection-start-column="49" selection-end-line="434" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/Constants.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperAttributeToMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperEntityBlankToJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperSimpleAttributeTypeToMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperSimpleAttributeTypeToJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperMapToSimpleAttributeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperMapToJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperMapToAttributeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperMapToAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperJsonToMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/MapperJsonToEntityBlank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/type/AttributeDateType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/type/AttributeIntegerType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/attribute/type/AttributeSimpleType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/Builder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="79" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#338#368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/AbstractEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/EntityDescription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/NamedEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityBlank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityServiceException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.1.4.RELEASE/spring-tx-5.1.4.RELEASE.jar!/org/springframework/transaction/annotation/Transactional.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/BuilderSimpleAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="27" />
+        <state relative-caret-position="180">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.4.RELEASE/spring-context-5.1.4.RELEASE.jar!/org/springframework/stereotype/Repository.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.4.RELEASE/spring-core-5.1.4.RELEASE.jar!/org/springframework/util/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="229">
+          <caret line="72" column="46" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/Settings.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/rest/RestControllerEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="192">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.1.4.RELEASE/spring-tx-5.1.4.RELEASE.jar!/org/springframework/transaction/support/AbstractPlatformTransactionManager.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/BuildingServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="26" column="108" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/5.1.4.RELEASE/spring-orm-5.1.4.RELEASE.jar!/org/springframework/orm/hibernate5/HibernateTransactionManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/reflections/reflections/0.9.10/reflections-0.9.10.jar!/org/reflections/Reflections.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
-          <folding>
-            <element signature="e#2856#2857#0" expanded="true" />
-            <element signature="e#2894#2895#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="1972" column="11" selection-start-line="1972" selection-start-column="11" selection-end-line="1972" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/Application.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding>
-            <element signature="e#2504#2505#0" expanded="true" />
-            <element signature="e#2566#2567#0" expanded="true" />
-          </folding>
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactoryBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/ErrorUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="57" column="4" lean-forward="true" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2087#2114#0" expanded="true" />
-            <element signature="e#2862#2889#0" expanded="true" />
-            <element signature="e#3043#3044#0" expanded="true" />
-            <element signature="e#3034#3061#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/EntityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-268">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.4.RELEASE/spring-core-5.1.4.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
