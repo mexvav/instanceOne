@@ -1,6 +1,6 @@
 package core.jpa;
 
-import core.jpa.entity_builder.BuilderService;
+import core.jpa.entity.building.BuilderService;
 import javassist.*;
 
 import javax.annotation.Nullable;
