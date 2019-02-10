@@ -1,19 +1,19 @@
-package core;
+package tests;
 
 import core.jpa.entity.EntityBlank;
 import core.jpa.entity.building.BuildingService;
 import javassist.CtClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.springframework.util.Assert;
-import utils.ErrorUtils;
-import utils.FactoryEntityBlank;
+import core.utils.ErrorUtils;
+import core.utils.FactoryEntityBlank;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class BuildingServiceTest {
 
     static BuildingService buildingService;
 
-    @BeforeClass
+    @BeforeAll
     public static void initialize(){
         buildingService = new BuildingService();
     }
@@ -24,7 +24,7 @@ public class BuildingServiceTest {
 
         ErrorUtils.assertNotError(()->{
             CtClass ctClass = buildingService.build(null, entityBlank);
-            Assert.notNull(ctClass,"Not expected error with building EntityBlank");
+            Assertions.assertNotNull(ctClass,"Not expected error with building EntityBlank");
         });
     }
 }

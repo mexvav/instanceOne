@@ -1,4 +1,4 @@
-package utils;
+package core.utils;
 
 import com.google.common.collect.Lists;
 
@@ -13,8 +13,8 @@ public class RandomUtils {
     private static final String ENGLISH_ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String CYRILLIC_ALPHABET = "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя";
 
-    private static final int CODE_SIZE = 40;
-    private static final int TITLE_SIZE = 80;
+    private static final int CODE_SIZE = 10;
+    private static final int TITLE_SIZE = 40;
 
     /**
      * Generate unique code of standard length. See CODE_SIZE

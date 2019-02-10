@@ -1,17 +1,17 @@
-package core;
+package tests;
 
 import core.jpa.entity.EntityBlank;
 import core.jpa.mapping.MappingService;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import utils.FactoryEntityBlank;
+import core.utils.FactoryEntityBlank;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class MappingServiceTest {
 
     static MappingService mappingService;
 
-    @BeforeClass
+    @BeforeAll
     public static void initialize(){
         mappingService = new MappingService();
     }
@@ -22,6 +22,6 @@ public class MappingServiceTest {
         String json = mappingService.mapping(entityBlank, String.class);
         EntityBlank mappedEntityBlank = mappingService.mapping(json, EntityBlank.class);
 
-        Assert.assertEquals(entityBlank, mappedEntityBlank);
+        Assertions.assertEquals(entityBlank, mappedEntityBlank);
     }
 }
