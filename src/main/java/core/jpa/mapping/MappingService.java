@@ -37,7 +37,7 @@ public class MappingService {
      */
     public <F, T> T mapping(final F object, final Class<T> to) {
         @SuppressWarnings("unchecked")
-        Mapper<F, T> mapper = getMapper((Class<F>) object.getClass(), to);
+        Mapper<F, T> mapper = getMapper(object.getClass(), to);
         if (null == mapper) {
             throw new MappingException(MappingException.ExceptionCauses.MAPPER_NOT_FOUND,
                     object.getClass().getName(), to.getName());

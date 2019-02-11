@@ -11,18 +11,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = Constants.EntityDescription.TABLE)
 public class EntityDescription extends AbstractEntity implements HasCode {
-    public static final String entityName =  Constants.EntityDescription.ENTITY_NAME;
-
-    @Override
-    public String getEntityName() {
-        return entityName;
-    }
-
+    public static final String entityName = Constants.EntityDescription.ENTITY_NAME;
     @Column(name = Constants.HasCode.CODE, nullable = false, unique = true)
     private String code;
-
-    @Column(name =  Constants.EntityDescription.DESCRIPTION)
+    @Column(name = Constants.EntityDescription.DESCRIPTION)
     private String description;
+
+    @Override
+    public String getEntityCode() {
+        return entityName;
+    }
 
     public String getCode() {
         return code;

@@ -1,12 +1,13 @@
 package core.jpa.entity.entities;
 
 import core.jpa.Constants;
+import core.jpa.interfaces.HasEntityCode;
 import core.jpa.interfaces.HasId;
 
 import javax.persistence.*;
 
 @MappedSuperclass
-public abstract class AbstractEntity implements NamedEntity, HasId {
+public abstract class AbstractEntity implements HasEntityCode, HasId {
 
     @Id
     @GeneratedValue

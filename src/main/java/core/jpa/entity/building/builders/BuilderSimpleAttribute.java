@@ -24,7 +24,7 @@ public class BuilderSimpleAttribute extends BuilderAbstract<Attribute> {
 
     @Override
     public CtClass build(final CtClass ctClass, Attribute attribute) {
-        if(null == ctClass){
+        if (null == ctClass) {
             return null;
         }
         try {

@@ -1,17 +1,18 @@
 package core.jpa.mapping.mappers;
 
 import core.jpa.entity.attribute.Attribute;
+
 import java.util.Map;
 
 public class MapperAttributeToJson extends MapperAbstract<Attribute, String> {
 
     @Override
-    public Class<Attribute> getFromClass(){
+    public Class<Attribute> getFromClass() {
         return Attribute.class;
     }
 
     @Override
-    public Class<String> getToClass(){
+    public Class<String> getToClass() {
         return String.class;
     }
 

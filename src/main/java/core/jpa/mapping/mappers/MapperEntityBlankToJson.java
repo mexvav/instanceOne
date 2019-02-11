@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 public class MapperEntityBlankToJson extends MapperAbstract<EntityBlank, String> {
 
     @Override
-    public Class<EntityBlank> getFromClass(){
+    public Class<EntityBlank> getFromClass() {
         return EntityBlank.class;
     }
 
     @Override
-    public Class<String> getToClass(){
+    public Class<String> getToClass() {
         return String.class;
     }
 

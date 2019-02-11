@@ -26,6 +26,10 @@ public class Application {
     @Autowired
     Settings settings;
 
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
     @Autowired
     @Bean(name = "sessionFactory")
     public SessionFactory getSessionFactory() {
@@ -40,16 +44,11 @@ public class Application {
     @Autowired
     @Bean(name = "transactionManager")
     public PlatformTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-        if(sessionFactory instanceof ReloadableSessionFactory){
-            return ((ReloadableSessionFactory)sessionFactory).getPlatformTransactionManager();
+        if (sessionFactory instanceof ReloadableSessionFactory) {
+            return ((ReloadableSessionFactory) sessionFactory).getPlatformTransactionManager();
         }
         return new HibernateTransactionManager(sessionFactory);
     }
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
 
 
 }

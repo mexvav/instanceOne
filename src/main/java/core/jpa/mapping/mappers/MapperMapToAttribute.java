@@ -3,17 +3,18 @@ package core.jpa.mapping.mappers;
 import core.jpa.Constants;
 import core.jpa.entity.attribute.Attribute;
 import core.jpa.entity.attribute.type.AttributeType;
+
 import java.util.Map;
 
 public class MapperMapToAttribute extends MapperAbstract<Map, Attribute> {
 
     @Override
-    public Class<Map> getFromClass(){
+    public Class<Map> getFromClass() {
         return Map.class;
     }
 
     @Override
-    public Class<Attribute> getToClass(){
+    public Class<Attribute> getToClass() {
         return Attribute.class;
     }
 

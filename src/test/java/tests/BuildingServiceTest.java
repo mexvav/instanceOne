@@ -9,22 +9,22 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class BuildingServiceTest {
+class BuildingServiceTest {
 
-    static BuildingService buildingService;
+    private static BuildingService buildingService;
 
     @BeforeAll
-    public static void initialize(){
+    static void initialize() {
         buildingService = new BuildingService();
     }
 
     @Test
-    public void testBuild(){
+    void testBuild() {
         EntityBlank entityBlank = FactoryEntityBlank.create();
 
-        ErrorUtils.assertNotError(()->{
+        ErrorUtils.assertNotError(() -> {
             CtClass ctClass = buildingService.build(null, entityBlank);
-            Assertions.assertNotNull(ctClass,"Not expected error with building EntityBlank");
+            Assertions.assertNotNull(ctClass, "Not expected error with building EntityBlank");
         });
     }
 }

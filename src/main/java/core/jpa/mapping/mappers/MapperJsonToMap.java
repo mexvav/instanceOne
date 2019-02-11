@@ -8,20 +8,20 @@ public class MapperJsonToMap extends MapperAbstract<String, Map> {
 
     private static Gson gson;
 
-    private Gson getGson(){
-        if(null == gson){
+    private Gson getGson() {
+        if (null == gson) {
             gson = new Gson();
         }
         return gson;
     }
 
     @Override
-    public Class<String> getFromClass(){
+    public Class<String> getFromClass() {
         return String.class;
     }
 
     @Override
-    public Class<Map> getToClass(){
+    public Class<Map> getToClass() {
         return Map.class;
     }
 

@@ -16,8 +16,9 @@ public class EntityBlank implements HasCode, HasTitle {
     private String title;
     private Set<Attribute> attributes;
 
+    @SuppressWarnings("unused")
     EntityBlank(String code) {
-        this.code = code;
+        setCode(code);
     }
 
     public EntityBlank() {
@@ -28,7 +29,7 @@ public class EntityBlank implements HasCode, HasTitle {
     }
 
     public void setCode(String entityName) {
-        this.code = entityName;
+        this.code = entityName.toLowerCase();
     }
 
     public Set<Attribute> getAttributes() {

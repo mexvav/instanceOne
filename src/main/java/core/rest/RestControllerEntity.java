@@ -37,14 +37,14 @@ public class RestControllerEntity {
     }
 
     @PostMapping("/create")
-    public String createEntity(@RequestBody String jsonEntity){
+    public String createEntity(@RequestBody String jsonEntity) {
         EntityBlank entityBlank = mappingService.mapping(jsonEntity, EntityBlank.class);
         entityService.createEntity(entityBlank);
         return "true";
     }
 
     @GetMapping("/test")
-    public String create(){
+    public String create() {
         Map<String, Object> objectMap = Maps.newHashMap();
         objectMap.put("string", "test1");
         objectMap.put("date", new Date());
@@ -56,7 +56,7 @@ public class RestControllerEntity {
 
     @GetMapping("/zzz")
     @Transactional
-    public String zzz(@RequestParam String sql){
+    public String zzz(@RequestParam String sql) {
         List z = sessionFactory.getCurrentSession().createQuery(sql).list();
         return z.toString();
     }

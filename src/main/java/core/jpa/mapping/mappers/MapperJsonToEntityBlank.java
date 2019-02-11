@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
 public class MapperJsonToEntityBlank extends MapperAbstract<String, EntityBlank> {
 
     @Override
-    public Class<String> getFromClass(){
+    public Class<String> getFromClass() {
         return String.class;
     }
 
     @Override
-    public Class<EntityBlank> getToClass(){
+    public Class<EntityBlank> getToClass() {
         return EntityBlank.class;
     }
 
@@ -33,8 +33,8 @@ public class MapperJsonToEntityBlank extends MapperAbstract<String, EntityBlank>
                 .collect(Collectors.toSet());
 
         EntityBlank entityBlank = new EntityBlank();
-        entityBlank.setCode((String)transition.get(Constants.HasCode.CODE));
-        entityBlank.setTitle((String)transition.get(Constants.HasTitle.TITLE));
+        entityBlank.setCode((String) transition.get(Constants.HasCode.CODE));
+        entityBlank.setTitle((String) transition.get(Constants.HasTitle.TITLE));
         entityBlank.setAttributes(attributes);
 
         return entityBlank;

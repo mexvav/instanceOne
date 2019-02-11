@@ -7,26 +7,20 @@ import java.util.Random;
 
 public class RandomUtils {
 
-    private static Random random;
-    private static List<String> codes;
-
     private static final String ENGLISH_ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String CYRILLIC_ALPHABET = "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя";
-
     private static final int CODE_SIZE = 10;
     private static final int TITLE_SIZE = 40;
+    private static Random random;
+    private static List<String> codes;
 
     /**
      * Generate unique code of standard length. See CODE_SIZE
      *
      * @return unique random code
      */
-    public static String getCode(){
-        String generatedCode = generateEnglishString(CODE_SIZE);
-        if(getCodes().contains(generatedCode)){
-            return getCode(CODE_SIZE);
-        }
-        return generatedCode;
+    public static String getCode() {
+        return getCode(CODE_SIZE);
     }
 
     /**
@@ -35,15 +29,15 @@ public class RandomUtils {
      * @param count length
      * @return unique random code of given length
      */
-    public static String getCode(int count){
+    public static String getCode(int count) {
         String generatedCode = generateEnglishString(count);
-        if(getCodes().contains(generatedCode)){
+        if (getCodes().contains(generatedCode)) {
             return getCode(count);
         }
-        return generatedCode;
+        return generatedCode.toLowerCase();
     }
 
-    public static String getTitle(){
+    public static String getTitle() {
         return generateStringByCustomAlphabet(TITLE_SIZE, ENGLISH_ALPHABET.concat(CYRILLIC_ALPHABET));
     }
 
@@ -70,7 +64,7 @@ public class RandomUtils {
     /**
      * Generate random string of given length from custom alphabet
      *
-     * @param count length
+     * @param count    length
      * @param alphabet alphabet for generating string
      * @return random string of given length
      */
@@ -85,8 +79,8 @@ public class RandomUtils {
     /**
      * Get {@link Random} instance
      */
-    private static Random getRandom(){
-        if(null == random){
+    private static Random getRandom() {
+        if (null == random) {
             random = new Random();
         }
         return random;
@@ -97,8 +91,8 @@ public class RandomUtils {
      *
      * @return unique generated codes
      */
-    private static List<String> getCodes(){
-        if(null == codes){
+    private static List<String> getCodes() {
+        if (null == codes) {
             codes = Lists.newArrayList();
         }
         return codes;

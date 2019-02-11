@@ -7,12 +7,12 @@ import java.util.Map;
 public class MapperSimpleAttributeTypeToJson extends MapperAbstract<AttributeSimpleType, String> {
 
     @Override
-    public Class<AttributeSimpleType> getFromClass(){
+    public Class<AttributeSimpleType> getFromClass() {
         return AttributeSimpleType.class;
     }
 
     @Override
-    public Class<String> getToClass(){
+    public Class<String> getToClass() {
         return String.class;
     }
 

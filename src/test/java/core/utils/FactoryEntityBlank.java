@@ -4,7 +4,7 @@ import core.jpa.entity.EntityBlank;
 
 public class FactoryEntityBlank {
 
-    public static EntityBlank create(){
+    public static EntityBlank create() {
         EntityBlank entityBlank = new EntityBlank();
         entityBlank.setCode(RandomUtils.getCode());
         entityBlank.setTitle(RandomUtils.getTitle());

@@ -7,17 +7,17 @@ import java.util.Map;
 public class MapperMapToSimpleAttributeType extends MapperAbstract<Map, AttributeSimpleType> {
 
     @Override
-    public Class<Map> getFromClass(){
+    public Class<Map> getFromClass() {
         return Map.class;
     }
 
     @Override
-    public Class<AttributeSimpleType> getToClass(){
+    public Class<AttributeSimpleType> getToClass() {
         return AttributeSimpleType.class;
     }
 
     @Override
     public AttributeSimpleType transform(Map from) {
-        return (AttributeSimpleType)from.get("instance");
+        return (AttributeSimpleType) from.get("instance");
     }
 }

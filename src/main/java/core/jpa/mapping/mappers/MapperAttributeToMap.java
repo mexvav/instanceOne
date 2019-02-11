@@ -10,12 +10,12 @@ import java.util.Map;
 public class MapperAttributeToMap extends MapperAbstract<Attribute, Map> {
 
     @Override
-    public Class<Attribute> getFromClass(){
+    public Class<Attribute> getFromClass() {
         return Attribute.class;
     }
 
     @Override
-    public Class<Map> getToClass(){
+    public Class<Map> getToClass() {
         return Map.class;
     }
 

@@ -9,6 +9,7 @@ public interface Builder<B> {
 
     /**
      * Initialize buider in building service
+     *
      * @param buildingService building service for initialize
      */
     void init(BuildingService buildingService);
@@ -21,7 +22,7 @@ public interface Builder<B> {
     /**
      * Build in entity
      *
-     * @param ctClass entity class blank
+     * @param ctClass     entity class blank
      * @param buildObject object for building
      * @throws core.jpa.entity.building.BuildingException if building is failed
      */
