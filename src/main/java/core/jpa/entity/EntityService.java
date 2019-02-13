@@ -4,17 +4,14 @@ import com.google.common.collect.Maps;
 import core.jpa.Constants;
 import core.jpa.ReloadableSessionFactory;
 import core.jpa.dao.DAOEntity;
-import core.jpa.entity.building.BuildingException;
 import core.jpa.entity.building.BuildingService;
 import core.jpa.entity.entities.EntityDescription;
 import core.jpa.interfaces.HasEntityCode;
 import core.jpa.mapping.MappingService;
-import javassist.CannotCompileException;
-import javassist.CtClass;
+import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -189,12 +186,11 @@ public class EntityService {
      * @param entityBlank - entity blank
      */
     private Class buildEntity(EntityBlank entityBlank) {
-        CtClass entityCtClass = buildingService.build(null, entityBlank);
-        try {
-            return entityCtClass.toClass();
-        } catch (CannotCompileException e) {
-            throw new BuildingException(e.getMessage());
-        }
+        return buildingService
+                .build(null, entityBlank)
+                .make()
+                .load(ReloadableSessionFactory.class.getClassLoader(), ClassLoadingStrategy.Default.INJECTION)
+                .getLoaded();
     }
 
     /**

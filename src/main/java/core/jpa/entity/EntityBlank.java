@@ -43,10 +43,6 @@ public class EntityBlank implements HasCode, HasTitle {
         this.attributes = attributes;
     }
 
-    public String getTableName() {
-        return getCode();
-    }
-
     public String getTitle() {
         return title;
     }

@@ -61,28 +61,4 @@ public class RestControllerEntity {
         return z.toString();
     }
 
-    /*
-    {
-        "code":"test",
-        "attributes":[
-        {
-            "code":"string",
-            "unique":false,
-            "type":{"code":"string"},
-            "required":false
-        },
-        {
-            "code":"date",
-            "unique":false,
-            "type":{"code":"date"},
-            "required":false
-        },
-        {
-            "code":"integer",
-            "unique":false,
-            "type":{"code":"integer"},
-            "required":false
-        }]
-    }
-    */
 }

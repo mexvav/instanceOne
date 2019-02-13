@@ -17,7 +17,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
         "datasource.username=postgres",
         "datasource.password=postgres"
 })
-//@AssumeSpringContext
+@AssumeSpringContext
 abstract class SpringContextAbstractTest {
 
 }

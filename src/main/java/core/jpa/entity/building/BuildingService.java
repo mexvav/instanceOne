@@ -3,7 +3,7 @@ package core.jpa.entity.building;
 import com.google.common.collect.Sets;
 import core.jpa.entity.building.builders.Builder;
 import core.utils.ClassUtils;
-import javassist.*;
+import net.bytebuddy.dynamic.DynamicType;
 import org.reflections.Reflections;
 import org.springframework.stereotype.Component;
 
@@ -44,7 +44,7 @@ public class BuildingService {
      * @throws BuildingException if building is failed
      */
     @SuppressWarnings("unchecked")
-    public CtClass build(final CtClass ctClass, Object buildObject) {
+    public DynamicType.Builder build(final DynamicType.Builder ctClass, Object buildObject) {
         Builder builder = getBuilder(buildObject);
         return builder.build(ctClass, buildObject);
     }
