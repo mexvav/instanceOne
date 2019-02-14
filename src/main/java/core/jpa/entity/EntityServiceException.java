@@ -4,15 +4,16 @@ package core.jpa.entity;
  * Exception for entity builder
  */
 public class EntityServiceException extends RuntimeException {
-    EntityServiceException(String message) {
+
+    public EntityServiceException(String message) {
         super(message);
     }
 
-    EntityServiceException(ExceptionCauses cause) {
+    public EntityServiceException(ExceptionCauses cause) {
         super(cause.getCause());
     }
 
-    EntityServiceException(ExceptionCauses cause, String... args) {
+    public EntityServiceException(ExceptionCauses cause, String... args) {
         super(String.format(cause.getCause(), (Object[]) args));
     }
 

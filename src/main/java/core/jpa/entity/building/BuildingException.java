@@ -4,11 +4,12 @@ package core.jpa.entity.building;
  * Exception for building Entity
  */
 public class BuildingException extends RuntimeException {
+
     public BuildingException(String message) {
         super(message);
     }
 
-    BuildingException(ExceptionCauses cause) {
+    public BuildingException(ExceptionCauses cause) {
         super(cause.getCause());
     }
 

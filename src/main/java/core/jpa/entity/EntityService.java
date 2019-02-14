@@ -3,45 +3,44 @@ package core.jpa.entity;
 import com.google.common.collect.Maps;
 import core.jpa.Constants;
 import core.jpa.ReloadableSessionFactory;
-import core.jpa.dao.DAOEntity;
+import core.jpa.aspects.WithReloadSessionFactory;
+import core.jpa.dao.EntityDAO;
 import core.jpa.entity.building.BuildingService;
 import core.jpa.entity.entities.EntityDescription;
-import core.jpa.interfaces.HasEntityCode;
 import core.jpa.mapping.MappingService;
-import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.Supplier;
 
 @Component
 public class EntityService {
+
     private ReloadableSessionFactory sessionFactory;
+    private BuildingService buildingService;
+    private MappingService mappingService;
+    private EntityDAO dao;
 
     private Map<String, Class<?>> currentEntities;
     private Map<String, Class<?>> entities;
-    private Map<String, EntityBlank> entitiesBlank;
-
-    private BuildingService buildingService;
-    private MappingService mappingService;
-    private DAOEntity dao;
+    private Map<String, EntityClass> entitiesBlank;
 
     @Autowired
-    EntityService(SessionFactory sessionFactory, BuildingService buildingService,
-                  MappingService mappingService, DAOEntity dao) {
+    EntityService(
+            SessionFactory sessionFactory,
+            BuildingService buildingService,
+            MappingService mappingService,
+            EntityDAO dao) {
         if (sessionFactory instanceof ReloadableSessionFactory) {
             this.sessionFactory = (ReloadableSessionFactory) sessionFactory;
         } else {
-            throw new EntityServiceException(EntityServiceException.ExceptionCauses.SESSION_FACTORY_IS_NOT_RELOADABLE);
+            throw new EntityServiceException(
+                    EntityServiceException.ExceptionCauses.SESSION_FACTORY_IS_NOT_RELOADABLE);
         }
         this.buildingService = buildingService;
         this.mappingService = mappingService;
@@ -59,7 +58,7 @@ public class EntityService {
     public <R> R actionWithReloadSessionFactory(Supplier<R> action) {
         reloadCurrentEntities();
         Map<String, Class<?>> entities = getEntities();
-        Map<String, EntityBlank> entitiesBlank = getEntitiesBlank();
+        Map<String, EntityClass> entitiesBlank = getEntitiesBlank();
         try {
             R result = action.get();
             reloadService();
@@ -72,21 +71,25 @@ public class EntityService {
     }
 
     /**
-     * Rebuild session factory
-     * not safety, use method actionWithReloadSessionFactory or annotation {@link WithReloadSessionFactory}
+     * Rebuild session factory not safety, use method actionWithReloadSessionFactory or annotation
+     * {@link WithReloadSessionFactory}
      */
     public void reloadService() {
-        getEntities().forEach((code, entity) -> {
-            if (!getCurrentEntities().containsKey(code)) {
-                sessionFactory.getEntities().add(entity);
-            }
-        });
+        getEntities()
+                .forEach(
+                        (code, entity) -> {
+                            if (!getCurrentEntities().containsKey(code)) {
+                                sessionFactory.getEntities().add(entity);
+                            }
+                        });
 
-        getCurrentEntities().forEach((code, entity) -> {
-            if (!getEntities().containsKey(code)) {
-                sessionFactory.getEntities().remove(entity);
-            }
-        });
+        getCurrentEntities()
+                .forEach(
+                        (code, entity) -> {
+                            if (!getEntities().containsKey(code)) {
+                                sessionFactory.getEntities().remove(entity);
+                            }
+                        });
 
         sessionFactory.reloadSessionFactory();
         reloadCurrentEntities();
@@ -95,18 +98,18 @@ public class EntityService {
     /**
      * Create new entity in runtime
      *
-     * @param entityBlanks - entity blanks
+     * @param entityClasses - description objects for entity class
      */
     @WithReloadSessionFactory
-    public void createEntity(final EntityBlank... entityBlanks) {
-        for (EntityBlank entityBlank : entityBlanks) {
-            if (isEntityExist(entityBlank.getCode())) {
+    public void createEntity(final EntityClass... entityClasses) {
+        for (EntityClass entityClass : entityClasses) {
+            if (isEntityExist(entityClass.getCode())) {
                 continue;
             }
-            Class entity = buildEntity(entityBlank);
-            getEntities().put(entityBlank.getCode(), entity);
-            getEntitiesBlank().put(entityBlank.getCode(), entityBlank);
-            saveDescription(entityBlank);
+            Class entity = buildingService.building(entityClass);
+            getEntities().put(entityClass.getCode(), entity);
+            getEntitiesBlank().put(entityClass.getCode(), entityClass);
+            saveDescription(entityClass);
         }
     }
 
@@ -117,11 +120,13 @@ public class EntityService {
      */
     @WithReloadSessionFactory
     public void removeEntity(String... codes) {
-        Arrays.stream(codes).forEach(code -> {
-            dao.dropTable(code);
-            getEntities().remove(code);
-            getEntitiesBlank().remove(code);
-        });
+        Arrays.stream(codes)
+                .forEach(
+                        code -> {
+                            dao.dropTable(code);
+                            getEntities().remove(code);
+                            getEntitiesBlank().remove(code);
+                        });
     }
 
     /**
@@ -139,7 +144,7 @@ public class EntityService {
     }
 
     /**
-     * Is entity with {@link HasEntityCode} exist
+     * Is entity exist
      *
      * @param code entity code
      */
@@ -153,58 +158,54 @@ public class EntityService {
      * @param code code of entity
      * @throws EntityServiceException if entity not found
      */
-    public EntityBlank getEntityBlank(String code) {
+    public EntityClass getEntityBlank(String code) {
         if (isEntityExist(code)) {
             return getEntitiesBlank().get(code);
         }
-        throw new EntityServiceException(EntityServiceException.ExceptionCauses.ENTITY_IS_NOT_EXIST, code);
+        throw new EntityServiceException(
+                EntityServiceException.ExceptionCauses.ENTITY_IS_NOT_EXIST, code);
     }
 
+    /**
+     * Get entity
+     *
+     * @param code code of entity
+     * @throws EntityServiceException if entity not found
+     */
     public Class<?> getEntity(String code) {
         if (isEntityExist(code)) {
             return getEntities().get(code);
         }
-        throw new EntityServiceException(EntityServiceException.ExceptionCauses.ENTITY_IS_NOT_EXIST, code);
+        throw new EntityServiceException(
+                EntityServiceException.ExceptionCauses.ENTITY_IS_NOT_EXIST, code);
     }
 
     /**
-     * Save information about entityBlank in db. See {@link EntityDescription}
+     * Save information about entityClass in db. See {@link EntityDescription}
      *
-     * @param entityBlank entityBlank for saving description
+     * @param entityClass description object for entity class
      */
-    private void saveDescription(EntityBlank entityBlank) {
-        String json = mappingService.mapping(entityBlank, String.class);
+    private void saveDescription(EntityClass entityClass) {
+        String json = mappingService.mapping(entityClass, String.class);
         EntityDescription description = new EntityDescription();
-        description.setCode(entityBlank.getCode());
+        description.setCode(entityClass.getCode());
         description.setDescription(json);
         dao.save(description);
     }
 
     /**
-     * Build entity
-     *
-     * @param entityBlank - entity blank
-     */
-    private Class buildEntity(EntityBlank entityBlank) {
-        return buildingService
-                .build(null, entityBlank)
-                .make()
-                .load(ReloadableSessionFactory.class.getClassLoader(), ClassLoadingStrategy.Default.INJECTION)
-                .getLoaded();
-    }
-
-    /**
      * Init all entities from db by {@link EntityDescription}
      */
+    @SuppressWarnings("unchecked")
     @WithReloadSessionFactory
     private void initializeEntities() {
-        @SuppressWarnings("unchecked")
         List<EntityDescription> entities = dao.getAll(EntityDescription.entityName);
         for (EntityDescription description : entities) {
-            EntityBlank entityBlank = mappingService.mapping(description.getDescription(), EntityBlank.class);
-            Class entity = buildEntity(entityBlank);
-            getEntitiesBlank().put(entityBlank.getCode(), entityBlank);
-            getEntities().put(entityBlank.getCode(), entity);
+            EntityClass entityClass =
+                    mappingService.mapping(description.getDescription(), EntityClass.class);
+            Class entity = buildingService.building(entityClass);
+            getEntitiesBlank().put(entityClass.getCode(), entityClass);
+            getEntities().put(entityClass.getCode(), entity);
         }
     }
 
@@ -219,15 +220,18 @@ public class EntityService {
     }
 
     /**
-     * Get all entitiesBlank
+     * Get all entityClass
      */
-    private Map<String, EntityBlank> getEntitiesBlank() {
+    private Map<String, EntityClass> getEntitiesBlank() {
         if (null == entitiesBlank) {
             entitiesBlank = Maps.newHashMap();
         }
         return entitiesBlank;
     }
 
+    /**
+     * Get actual entities, used for {@link #actionWithReloadSessionFactory(Supplier)}
+     */
     private Map<String, Class<?>> getCurrentEntities() {
         if (null == currentEntities) {
             currentEntities = Maps.newHashMap();
@@ -235,28 +239,10 @@ public class EntityService {
         return currentEntities;
     }
 
+    /**
+     * Reload actual entities
+     */
     private void reloadCurrentEntities() {
         currentEntities = Maps.newHashMap(getEntities());
-    }
-
-    @Retention(RetentionPolicy.RUNTIME)
-    @Target(ElementType.METHOD)
-    public @interface WithReloadSessionFactory {
-    }
-
-    @Aspect
-    @Component
-    public class WithReloadSessionFactoryAspect {
-
-        @Around("@annotation(core.jpa.entity.EntityService.WithReloadSessionFactory)")
-        public Object withReloadSessionFactory(ProceedingJoinPoint joinPoint) {
-            return actionWithReloadSessionFactory(() -> {
-                try {
-                    return joinPoint.proceed();
-                } catch (Throwable e) {
-                    throw new EntityServiceException(e.getMessage());
-                }
-            });
-        }
     }
 }

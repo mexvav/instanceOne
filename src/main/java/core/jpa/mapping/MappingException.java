@@ -4,6 +4,7 @@ package core.jpa.mapping;
  * Exception for entity generator
  */
 public class MappingException extends RuntimeException {
+
     public MappingException(String message) {
         super(message);
     }

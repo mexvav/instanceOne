@@ -16,11 +16,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
-
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,
-        DataSourceTransactionManagerAutoConfiguration.class,
-        HibernateJpaAutoConfiguration.class})
+@EnableAutoConfiguration(
+        exclude = {
+                DataSourceAutoConfiguration.class,
+                DataSourceTransactionManagerAutoConfiguration.class,
+                HibernateJpaAutoConfiguration.class
+        })
 public class Application {
 
     @Autowired
@@ -34,11 +36,14 @@ public class Application {
     @Bean(name = "sessionFactory")
     public SessionFactory getSessionFactory() {
         StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder();
-        serviceRegistryBuilder.applySetting(org.hibernate.cfg.Environment.DATASOURCE, settings.getDataSource());
+        serviceRegistryBuilder.applySetting(
+                org.hibernate.cfg.Environment.DATASOURCE, settings.getDataSource());
         serviceRegistryBuilder.applySettings(settings.getHibernateProperties());
         StandardServiceRegistry serviceRegistry = serviceRegistryBuilder.build();
 
-        return new ReloadableSessionFactoryBuilder(settings.getHibernateProperties(), serviceRegistry, "core").build();
+        return new ReloadableSessionFactoryBuilder(
+                settings.getHibernateProperties(), serviceRegistry, "core")
+                .build();
     }
 
     @Autowired
@@ -49,6 +54,4 @@ public class Application {
         }
         return new HibernateTransactionManager(sessionFactory);
     }
-
-
 }

@@ -1,8 +1,8 @@
 package tests;
 
-import core.jpa.entity.EntityBlank;
+import core.factories.EntityClassFactory;
+import core.jpa.entity.EntityClass;
 import core.jpa.mapping.MappingService;
-import core.utils.FactoryEntityBlank;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -18,10 +18,19 @@ class MappingServiceTest {
 
     @Test
     void testMappingEntityBlank() {
-        EntityBlank entityBlank = FactoryEntityBlank.create();
-        String json = mappingService.mapping(entityBlank, String.class);
-        EntityBlank mappedEntityBlank = mappingService.mapping(json, EntityBlank.class);
+        EntityClass entityClass = EntityClassFactory.create();
+        String json = mappingService.mapping(entityClass, String.class);
+        EntityClass mappedEntityClass = mappingService.mapping(json, EntityClass.class);
 
-        Assertions.assertEquals(entityBlank, mappedEntityBlank);
+        Assertions.assertEquals(entityClass, mappedEntityClass);
+    }
+
+    @Test
+    void test() {
+        EntityClass entityClass = EntityClassFactory.create();
+        String json = mappingService.mapping(entityClass, String.class);
+        EntityClass mappedEntityClass = mappingService.mapping(json, EntityClass.class);
+
+        Assertions.assertEquals(entityClass, mappedEntityClass);
     }
 }

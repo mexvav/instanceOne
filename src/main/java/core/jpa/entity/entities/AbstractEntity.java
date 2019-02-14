@@ -4,7 +4,10 @@ import core.jpa.Constants;
 import core.jpa.interfaces.HasEntityCode;
 import core.jpa.interfaces.HasId;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public abstract class AbstractEntity implements HasEntityCode, HasId {

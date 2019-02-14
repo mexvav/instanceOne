@@ -1,9 +1,9 @@
 package spring_context_tests;
 
-import core.jpa.dao.DAOEntity;
-import core.jpa.entity.EntityBlank;
+import core.factories.EntityClassFactory;
+import core.jpa.dao.EntityDAO;
+import core.jpa.entity.EntityClass;
 import core.jpa.entity.EntityService;
-import core.utils.FactoryEntityBlank;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,38 +18,44 @@ class EntityServiceTest extends SpringContextAbstractTest {
     EntityService entityService;
 
     @Autowired
-    DAOEntity daoEntity;
+    EntityDAO entityDAO;
 
     @Test
     void testEntityLifeCircle() {
-        EntityBlank entityBlank = FactoryEntityBlank.create();
-        entityService.createEntity(entityBlank);
+        EntityClass entityClass = EntityClassFactory.create();
+        entityService.createEntity(entityClass);
 
-        Assertions.assertTrue(entityService.isEntityExist(entityBlank.getCode()));
-        Assertions.assertTrue(tableExist(entityBlank.getCode()));
+        Assertions.assertTrue(entityService.isEntityExist(entityClass.getCode()));
+        Assertions.assertTrue(tableExist(entityClass.getCode()));
 
-        entityService.removeEntity(entityBlank.getCode());
+        entityService.removeEntity(entityClass.getCode());
 
-        Assertions.assertFalse(entityService.isEntityExist(entityBlank.getCode()));
-        Assertions.assertFalse(tableExist(entityBlank.getCode()));
+        Assertions.assertFalse(entityService.isEntityExist(entityClass.getCode()));
+        Assertions.assertFalse(tableExist(entityClass.getCode()));
     }
 
     @Test
     void testHardClean() {
-        List<EntityBlank> entityBlanks = Stream.generate(FactoryEntityBlank::create).limit(10).collect(Collectors.toList());
-        entityService.createEntity(entityBlanks.toArray(new EntityBlank[0]));
+        List<EntityClass> entityClasses =
+                Stream.generate(EntityClassFactory::create).limit(10).collect(Collectors.toList());
+        entityService.createEntity(entityClasses.toArray(new EntityClass[0]));
 
-        Assertions.assertTrue(entityBlanks.stream().allMatch(entityBlank -> entityService.isEntityExist(entityBlank.getCode())));
-        Assertions.assertTrue(entityBlanks.stream().allMatch(entityBlank -> tableExist(entityBlank.getCode())));
+        Assertions.assertTrue(
+                entityClasses.stream()
+                        .allMatch(entityBlank -> entityService.isEntityExist(entityBlank.getCode())));
+        Assertions.assertTrue(
+                entityClasses.stream().allMatch(entityBlank -> tableExist(entityBlank.getCode())));
 
         entityService.hardClean();
 
-        Assertions.assertTrue(entityBlanks.stream().noneMatch(entityBlank -> entityService.isEntityExist(entityBlank.getCode())));
-        Assertions.assertTrue(entityBlanks.stream().noneMatch(entityBlank -> tableExist(entityBlank.getCode())));
+        Assertions.assertTrue(
+                entityClasses.stream()
+                        .noneMatch(entityBlank -> entityService.isEntityExist(entityBlank.getCode())));
+        Assertions.assertTrue(
+                entityClasses.stream().noneMatch(entityBlank -> tableExist(entityBlank.getCode())));
     }
 
     private boolean tableExist(String code) {
-        return daoEntity.getAllTables().contains(code);
+        return entityDAO.getAllTables().contains(code);
     }
-
 }

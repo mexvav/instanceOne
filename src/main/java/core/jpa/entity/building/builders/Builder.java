@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 public interface Builder<B> {
 
     /**
-     * Initialize this buider in building service
+     * Initialize this builder in building service
      *
      * @param buildingService building service for initialize
      */
@@ -20,7 +20,7 @@ public interface Builder<B> {
     Class getSuitableClass();
 
     /**
-     * Part of entity class building
+     * Step of class building. See {@link BuildingService#building(Object)}
      *
      * @param classBuilder entity class builder
      * @param buildObject  object for building
