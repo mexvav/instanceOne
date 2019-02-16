@@ -15,6 +15,8 @@ import org.springframework.util.StringUtils;
 import javax.annotation.Nullable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @SuppressWarnings("unused")
 public class EntityClassBuilder extends AbstractBuilder<EntityClass> {
@@ -32,7 +34,8 @@ public class EntityClassBuilder extends AbstractBuilder<EntityClass> {
      * @throws BuildingException if building is failed
      */
     @Override
-    public Builder build(@Nullable final Builder classBuilder, EntityClass entityClass) {
+    @NotNull
+    public Builder build(@Nullable final Builder classBuilder, @NotNull EntityClass entityClass) {
         validateEntityBlank(entityClass);
 
         Builder builder =
@@ -64,8 +67,8 @@ public class EntityClassBuilder extends AbstractBuilder<EntityClass> {
      * @param entityClass blank for entity class
      * @throws BuildingException if validation is failed
      */
-    private void validateEntityBlank(EntityClass entityClass) {
-        if (entityClass.getCode().isEmpty()) {
+    private void validateEntityBlank(@NotNull EntityClass entityClass) {
+        if (Objects.requireNonNull(entityClass).getCode().isEmpty()) {
             throw new BuildingException(BuildingException.ExceptionCauses.CODE_IS_EMPTY);
         }
     }

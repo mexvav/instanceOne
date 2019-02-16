@@ -20,7 +20,7 @@ public class WithReloadSessionFactoryAspect {
         this.entityService = entityService;
     }
 
-    @Around("@annotation(core.jpa.entity.EntityService.WithReloadSessionFactory)")
+    @Around("@annotation(core.jpa.aspects.WithReloadSessionFactory)")
     public Object withReloadSessionFactory(ProceedingJoinPoint joinPoint) {
         return entityService.actionWithReloadSessionFactory(
                 () -> {

@@ -1,4 +1,4 @@
-package core.conditions;
+package core.extentions.conditions;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 

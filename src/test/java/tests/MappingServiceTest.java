@@ -1,8 +1,5 @@
 package tests;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import core.factories.EntityClassFactory;
 import core.factories.EntityFieldFactory;
 import core.jpa.entity.EntityClass;
@@ -21,31 +18,125 @@ class MappingServiceTest {
         mappingService = new MappingService();
     }
 
+    /**
+     * Testing mapping of empty {@link EntityClass} by {@link MappingService}
+     *
+     * <ol>
+     * <b>Actions:</b>
+     * <li>create "entityClass" of {@link EntityClass}</li>
+     * <li>mapping "entityClass" to "json"</li>
+     * </ol>
+     *
+     * <ol>
+     * <b>Verifications:</b>
+     * <li>is "json" equals "{"code":"%s","title":"%s","fields":[]}"</li>
+     * </ol>
+     *
+     * <ol>
+     * <b>Actions:</b>
+     * <li>mapping "json" to "mappedEntityClass"</li>
+     * </ol>
+     *
+     * <ol>
+     * <b>Verifications:</b>
+     * <li>is "entityClass" equals "mappedEntityClass"</li>
+     * </ol>
+     */
     @Test
-    void testMappingEntityBlank() {
+    void testMappingEmptyEntityClass() {
         EntityClass entityClass = EntityClassFactory.create();
+        String json = mappingService.mapping(entityClass, String.class);
+
+        String expectedJsonPattern = "{\"code\":\"%s\",\"title\":\"%s\",\"fields\":[]}";
+        String expectedJson = String.format(expectedJsonPattern, entityClass.getCode(), entityClass.getTitle());
+        Assertions.assertEquals(expectedJson, json);
+
+        EntityClass mappedEntityClass = mappingService.mapping(json, EntityClass.class);
+        Assertions.assertEquals(entityClass, mappedEntityClass);
+    }
+
+    /**
+     * Testing mapping of {@link EntityField} by {@link MappingService}
+     *
+     * <ol>
+     * <b>Actions:</b>
+     * <li>create "entityField" with type {@link core.jpa.entity.fields.types.StringEntityFieldType}</li>
+     * <li>mapping "entityClass" to "json"</li>
+     * </ol>
+
+     * <ol>
+     * <b>Verifications:</b>
+     * <li>is "json" equals "{"code":"%s","type":{"length":0,"code":"%s"}"</li>
+     * </ol>
+     *
+     * <ol>
+     * <b>Actions:</b>
+     * <li>mapping "json" to "mappedEntityClass"</li>
+     * </ol>
+     *
+     * <ol>
+     * <b>Verifications:</b>
+     * <li>is "entityClass" equals "mappedEntityClass"</li>
+     * </ol>
+     *
+     */
+    @Test
+    void testMappingEntityField() {
+        EntityField entityField = EntityFieldFactory.stringEntityField();
+        String json = mappingService.mapping(entityField, String.class);
+
+        String expectedJsonPattern = "{\"code\":\"%s\",\"type\":{\"length\":0,\"code\":\"%s\"}}";
+        String expectedJson = String.format(expectedJsonPattern, entityField.getCode(), entityField.getType().getCode());
+        Assertions.assertEquals(expectedJson, json);
+
+        EntityField mappedEntityField = mappingService.mapping(json, EntityField.class);
+        Assertions.assertEquals(entityField, mappedEntityField);
+
+        entityField = EntityFieldFactory.dateEntityField();
+        json = mappingService.mapping(entityField, String.class);
+
+        expectedJsonPattern = "{\"code\":\"%s\",\"type\":\"%s\"}";
+        expectedJson = String.format(expectedJsonPattern, entityField.getCode(), entityField.getType().getCode());
+        Assertions.assertEquals(expectedJson, json);
+
+        mappedEntityField = mappingService.mapping(json, EntityField.class);
+        Assertions.assertEquals(entityField, mappedEntityField);
+    }
+
+    /**
+     * Testing mapping of {@link EntityClass} with all type of {@link EntityField} by {@link MappingService}
+     *
+     * <ol>
+     * <b>Actions:</b>
+     * <li>create "entityClass" of {@link EntityClass}</li>
+     * <li>add "entityFields" of {@link EntityField} to "entityClass", field types:
+     * <ul>
+     * <li>{@link core.jpa.entity.fields.types.StringEntityFieldType}</li>
+     * <li>{@link core.jpa.entity.fields.types.DateEntityFieldType}</li>
+     * <li>{@link core.jpa.entity.fields.types.IntegerEntityFieldType}</li>
+     * </ul>
+     * </li>
+     * <li>mapping "entityClass" to "json"</li>
+     * <li>mapping "json" to "mappedEntityClass"</li>
+     * </ol>
+     *
+     * <ol>
+     * <b>Verifications:</b>
+     * <li>is "entityClass" equals "mappedEntityClass"</li>
+     * </ol>
+     */
+    @Test
+    void testMappingEntityClass() {
+        EntityClass entityClass = EntityClassFactory.create();
+
+        EntityField stringEntityField = EntityFieldFactory.stringEntityField();
+        EntityField dateEntityField = EntityFieldFactory.dateEntityField();
+        EntityField integerEntityField = EntityFieldFactory.integerEntityField();
+        entityClass.addFields(stringEntityField, dateEntityField, integerEntityField);
+
         String json = mappingService.mapping(entityClass, String.class);
         EntityClass mappedEntityClass = mappingService.mapping(json, EntityClass.class);
 
         Assertions.assertEquals(entityClass, mappedEntityClass);
     }
-
-    @Test
-    void test() throws JsonProcessingException {
-        EntityClass entityClass = EntityClassFactory.create();
-
-        //EntityField stringEntityField = EntityFieldFactory.stringEntityField();
-        //EntityField dateEntityField = EntityFieldFactory.dateEntityField();
-        //EntityField integerEntityField = EntityFieldFactory.integerEntityField();
-        //entityClass.addFields(stringEntityField, dateEntityField, integerEntityField);
-
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        //String json1 = mapper.writeValueAsString(stringEntityField);
-        //String json2 = mapper.writeValueAsString(dateEntityField);
-        //String json3 = mapper.writeValueAsString(integerEntityField);
-        String json = mapper.writeValueAsString(mapper);
-    }
-
-
 }

@@ -8,7 +8,7 @@ public interface Mapper<F, T> {
 
     Class<T> getToClass();
 
-    T transform(F from);
+    T transform(F from, Class<T> toClass);
 
     void init(MappingService mappingService);
 }

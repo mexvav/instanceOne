@@ -13,4 +13,7 @@ public class Constants {
      * drop table %s
      */
     static final String HQL_CLEAN = "delete %s";
+
+
+
 }

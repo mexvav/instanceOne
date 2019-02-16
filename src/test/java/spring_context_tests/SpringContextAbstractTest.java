@@ -1,7 +1,6 @@
 package spring_context_tests;
 
 import core.Application;
-import core.conditions.AssumeSpringContext;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
@@ -18,6 +17,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
                 "datasource.username=postgres",
                 "datasource.password=postgres"
         })
-@AssumeSpringContext
+//@AssumeSpringContext
 abstract class SpringContextAbstractTest {
 }

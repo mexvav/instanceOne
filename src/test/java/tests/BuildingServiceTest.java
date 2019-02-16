@@ -5,7 +5,7 @@ import core.factories.EntityFieldFactory;
 import core.jpa.entity.EntityClass;
 import core.jpa.entity.building.BuildingService;
 import core.jpa.entity.fields.EntityField;
-import core.utils.Constans;
+import core.utils.Constants;
 import core.utils.ErrorUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -63,7 +63,7 @@ class BuildingServiceTest {
         entityClass.addFields(stringEntityField, dateEntityField, integerEntityField);
 
         Class<?> entity = ErrorUtils.assertNotError(
-                () -> buildingService.building(entityClass), Constans.Error.BUILDING_EXCEPTION);
+                () -> buildingService.building(entityClass), Constants.Error.BUILDING_EXCEPTION);
         Assertions.assertEquals(StringUtils.capitalize(entityClass.getCode()), entity.getSimpleName());
 
         Entity entityAnnotation = getAnnotation(entity, Entity.class);
@@ -89,10 +89,10 @@ class BuildingServiceTest {
         Field stringField = getField(entity, name);
         Assertions.assertTrue(
                 stringField.getType().isAssignableFrom(type),
-                Constans.Error.FIELD_TYPE);
+                Constants.Error.FIELD_TYPE);
         Column columnAnnotation = stringField.getAnnotation(Column.class);
         Assertions.assertNotNull(columnAnnotation,
-                String.format(Constans.Error.NOT_FOUND_ANNOTATION, Column.class.getName()));
+                String.format(Constants.Error.NOT_FOUND_ANNOTATION, Column.class.getName()));
     }
 
     /**
@@ -119,7 +119,7 @@ class BuildingServiceTest {
      */
     private <A extends Annotation> A getAnnotation(Class<?> entity, Class<A> annotationClass) {
         A annotation = entity.getAnnotation(annotationClass);
-        Assertions.assertNotNull(annotation, String.format(Constans.Error.NOT_FOUND_ANNOTATION, annotationClass.getName()));
+        Assertions.assertNotNull(annotation, String.format(Constants.Error.NOT_FOUND_ANNOTATION, annotationClass.getName()));
         return annotation;
     }
 }

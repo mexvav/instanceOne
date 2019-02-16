@@ -19,7 +19,7 @@ public class EntityDescription extends AbstractEntity implements HasCode {
     @Column(name = Constants.HasCode.CODE, nullable = false, unique = true)
     private String code;
 
-    @Column(name = Constants.EntityDescription.DESCRIPTION)
+    @Column(name = Constants.EntityDescription.DESCRIPTION, length = 234)
     private String description;
 
     @Override

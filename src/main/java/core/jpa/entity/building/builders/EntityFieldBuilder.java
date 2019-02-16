@@ -14,8 +14,15 @@ public class EntityFieldBuilder extends AbstractBuilder<EntityField> {
     }
 
     @Override
+    @Nullable
     @SuppressWarnings("unchecked")
-    public Builder build(@Nullable Builder classBuilder, EntityField buildObject) {
+    public Builder build(@Nullable Builder classBuilder, @Nullable EntityField buildObject) {
+        if (null == classBuilder) {
+            return null;
+        }
+        if (null == buildObject) {
+            return classBuilder;
+        }
         return buildingService.getBuilder(buildObject.getType()).build(classBuilder, buildObject);
     }
 }

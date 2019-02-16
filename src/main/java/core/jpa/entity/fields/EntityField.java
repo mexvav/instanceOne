@@ -12,6 +12,9 @@ public class EntityField implements HasCode {
     private boolean required = false;
     private boolean unique = false;
 
+    public EntityField() {
+    }
+
     public EntityField(String code) {
         this.code = code;
     }

@@ -47,17 +47,22 @@ public class Constants {
         public static final String ID = "id";
     }
 
+    public static class HasLength {
+        public static final String LENGTH = "length";
+        public static final int DEFAUIT = 0;
+    }
+
     public static class Entity {
         public static final String ATTRIBUTES = "attributes";
     }
 
-    public static class Attribute {
+    public static class EntityField {
         public static final String REQUIRED = "required";
         public static final String UNIQUE = "unique";
         public static final String TYPE = "type";
     }
 
-    public static class AttributeType {
+    public static class EntityFieldType {
         public static final String DATE = "date";
         public static final String INTEGER = "integer";
         public static final String STRING = "string";
@@ -72,6 +77,17 @@ public class Constants {
     public static class Builder{
         public static final String NAME = "name";
         public static final String ENTITY_CODE_METHOD = "getEntityCode";
+    }
+
+    public static class EntityDAO{
+        public static final String TABLE = "TABLE";
+        public static final String COLUMN_NAME = "COLUMN_NAME";
+        public static final String TYPE_NAME = "TYPE_NAME";
+        public static final String COLUMN_SIZE = "COLUMN_SIZE";
+        public static final String IS_NULLABLE = "IS_NULLABLE";
+
+        public static final String YES = "yes";
+        public static final String NO = "no";
     }
 
 }

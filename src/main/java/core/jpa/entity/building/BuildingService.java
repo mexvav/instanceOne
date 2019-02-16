@@ -46,15 +46,15 @@ public class BuildingService {
     /**
      * Step of class building
      *
-     * @param ctClass     entity class blank
-     * @param buildObject object for building
+     * @param classBuilder entity class blank
+     * @param buildObject  object for building
      * @return CtClass for generate to Entity
      * @throws BuildingException if building is failed
      */
     @SuppressWarnings("unchecked")
-    public DynamicType.Builder build(final DynamicType.Builder ctClass, Object buildObject) {
+    public DynamicType.Builder build(final DynamicType.Builder classBuilder, Object buildObject) {
         Builder builder = getBuilder(buildObject);
-        return builder.build(ctClass, buildObject);
+        return builder.build(classBuilder, buildObject);
     }
 
     /**

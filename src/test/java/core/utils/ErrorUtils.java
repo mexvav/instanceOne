@@ -13,12 +13,12 @@ public class ErrorUtils {
         try {
             errorOperation.run();
         } catch (Exception e) {
-            throw new AssertionError(String.format(Constans.Error.NOT_EXPECTED_ERROR, e.getMessage()));
+            throw new AssertionError(String.format(Constants.Error.NOT_EXPECTED_ERROR, e.getMessage()));
         }
     }
 
     public static <R> R assertNotError(Supplier<R> errorOperation) {
-        return assertNotError(errorOperation, Constans.Error.NOT_EXPECTED_ERROR);
+        return assertNotError(errorOperation, Constants.Error.NOT_EXPECTED_ERROR);
     }
 
     public static <R> R assertNotError(Supplier<R> errorOperation, String message) {

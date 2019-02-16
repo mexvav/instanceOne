@@ -8,4 +8,8 @@ public interface EntityFieldType {
 
     @Transient
     Class<?> getFieldClass();
+
+    boolean equals(Object o);
+
+    int hashCode();
 }
