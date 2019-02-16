@@ -28,11 +28,16 @@ public class Settings {
 
     public Properties getHibernateProperties() {
         Properties properties = new Properties();
-        properties.put(Constants.JPA.HIBERNATE_PROP_SHOW_SQL, getProperty(Constants.JPA.DB_PROPERTY_SHOW_SQL));
-        properties.put(Constants.JPA.HIBERNATE_PROP_DIALECT, getProperty(Constants.JPA.DB_PROPERTY_DIALECT));
-        properties.put(Constants.JPA.HIBERNATE_PROP_CUR_S_CTX, getProperty(Constants.JPA.DB_PROPERTY_CUR_S_CTX));
-        properties.put(Constants.JPA.HIBERNATE_PROP_HBM_2_DDL, getProperty(Constants.JPA.DB_PROPERTY_DDL_AUTO));
-        properties.put(Constants.JPA.HIBERNATE_PROP_META_DEF, getProperty(Constants.JPA.DB_PROPERTY_META_DEF));
+        properties.put(
+                Constants.JPA.HIBERNATE_PROP_SHOW_SQL, getProperty(Constants.JPA.DB_PROPERTY_SHOW_SQL));
+        properties.put(
+                Constants.JPA.HIBERNATE_PROP_DIALECT, getProperty(Constants.JPA.DB_PROPERTY_DIALECT));
+        properties.put(
+                Constants.JPA.HIBERNATE_PROP_CUR_S_CTX, getProperty(Constants.JPA.DB_PROPERTY_CUR_S_CTX));
+        properties.put(
+                Constants.JPA.HIBERNATE_PROP_HBM_2_DDL, getProperty(Constants.JPA.DB_PROPERTY_DDL_AUTO));
+        properties.put(
+                Constants.JPA.HIBERNATE_PROP_META_DEF, getProperty(Constants.JPA.DB_PROPERTY_META_DEF));
 
         return properties;
     }

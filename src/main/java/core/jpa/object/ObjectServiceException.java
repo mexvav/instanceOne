@@ -4,6 +4,7 @@ package core.jpa.object;
  * Exception for object service
  */
 public class ObjectServiceException extends RuntimeException {
+
     ObjectServiceException(String message) {
         super(message);
     }

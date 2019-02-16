@@ -2,16 +2,18 @@ package core.jpa.dao;
 
 public class Constants {
 
-    //SQL
+    // SQL
     /**
      * drop table %s
      */
-    public static final String SQL_DROP = "drop table %s";
+    static final String SQL_DROP = "drop table %s";
 
-    //HQL
+    // HQL
     /**
      * drop table %s
      */
-    public static final String HQL_CLEAN = "delete %s";
+    static final String HQL_CLEAN = "delete %s";
+
+
 
 }

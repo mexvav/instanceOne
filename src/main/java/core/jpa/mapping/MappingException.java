@@ -1,9 +1,10 @@
 package core.jpa.mapping;
 
 /**
- * Exception for entity generator
+ * Exception for mapping service
  */
 public class MappingException extends RuntimeException {
+
     public MappingException(String message) {
         super(message);
     }

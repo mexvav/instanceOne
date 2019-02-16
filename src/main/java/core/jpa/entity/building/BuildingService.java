@@ -3,7 +3,8 @@ package core.jpa.entity.building;
 import com.google.common.collect.Sets;
 import core.jpa.entity.building.builders.Builder;
 import core.utils.ClassUtils;
-import javassist.*;
+import net.bytebuddy.dynamic.DynamicType;
+import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import org.reflections.Reflections;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +15,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Service for build CtClass
- * Service use javassist for generate CtClass
+ * Service for build Class in Runtime
  */
 @Component
 public class BuildingService {
@@ -27,26 +27,34 @@ public class BuildingService {
     }
 
     /**
-     * Register {@link Builder} for building Entity in chain building chain
+     * Building Class in building chain, see {@link #build(DynamicType.Builder, Object)}
      *
-     * @param builder - initialized builder
+     * @param object value for building in class
+     * @throws BuildingException if building is failed
      */
-    public void initBuilder(Builder builder) {
-        getBuilders().add(builder);
+    public Class<?> building(Object object) {
+        try {
+            return build(null, object)
+                    .make()
+                    .load(this.getClass().getClassLoader(), ClassLoadingStrategy.Default.INJECTION)
+                    .getLoaded();
+        } catch (Exception e) {
+            throw new BuildingException(e.getMessage());
+        }
     }
 
     /**
-     * Build in entity
+     * Step of class building
      *
-     * @param ctClass     entity class blank
-     * @param buildObject object for building
+     * @param classBuilder entity class blank
+     * @param buildObject  object for building
      * @return CtClass for generate to Entity
      * @throws BuildingException if building is failed
      */
     @SuppressWarnings("unchecked")
-    public CtClass build(final CtClass ctClass, Object buildObject) {
+    public DynamicType.Builder build(final DynamicType.Builder classBuilder, Object buildObject) {
         Builder builder = getBuilder(buildObject);
-        return builder.build(ctClass, buildObject);
+        return builder.build(classBuilder, buildObject);
     }
 
     /**
@@ -55,20 +63,33 @@ public class BuildingService {
      * @param buildObject object for building
      * @throws BuildingException if suitable builder not found
      */
+    @SuppressWarnings("unchecked")
     public Builder getBuilder(final Object buildObject) {
-        @SuppressWarnings("unchecked")
-        Set<Builder> suitableBuilders = getBuilders().stream()
-                .filter(builder -> builder.getSuitableClass().isAssignableFrom(buildObject.getClass()))
-                .collect(Collectors.toSet());
+        Set<Builder> suitableBuilders =
+                getBuilders().stream()
+                        .filter(builder -> builder.getSuitableClass().isAssignableFrom(buildObject.getClass()))
+                        .collect(Collectors.toSet());
         if (suitableBuilders.isEmpty()) {
-            throw new BuildingException(BuildingException.ExceptionCauses.SUITABLE_BUILDER_NOT_FOUND, buildObject.getClass().getName());
+            throw new BuildingException(
+                    BuildingException.ExceptionCauses.SUITABLE_BUILDER_NOT_FOUND,
+                    buildObject.getClass().getName());
         }
         if (suitableBuilders.size() == 1) {
             return suitableBuilders.iterator().next();
         }
         Map<Class, Integer> fromClasses = ClassUtils.getHierarchyClass(buildObject.getClass());
         return suitableBuilders.stream()
-                .min(Comparator.comparingInt(b -> fromClasses.get(b.getSuitableClass()))).get();
+                .min(Comparator.comparingInt(b -> fromClasses.get(b.getSuitableClass())))
+                .get();
+    }
+
+    /**
+     * Register {@link Builder} for building Entity in chain building chain
+     *
+     * @param builder - initialized builder
+     */
+    public void initBuilder(Builder builder) {
+        getBuilders().add(builder);
     }
 
     /**
@@ -87,15 +108,16 @@ public class BuildingService {
     private void initializeBuilders() {
         Reflections reflections = new Reflections(this.getClass().getPackage().getName());
         Set<Class<? extends Builder>> builders = reflections.getSubTypesOf(Builder.class);
-        builders.forEach(builder -> {
-            if (!Modifier.isAbstract(builder.getModifiers()) && !builder.isInterface()) {
-                try {
-                    Builder builderInsctance = builder.newInstance();
-                    builderInsctance.init(this);
-                } catch (InstantiationException | IllegalAccessException e) {
-                    throw new BuildingException(e.getMessage());
-                }
-            }
-        });
+        builders.forEach(
+                builder -> {
+                    if (!Modifier.isAbstract(builder.getModifiers()) && !builder.isInterface()) {
+                        try {
+                            Builder builderInstance = builder.newInstance();
+                            builderInstance.init(this);
+                        } catch (InstantiationException | IllegalAccessException e) {
+                            throw new BuildingException(e.getMessage());
+                        }
+                    }
+                });
     }
 }

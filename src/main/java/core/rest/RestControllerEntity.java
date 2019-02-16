@@ -1,15 +1,14 @@
 package core.rest;
 
 import com.google.common.collect.Maps;
-import core.jpa.entity.EntityBlank;
+import core.jpa.entity.EntityClass;
 import core.jpa.entity.EntityService;
-import core.jpa.object.ObjectService;
 import core.jpa.mapping.MappingService;
+import core.jpa.object.ObjectService;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.Date;
 import java.util.List;
@@ -38,8 +37,8 @@ public class RestControllerEntity {
 
     @PostMapping("/create")
     public String createEntity(@RequestBody String jsonEntity) {
-        EntityBlank entityBlank = mappingService.mapping(jsonEntity, EntityBlank.class);
-        entityService.createEntity(entityBlank);
+        EntityClass entityClass = mappingService.mapping(jsonEntity, EntityClass.class);
+        entityService.createEntity(entityClass);
         return "true";
     }
 
@@ -60,29 +59,4 @@ public class RestControllerEntity {
         List z = sessionFactory.getCurrentSession().createQuery(sql).list();
         return z.toString();
     }
-
-    /*
-    {
-        "code":"test",
-        "attributes":[
-        {
-            "code":"string",
-            "unique":false,
-            "type":{"code":"string"},
-            "required":false
-        },
-        {
-            "code":"date",
-            "unique":false,
-            "type":{"code":"date"},
-            "required":false
-        },
-        {
-            "code":"integer",
-            "unique":false,
-            "type":{"code":"integer"},
-            "required":false
-        }]
-    }
-    */
 }

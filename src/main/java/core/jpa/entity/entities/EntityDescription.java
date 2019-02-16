@@ -3,7 +3,9 @@ package core.jpa.entity.entities;
 import core.jpa.Constants;
 import core.jpa.interfaces.HasCode;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Entity for storage information about runtime-created entity
@@ -11,10 +13,13 @@ import javax.persistence.*;
 @Entity
 @Table(name = Constants.EntityDescription.TABLE)
 public class EntityDescription extends AbstractEntity implements HasCode {
+
     public static final String entityName = Constants.EntityDescription.ENTITY_NAME;
+
     @Column(name = Constants.HasCode.CODE, nullable = false, unique = true)
     private String code;
-    @Column(name = Constants.EntityDescription.DESCRIPTION)
+
+    @Column(name = Constants.EntityDescription.DESCRIPTION, length = 234)
     private String description;
 
     @Override

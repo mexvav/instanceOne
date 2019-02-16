@@ -7,9 +7,7 @@ import java.util.Map;
 public class ClassUtils {
 
     /**
-     * Get class hierarchy with rate
-     * rate 0 - source class
-     * rate 1 - interfaces source class
+     * Get class hierarchy with rate rate 0 - source class rate 1 - interfaces source class
      *
      * @param nextClass - class for hierarchy
      * @return Map class/rate

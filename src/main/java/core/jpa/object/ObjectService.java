@@ -1,12 +1,10 @@
 package core.jpa.object;
 
-import core.jpa.entity.EntityBlank;
+import core.jpa.entity.EntityClass;
 import core.jpa.entity.EntityService;
-import core.jpa.entity.attribute.Attribute;
+import core.jpa.entity.fields.EntityField;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,7 +27,7 @@ public class ObjectService {
 
     @Transactional
     public void createObject(String code, Map<String, Object> params) {
-        EntityBlank entityBlank = entityService.getEntityBlank(code);
+        EntityClass entityBlank = entityService.getEntityBlank(code);
         Class entityClass = entityService.getEntity(code);
         Object entityInstance;
         try {
@@ -38,24 +36,29 @@ public class ObjectService {
             throw new ObjectServiceException(e.getMessage());
         }
 
-        Collection<Attribute> attributes = entityBlank.getAttributes();
+        Collection<EntityField> entityFields = entityBlank.getFields();
 
         for (Map.Entry<String, Object> param : params.entrySet()) {
-            Attribute attribute = attributes.stream().filter(attr -> attr.getCode().equals(param.getKey())).findFirst().orElse(null);
-            if (null == attribute) {
-                throw new ObjectServiceException(ObjectServiceException.ExceptionCauses.ATTRIBUTE_IS_NOT_EXIST, code, param.getKey());
+            EntityField entityField =
+                    entityFields.stream()
+                            .filter(attr -> attr.getCode().equals(param.getKey()))
+                            .findFirst()
+                            .orElse(null);
+            if (null == entityField) {
+                throw new ObjectServiceException(
+                        ObjectServiceException.ExceptionCauses.ATTRIBUTE_IS_NOT_EXIST, code, param.getKey());
             }
         }
 
-        for (Attribute attribute : attributes) {
-            if (!params.containsKey(attribute.getCode())) {
+        for (EntityField entityField : entityFields) {
+            if (!params.containsKey(entityField.getCode())) {
                 continue;
             }
 
-            Object value = params.get(attribute.getCode());
-            if (attribute.getType().getAttributeClass().equals(value.getClass())) {
+            Object value = params.get(entityField.getCode());
+            if (entityField.getType().getFieldClass().equals(value.getClass())) {
                 try {
-                    Field field = entityClass.getDeclaredField(attribute.getCode());
+                    Field field = entityClass.getDeclaredField(entityField.getCode());
                     field.setAccessible(true);
                     field.set(entityInstance, value);
                 } catch (NoSuchFieldException | IllegalAccessException e) {
