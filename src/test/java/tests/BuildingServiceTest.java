@@ -35,21 +35,23 @@ class BuildingServiceTest {
      * <b>Actions:</b>
      * <li>create "entityClass" of {@link EntityClass}</li>
      * <li>add "entityFields" of {@link EntityField} to "entityClass", field types:
-     *  <ul>
-     *     <li>{@link core.jpa.entity.fields.types.StringEntityFieldType}</li>
-     *     <li>{@link core.jpa.entity.fields.types.DateEntityFieldType}</li>
-     *     <li>{@link core.jpa.entity.fields.types.IntegerEntityFieldType}</li>
-     *  </ul>
+     * <ul>
+     * <li>{@link core.jpa.entity.fields.types.StringEntityFieldType}</li>
+     * <li>{@link core.jpa.entity.fields.types.DateEntityFieldType}</li>
+     * <li>{@link core.jpa.entity.fields.types.IntegerEntityFieldType}</li>
+     * </ul>
      * </li>
-     * <li>build "entityClass"</li>
+     * <li>build "entity" from "entityClass"</li>
+     * </ol>
      *
      * <ol>
      * <b>Verifications:</b>
-     * <li>is name of built class equals capitalized "code" of "entityClass"</li>
-     * <li>is built class contains annotation {@link Entity}, value of attribute "name" equals "code" of "entityClass"</li>
-     * <li>is built class contains annotation {@link Table}, value of attribute "name" equals "code" of "entityClass"</li>
-     * <li>is build contains fields with names from "entityClass" "entityFields"</li>
+     * <li>is name of built "entity" equals capitalized "code" of "entityClass"</li>
+     * <li>is built "entity" contains annotation {@link Entity}, value of attribute "name" equals "code" of "entityClass"</li>
+     * <li>is built "entity" contains annotation {@link Table}, value of attribute "name" equals "code" of "entityClass"</li>
+     * <li>is built "entity" contains fields with names from "entityClass" "entityFields"</li>
      * <li>is every field contains annotation {@link Column}</li>
+     * </ol>
      */
     @Test
     void testEntityClassBuilding() {
@@ -120,6 +122,4 @@ class BuildingServiceTest {
         Assertions.assertNotNull(annotation, String.format(Constans.Error.NOT_FOUND_ANNOTATION, annotationClass.getName()));
         return annotation;
     }
-
-
 }

@@ -16,4 +16,5 @@ public class StringEntityFieldType extends SimpleEntityFieldType {
     public Class<?> getFieldClass() {
         return String.class;
     }
+
 }
