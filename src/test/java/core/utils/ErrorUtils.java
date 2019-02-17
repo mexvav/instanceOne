@@ -1,5 +1,6 @@
 package core.utils;
 
+import org.junit.jupiter.api.Assertions;
 
 import java.util.function.Supplier;
 
@@ -29,5 +30,15 @@ public class ErrorUtils {
         }
     }
 
+    public static void assertError(Runnable errorOperation, String expectedError) {
+        assertError(errorOperation, expectedError, Constants.Error.NOT_EXPECTED_ERROR);
+    }
 
+    public static void assertError(Runnable errorOperation, String expectedError, String message) {
+        try {
+            errorOperation.run();
+        } catch (Exception e) {
+            Assertions.assertTrue(e.getMessage().contains(expectedError), message);
+        }
+    }
 }

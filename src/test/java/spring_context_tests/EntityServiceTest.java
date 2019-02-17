@@ -9,9 +9,9 @@ import core.jpa.entity.fields.EntityField;
 import core.jpa.entity.fields.types.EntityFieldType;
 import core.jpa.entity.fields.types.StringEntityFieldType;
 import core.jpa.interfaces.HasLength;
-import core.utils.EntityFieldUtils;
+import core.jpa.object.ObjectService;
+import core.assertions.EntityFieldAssertions;
 import core.utils.RandomUtils;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,10 +24,11 @@ import java.util.stream.Stream;
 class EntityServiceTest extends SpringContextAbstractTest {
 
     @Autowired
-    EntityService entityService;
-
-    @Autowired
-    EntityDAO entityDAO;
+    EntityServiceTest(EntityService entityService,
+                      ObjectService objectService,
+                      EntityDAO entityDAO) {
+        super(entityService, objectService, entityDAO);
+    }
 
     /**
      * Testing creation Entity from {@link EntityClass} by {@link EntityService}
@@ -58,11 +59,11 @@ class EntityServiceTest extends SpringContextAbstractTest {
     void testEntityLifeCircle() {
         EntityClass entityClass = EntityClassFactory.create();
 
-        entityService.createEntity(entityClass);
-        checkEntityExist(entityClass);
+        testUtils.getEntityService().createEntity(entityClass);
+        testUtils.assertEntityExist(entityClass);
 
-        entityService.removeEntity(entityClass.getCode());
-        checkEntityNotExist(entityClass);
+        testUtils.getEntityService().removeEntity(entityClass.getCode());
+        testUtils.assertEntityNotExist(entityClass);
     }
 
     /**
@@ -96,11 +97,11 @@ class EntityServiceTest extends SpringContextAbstractTest {
         List<EntityClass> entityClasses =
                 Stream.generate(EntityClassFactory::create).limit(count).collect(Collectors.toList());
 
-        entityService.createEntity(entityClasses.toArray(new EntityClass[0]));
-        entityClasses.forEach(this::checkEntityExist);
+        testUtils.getEntityService().createEntity(entityClasses.toArray(new EntityClass[0]));
+        entityClasses.forEach(testUtils::assertEntityExist);
 
-        entityService.hardClean();
-        entityClasses.forEach(this::checkEntityNotExist);
+        testUtils.getEntityService().hardClean();
+        entityClasses.forEach(testUtils::assertEntityNotExist);
     }
 
     /**
@@ -125,11 +126,11 @@ class EntityServiceTest extends SpringContextAbstractTest {
         EntityClass entityClass = EntityClassFactory.create();
         EntityFieldFactory.setAllFields(entityClass);
 
-        entityService.createEntity(entityClass);
-        checkEntityExist(entityClass);
+        testUtils.getEntityService().createEntity(entityClass);
+        testUtils.assertEntityExist(entityClass);
 
-        Set<Map<String, String>> columns = entityDAO.getColumns(entityClass.getCode());
-        EntityFieldUtils.checkFields(entityClass.getFields(), columns);
+        Set<Map<String, String>> columns = testUtils.getEntityDAO().getColumns(entityClass.getCode());
+        EntityFieldAssertions.assertFields(entityClass.getFields(), columns);
     }
 
     @Test
@@ -144,39 +145,9 @@ class EntityServiceTest extends SpringContextAbstractTest {
         entityField.setType(entityFieldType);
         entityClass.addFields(entityField);
 
-        entityService.createEntity(entityClass);
-        checkEntityExist(entityClass);
+        testUtils.getEntityService().createEntity(entityClass);
+        testUtils.assertEntityExist(entityClass);
 
-        EntityFieldUtils.checkField(entityField, entityDAO.getColumns(entityClass.getCode()));
-    }
-
-    /**
-     * Check is entity exist
-     * is Entity exist in {@link EntityService}
-     * is Entity table exist
-     *
-     * @param entityClass {@link EntityClass}
-     */
-    private void checkEntityExist(EntityClass entityClass) {
-        String code = entityClass.getCode();
-        Assertions.assertTrue(entityService.isEntityExist(code),
-                String.format("Entity '%s' is not exist in entityService", code));
-        Assertions.assertTrue(entityDAO.getAllTables().contains(code),
-                String.format("Entity table '%s' is not exist", code));
-    }
-
-    /**
-     * Check is entity not exist
-     * is Entity exist in {@link EntityService}
-     * is Entity table exist
-     *
-     * @param entityClass {@link EntityClass}
-     */
-    private void checkEntityNotExist(EntityClass entityClass) {
-        String code = entityClass.getCode();
-        Assertions.assertFalse(entityService.isEntityExist(code),
-                String.format("Entity '%s' is exist in entityService", code));
-        Assertions.assertFalse(entityDAO.getAllTables().contains(code),
-                String.format("Entity table '%s' is exist", code));
+        EntityFieldAssertions.assertField(entityField, testUtils.getEntityDAO().getColumns(entityClass.getCode()));
     }
 }

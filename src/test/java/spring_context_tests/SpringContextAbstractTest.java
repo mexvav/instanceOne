@@ -1,7 +1,13 @@
 package spring_context_tests;
 
 import core.Application;
+import core.assertions.SpringContextAssertions;
+import core.extentions.HardClean;
+import core.jpa.dao.EntityDAO;
+import core.jpa.entity.EntityService;
+import core.jpa.object.ObjectService;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
@@ -17,6 +23,16 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
                 "datasource.username=postgres",
                 "datasource.password=postgres"
         })
+@HardClean
 //@AssumeSpringContext
-abstract class SpringContextAbstractTest {
+class SpringContextAbstractTest {
+
+    protected SpringContextAssertions testUtils;
+
+    @Autowired
+    SpringContextAbstractTest(EntityService entityService,
+                              ObjectService objectService,
+                              EntityDAO entityDAO){
+        testUtils = new SpringContextAssertions(entityService, objectService, entityDAO);
+    }
 }

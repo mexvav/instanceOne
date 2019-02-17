@@ -2,6 +2,7 @@ package core.utils;
 
 import com.google.common.collect.Lists;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -15,6 +16,24 @@ public class RandomUtils {
     private static final int TITLE_SIZE = 40;
     private static Random random;
     private static List<String> codes;
+
+    /**
+     * Generate integer value
+     *
+     * @return random integer value
+     */
+    public static int getInteger() {
+        return getRandom().nextInt();
+    }
+
+    /**
+     * Generate date value
+     *
+     * @return random date value
+     */
+    public static Date getDate() {
+        return new Date();
+    }
 
     /**
      * Generate unique code of standard length. See CODE_SIZE

@@ -3,6 +3,7 @@ package core.jpa.object;
 import core.jpa.entity.EntityClass;
 import core.jpa.entity.EntityService;
 import core.jpa.entity.fields.EntityField;
+import core.jpa.interfaces.HasId;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

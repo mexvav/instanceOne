@@ -2,36 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d38d89-65c8-4651-b4a9-82579f3f634d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/EntityFieldTypeDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/extentions/TestExtention.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/EntityFieldUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/assertions/EntityFieldAssertions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/assertions/SpringContextAssertions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/extentions/HardClean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/factories/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/utils/CleanUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/spring_context_tests/ObjectServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/aspects/WithReloadSessionFactoryAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/aspects/WithReloadSessionFactoryAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/dao/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/dao/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/dao/EntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/dao/EntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/SimpleEntityFieldBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/SimpleEntityFieldBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/EntityField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/EntityField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/DateEntityFieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/DateEntityFieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/EntityFieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/EntityFieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/EntityFieldTypeFactoty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/EntityFieldTypeFactoty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/IntegerEntityFieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/IntegerEntityFieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/SimpleEntityFieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/SimpleEntityFieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/StringEntityFieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/StringEntityFieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/AbstractJsonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/AbstractJsonMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/AbstractJsonCustomDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/AbstractJsonCustomDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/EntityFieldDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/EntityFieldDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/EntityFieldSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/EntityFieldSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/conditions/AssumeSpringContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/conditions/AssumeSpringContextCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContextCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/extentions/TestExtention.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/extentions/HardCleanExtention.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/factories/EntityFieldFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/factories/EntityFieldFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/Constans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/EntityFieldUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/EntityFieldUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/ErrorUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/ErrorUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/utils/RandomUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/utils/RandomUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spring_context_tests/EntityDAOTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spring_context_tests/EntityServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spring_context_tests/EntityServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAbstractTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAbstractTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BuildingServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BuildingServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/MappingServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/MappingServiceTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,37 +33,100 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/core/utils/ErrorUtils.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/core/factories/EntityFieldFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="141">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContextCondition.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/ObjectServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAbstractTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/EntityServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="412">
+              <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/tests/BuildingServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="9" column="57" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="71" />
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/TestExtention.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/tests/MappingServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="568">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/core/factories/ObjectFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="900">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/Session.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContext.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/core/factories/EntityClassFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="75">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -87,8 +136,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="AnnotationType" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -110,22 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/interfaces/HasId.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/EntityBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/SimpleAttributeBuilder.java" />
-        <option value="$PROJECT_DIR$/src/test/java/core/utils/ErrorUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/BuildingServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/EntityDescription.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/HasLength.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/interfaces/HasLength.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/EntityClassBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/EntityFieldBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityServiceException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/utils/ReflectionUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/Mapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/ObjectToJsonMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/JsonToObjectMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/JsonCustomizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/AbstractJsonCustomSerializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java" />
@@ -146,21 +179,37 @@
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/EntityFieldType.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/EntityFieldTypeFactoty.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/EntityFieldTypeFactoty.java" />
-        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAbstractTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/dao/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/dao/EntityDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/core/utils/FieldUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/Constants.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/MappingServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/core/factories/EntityFieldFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/core/utils/Constans.java" />
         <option value="$PROJECT_DIR$/src/test/java/core/utils/Constants.java" />
-        <option value="$PROJECT_DIR$/src/test/java/core/utils/EntityFieldUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/EntityServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/SimpleEntityFieldBuilder.java" />
         <option value="$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContextCondition.java" />
         <option value="$PROJECT_DIR$/src/test/java/core/conditions/AssumeSpringContextCondition.java" />
         <option value="$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContext.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/extentions/HardClean.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/utils/CleanUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/utils/TestService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/extentions/HardCleanExtention.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/TestService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/TestUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAbstractTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextTestUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/EntityServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/utils/ErrorUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/utils/EntityFieldAssertions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAssertions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/assertions/SpringContextAssertions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/utils/EntityFieldUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/assertions/EntityFieldAssertions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/utils/RandomUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/factories/EntityFieldFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/ObjectServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/factories/ObjectFactory.java" />
       </list>
     </option>
   </component>
@@ -186,9 +235,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="834" />
+    <option name="x" value="980" />
     <option name="y" value="27" />
-    <option name="width" value="1086" />
+    <option name="width" value="940" />
     <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -199,7 +248,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,28 +309,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="aspects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -294,8 +320,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="building" type="462c0819:PsiDirectoryNode" />
+              <item name="object" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -305,35 +330,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="building" type="462c0819:PsiDirectoryNode" />
-              <item name="builders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="fields" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="fields" type="462c0819:PsiDirectoryNode" />
-              <item name="types" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -358,6 +355,46 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="assertions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="extentions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="factories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -446,6 +483,15 @@
               <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="function" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -688,6 +734,40 @@
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-api:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-api-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="extension" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-engine-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-engine-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-engine-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="descriptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: org.junit.platform:junit-platform-commons:1.3.2" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
@@ -907,10 +987,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550356715847" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550424244907" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -925,10 +1006,10 @@
       <recent name="core" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="spring_context_tests" />
       <recent name="core.jpa.mapping.mappers.json" />
       <recent name="core.jpa.mapping.mappers" />
       <recent name="core" />
-      <recent name="spring_context_tests" />
       <recent name="core.jpa.entity.building.builders" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -948,12 +1029,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EntityServiceTest.testLengthEntityField">
+  <component name="RunManager" selected="JUnit.ObjectServiceTest.testCreateObject">
+    <configuration name="EntityServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instance-one.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.assertions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spring_context_tests" />
+      <option name="MAIN_CLASS_NAME" value="spring_context_tests.EntityServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EntityServiceTest.testCreateEntityWithFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="instance-one.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spring_context_tests.*" />
+          <option name="PATTERN" value="core.assertions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -965,7 +1061,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntityServiceTest.testCreateEntityWithStringField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EntityServiceTest.testEntityLifeCircle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instance-one.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.assertions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spring_context_tests" />
+      <option name="MAIN_CLASS_NAME" value="spring_context_tests.EntityServiceTest" />
+      <option name="METHOD_NAME" value="testEntityLifeCircle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObjectServiceTest.testCreateObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="instance-one.core" />
       <extension name="coverage">
         <pattern>
@@ -974,68 +1086,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spring_context_tests" />
-      <option name="MAIN_CLASS_NAME" value="spring_context_tests.EntityServiceTest" />
-      <option name="METHOD_NAME" value="testCreateEntityWithStringField" />
+      <option name="MAIN_CLASS_NAME" value="spring_context_tests.ObjectServiceTest" />
+      <option name="METHOD_NAME" value="testCreateObject" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntityServiceTest.testLengthEntityField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="[engine:junit-jupiter]/[class:spring_context_tests.EntityServiceTest]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="instance-one.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spring_context_tests.*" />
+          <option name="PATTERN" value="core.assertions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spring_context_tests" />
       <option name="MAIN_CLASS_NAME" value="spring_context_tests.EntityServiceTest" />
-      <option name="METHOD_NAME" value="testLengthEntityField" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MappingServiceTest.testMappingEntityField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="instance-one.core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.MappingServiceTest" />
-      <option name="METHOD_NAME" value="testMappingEntityField" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MappingServiceTest.testSerializationEmptyEntityClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="instance-one.core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.MappingServiceTest" />
-      <option name="METHOD_NAME" value="testSerializationEmptyEntityClass" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" value="testEntityLifeCircle" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:spring_context_tests.EntityServiceTest]" />
+      </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EntityServiceTest.testLengthEntityField" />
+        <item itemvalue="JUnit.ObjectServiceTest.testCreateObject" />
+        <item itemvalue="JUnit.EntityServiceTest" />
+        <item itemvalue="JUnit.[engine:junit-jupiter]/[class:spring_context_tests.EntityServiceTest]" />
+        <item itemvalue="JUnit.EntityServiceTest.testEntityLifeCircle" />
         <item itemvalue="JUnit.EntityServiceTest.testCreateEntityWithFields" />
-        <item itemvalue="JUnit.EntityServiceTest.testCreateEntityWithStringField" />
-        <item itemvalue="JUnit.MappingServiceTest.testMappingEntityField" />
-        <item itemvalue="JUnit.MappingServiceTest.testSerializationEmptyEntityClass" />
       </list>
     </recent_temporary>
   </component>
@@ -1053,35 +1136,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 19m 09s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest_testCreateEntityWithFields - 2019.02.17 at 05h 01m 41s.xml">
+      <configuration name="EntityServiceTest.testCreateEntityWithFields" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 20m 08s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest - 2019.02.17 at 20h 48m 58s.xml">
+      <configuration name="EntityServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 20m 46s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest_testEntityLifeCircle - 2019.02.17 at 20h 49m 19s.xml">
+      <configuration name="EntityServiceTest.testEntityLifeCircle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 21m 42s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest - 2019.02.17 at 20h 55m 05s.xml">
+      <configuration name="EntityServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 23m 53s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest_testEntityLifeCircle - 2019.02.17 at 20h 57m 31s.xml">
+      <configuration name="EntityServiceTest.testEntityLifeCircle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 25m 54s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest_testEntityLifeCircle - 2019.02.17 at 21h 02m 03s.xml">
+      <configuration name="EntityServiceTest.testEntityLifeCircle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 26m 44s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest_testEntityLifeCircle - 2019.02.17 at 21h 02m 47s.xml">
+      <configuration name="EntityServiceTest.testEntityLifeCircle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 30m 03s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest_(1) - 2019.02.17 at 21h 06m 03s.xml">
+      <configuration name="EntityServiceTest (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 33m 31s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="EntityServiceTest - 2019.02.17 at 21h 06m 53s.xml">
+      <configuration name="EntityServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testLengthEntityField - 2019.02.17 at 03h 33m 50s.xml">
-      <configuration name="EntityServiceTest.testLengthEntityField" configurationId="JUnit" />
+    <history-entry file="ObjectServiceTest_testCreateObject - 2019.02.17 at 22h 21m 49s.xml">
+      <configuration name="ObjectServiceTest.testCreateObject" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1094,10 +1177,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="834" y="27" width="1086" height="1052" extended-state="0" />
+    <frame x="980" y="27" width="940" height="1052" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23371647" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3351893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24971752" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1106,7 +1189,7 @@
       <window_info id="Favorites" order="6" side_tool="true" weight="0.3299435" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989496" visible="true" weight="0.32938644" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989496" visible="true" weight="0.32938644" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49789914" weight="0.27987084" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1119,7 +1202,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.2486631" />
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.24755381" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.5521811" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.55122495" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -1241,154 +1324,6 @@ columnValues.get(Constants.EntityDAO.DATA_TYPE)</expression-string>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar!/com/fasterxml/jackson/databind/JsonDeserializer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/AbstractJsonCustomDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#584#614#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/EntityFieldTypeDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/EntityFieldDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/SimpleEntityFieldType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="72" lean-forward="true" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/DateEntityFieldType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-          <folding>
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/IntegerEntityFieldType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#820#821#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/EntityFieldType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/fields/types/EntityFieldTypeFactoty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/BuildingServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="30" selection-start-line="30" selection-end-line="54" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAbstractTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/sql/DatabaseMetaData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="1663" column="14" selection-start-line="1663" selection-start-column="14" selection-end-line="1663" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/SessionFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.4.RELEASE/spring-core-5.1.4.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.1.4.RELEASE/spring-tx-5.1.4.RELEASE.jar!/org/springframework/dao/support/PersistenceExceptionTranslationInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.1.4.RELEASE/spring-tx-5.1.4.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.4.RELEASE/spring-aop-5.1.4.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.4.RELEASE/spring-aop-5.1.4.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1465,13 +1400,6 @@ columnValues.get(Constants.EntityDAO.DATA_TYPE)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/core/factories/EntityClassFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.2/junit-jupiter-api-5.3.2.jar!/org/junit/jupiter/api/AssertionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -1487,20 +1415,6 @@ columnValues.get(Constants.EntityDAO.DATA_TYPE)</expression-string>
             <element signature="e#1086#1087#0" expanded="true" />
             <element signature="e#1146#1147#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/core/factories/EntityFieldFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" selection-start-line="12" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="84" column="44" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1579,34 +1493,10 @@ columnValues.get(Constants.EntityDAO.DATA_TYPE)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/EntityServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="146" column="48" lean-forward="true" selection-start-line="146" selection-start-column="48" selection-end-line="146" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar!/net/bytebuddy/description/annotation/AnnotationDescription.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="200" column="45" selection-start-line="200" selection-start-column="45" selection-end-line="200" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/core/utils/EntityFieldUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1620,41 +1510,265 @@ columnValues.get(Constants.EntityDAO.DATA_TYPE)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/MappingServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/conditions/TestExtention.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.2/junit-jupiter-api-5.3.2.jar!/org/junit/jupiter/api/AfterAll.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1011">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="195">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/core/utils/ErrorUtils.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.2/junit-jupiter-api-5.3.2.jar!/org/junit/jupiter/api/extension/AfterAllCallback.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/conditions/TestExtention.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContextCondition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="57" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/TestExtention.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="165">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="75">
+          <caret line="10" column="19" selection-start-line="9" selection-end-line="11" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.2/junit-jupiter-api-5.3.2.jar!/org/junit/jupiter/api/BeforeAll.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.3.2/junit-jupiter-engine-5.3.2.jar!/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#17592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/EntityDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/utils/CleanUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/utils/ErrorUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/HardCleanExtention.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/conditions/AssumeSpringContextCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/rest/RestControllerEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="48" column="25" lean-forward="true" selection-start-line="46" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/assertions/SpringContextAssertions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#1060#1061#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/extentions/HardClean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="84" column="44" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/assertions/EntityFieldAssertions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/utils/EntityFieldUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/utils/RandomUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="e#715#716#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAbstractTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/ObjectServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring_context_tests/EntityServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/BuildingServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/MappingServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/factories/ObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/factories/EntityFieldFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/factories/EntityClassFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
