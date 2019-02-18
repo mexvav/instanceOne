@@ -32,7 +32,7 @@ public class EntityFieldSerializer extends AbstractJsonCustomSerializer<EntityFi
         writeBooleanFieldIfTrue(jsonGenerator, Constants.EntityField.REQUIRED, entityField.isRequired());
         writeBooleanFieldIfTrue(jsonGenerator, Constants.EntityField.UNIQUE,  entityField.isUnique());
 
-        EntityFieldType entityFieldType = entityField.getType();
+        String entityFieldType = entityField.getType();
         if (entityFieldType.getClass().getDeclaredFields().length > 1) {
             jsonGenerator.writeObjectField(Constants.EntityField.TYPE, entityFieldType);
         } else {

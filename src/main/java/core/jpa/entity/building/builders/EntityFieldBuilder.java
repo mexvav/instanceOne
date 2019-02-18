@@ -1,6 +1,7 @@
 package core.jpa.entity.building.builders;
 
 import core.jpa.entity.fields.EntityField;
+import core.jpa.interfaces.HasSuitableClassObjects;
 import net.bytebuddy.dynamic.DynamicType.Builder;
 
 import javax.annotation.Nullable;
@@ -13,6 +14,8 @@ public class EntityFieldBuilder extends AbstractBuilder<EntityField> {
         return EntityField.class;
     }
 
+
+
     @Override
     @Nullable
     @SuppressWarnings("unchecked")
@@ -23,6 +26,6 @@ public class EntityFieldBuilder extends AbstractBuilder<EntityField> {
         if (null == buildObject) {
             return classBuilder;
         }
-        return buildingService.getBuilder(buildObject.getType()).build(classBuilder, buildObject);
+        return buildingService.getSuitableClassObject(buildObject.getType()).build(classBuilder, buildObject);
     }
 }

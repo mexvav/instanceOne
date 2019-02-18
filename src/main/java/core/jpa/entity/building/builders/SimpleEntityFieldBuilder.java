@@ -2,8 +2,7 @@ package core.jpa.entity.building.builders;
 
 import core.jpa.Constants;
 import core.jpa.entity.fields.EntityField;
-import core.jpa.entity.fields.types.EntityFieldType;
-import core.jpa.entity.fields.types.SimpleEntityFieldType;
+import core.jpa.entity.fields.SimpleEntityField;
 import core.jpa.interfaces.HasLength;
 import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.dynamic.DynamicType.Builder;
@@ -13,28 +12,26 @@ import javax.persistence.Column;
 import java.util.Arrays;
 
 @SuppressWarnings("unused")
-public class SimpleEntityFieldBuilder extends AbstractBuilder<EntityField> {
+public class SimpleEntityFieldBuilder extends AbstractBuilder<SimpleEntityField> {
 
     @Override
-    public Class<SimpleEntityFieldType> getSuitableClass() {
-        return SimpleEntityFieldType.class;
+    public Class<SimpleEntityField> getSuitableClass() {
+        return SimpleEntityField.class;
     }
 
     @Override
     @Nullable
-    public Builder build(@Nullable final Builder classBuilder, @Nullable EntityField entityField) {
+    public Builder build(@Nullable final Builder classBuilder, @Nullable SimpleEntityField entityField) {
         if (null == classBuilder) {
             return null;
         }
         if (null == entityField) {
             return classBuilder;
         }
-
         AnnotationDescription.Builder annotationDescription = AnnotationDescription.Builder.ofType(Column.class);
         annotationDescription = setLength(annotationDescription, entityField);
-
         return classBuilder
-                .defineField(entityField.getCode(), entityField.getType().getFieldClass())
+                .defineField(entityField.getCode(), entityField.getFieldClass())
                 .annotateField(annotationDescription.build());
     }
 
@@ -42,15 +39,13 @@ public class SimpleEntityFieldBuilder extends AbstractBuilder<EntityField> {
      * Set length for column in entity table
      *
      * @param annotationDescription annotationDescription
-     * @param entityField field for column
+     * @param entityField           field for column
      */
     private AnnotationDescription.Builder setLength(AnnotationDescription.Builder annotationDescription, EntityField entityField) {
-        EntityFieldType entityFieldType = entityField.getType();
-
-        if (!Arrays.asList(entityFieldType.getClass().getInterfaces()).contains(HasLength.class)) {
+        if (!Arrays.asList(entityField.getClass().getInterfaces()).contains(HasLength.class)) {
             return annotationDescription;
         }
-        int length = ((HasLength) entityFieldType).getLength();
+        int length = ((HasLength) entityField).getLength();
         if (length == Constants.HasLength.DEFAUIT) {
             return annotationDescription;
         }

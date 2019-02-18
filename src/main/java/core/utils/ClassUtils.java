@@ -1,8 +1,13 @@
 package core.utils;
 
 import com.google.common.collect.Maps;
+import core.jpa.entity.building.BuildingException;
+import core.jpa.interfaces.HasSuitableClass;
 
+import java.util.Comparator;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ClassUtils {
 
@@ -27,5 +32,32 @@ public class ClassUtils {
             nextClass = nextClass.getSuperclass();
         }
         return hierarchyClass;
+    }
+
+    /**
+     * Get SuitableClassObject for object by object class hierarchy
+     *
+     * @param objects collection {@link HasSuitableClass}
+     * @param object  object
+     * @return SuitableClassObject
+     */
+    @SuppressWarnings("unused")
+    public static <R extends HasSuitableClass> R getSuitableClassObject(Set<R> objects, final Object object) {
+        Set<R> suitableClassObjects = objects.stream()
+                .filter(suitableClassObject ->
+                        suitableClassObject.getSuitableClass().isAssignableFrom(object.getClass()))
+                .collect(Collectors.toSet());
+        if (suitableClassObjects.isEmpty()) {
+            throw new BuildingException(
+                    BuildingException.ExceptionCauses.SUITABLE_BUILDER_NOT_FOUND,
+                    object.getClass().getName());
+        }
+        if (suitableClassObjects.size() == 1) {
+            return suitableClassObjects.iterator().next();
+        }
+        Map<Class, Integer> fromClasses = ClassUtils.getHierarchyClass(object.getClass());
+        return suitableClassObjects.stream()
+                .min(Comparator.comparingInt(b -> fromClasses.get(b.getSuitableClass())))
+                .get();
     }
 }

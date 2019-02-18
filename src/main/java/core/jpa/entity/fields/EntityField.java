@@ -1,14 +1,14 @@
 package core.jpa.entity.fields;
 
-import core.jpa.entity.fields.types.EntityFieldType;
 import core.jpa.interfaces.HasCode;
+import core.jpa.interfaces.HasTitle;
 
-import java.util.Objects;
+import java.beans.Transient;
 
-public class EntityField implements HasCode {
+public abstract class EntityField<C> implements HasCode, HasTitle {
 
-    private EntityFieldType type;
     private String code;
+    private String title;
     private boolean required = false;
     private boolean unique = false;
 
@@ -19,20 +19,20 @@ public class EntityField implements HasCode {
         this.code = code;
     }
 
-    public EntityFieldType getType() {
-        return type;
-    }
-
-    public void setType(EntityFieldType type) {
-        this.type = type;
-    }
-
     public String getCode() {
         return code;
     }
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getTitle() {
+        return code;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public boolean isRequired() {
@@ -52,18 +52,13 @@ public class EntityField implements HasCode {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof EntityField)) return false;
-        EntityField entityField = (EntityField) o;
-        return required == entityField.required
-                && unique == entityField.unique
-                && Objects.equals(type, entityField.type)
-                && Objects.equals(code, entityField.code);
-    }
+    public abstract boolean equals(Object o);
 
     @Override
-    public int hashCode() {
-        return Objects.hash(type, code, required, unique);
-    }
+    public abstract int hashCode();
+
+    @Transient
+    public abstract Class<C> getFieldClass();
+
+    public abstract String getType();
 }
