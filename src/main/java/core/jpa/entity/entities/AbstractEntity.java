@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+/**
+ * SuperClass for runtime built Entity
+ */
 @MappedSuperclass
 public abstract class AbstractEntity implements HasEntityCode, HasId {
 

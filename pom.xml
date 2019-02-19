@@ -89,18 +89,16 @@
             <resource>
                 <directory>src/main/resources/</directory>
             </resource>
-            <resource>
-                <directory>${project.basedir}/../config/</directory>
-            </resource>
-        </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+            <!-- <resource> <directory>${project.basedir}/../config/</directory> </resource>-->
+         </resources>
+         <plugins>
+             <plugin>
+                 <groupId>org.springframework.boot</groupId>
+                 <artifactId>spring-boot-maven-plugin</artifactId>
+             </plugin>
 
-        </plugins>
+         </plugins>
 
-    </build>
+     </build>
 
-</project>
+ </project>

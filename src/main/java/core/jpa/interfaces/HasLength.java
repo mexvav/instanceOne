@@ -1,8 +1,18 @@
 package core.jpa.interfaces;
 
 public interface HasLength {
-    int DEFAULT = 0;
+
+    /**
+     * Get length
+     *
+     * @return length
+     */
     int getLength();
 
+    /**
+     * Set length
+     *
+     * @param length length
+     */
     void setLength(int length);
 }

@@ -12,6 +12,11 @@ public abstract class AbstractJsonCustomSerializer<T>  extends StdSerializer<T> 
         super(t);
     }
 
+    @Override
+    public void init(JsonCustomizerFactory hasSuitableClassObjects) {
+        hasSuitableClassObjects.initSuitableObject( this);
+    }
+
     protected void writeBooleanFieldIfTrue(JsonGenerator jsonGenerator, String fieldName, Boolean value) throws IOException {
         if(value){
             jsonGenerator.writeBooleanField(fieldName, true);

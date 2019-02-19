@@ -1,9 +1,10 @@
 package core.jpa.object;
 
+import com.google.common.collect.Maps;
 import core.jpa.entity.EntityClass;
 import core.jpa.entity.EntityService;
-import core.jpa.entity.fields.EntityField;
-import core.jpa.interfaces.HasId;
+import core.jpa.entity.field.EntityField;
+import core.jpa.object.resolving.ResolvingService;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,17 +20,21 @@ public class ObjectService {
 
     private EntityService entityService;
     private SessionFactory sessionFactory;
+    private ResolvingService resolvingService;
+
 
     @Autowired
-    ObjectService(EntityService entityService, SessionFactory sessionFactory) {
+    ObjectService(EntityService entityService, SessionFactory sessionFactory, ResolvingService resolvingService) {
         this.entityService = entityService;
         this.sessionFactory = sessionFactory;
+        this.resolvingService = resolvingService;
     }
 
     @Transactional
     public void createObject(String code, Map<String, Object> params) {
         EntityClass entityBlank = entityService.getEntityBlank(code);
-        Class entityClass = entityService.getEntity(code);
+        Class entityClass = entityService.getEntity(entityBlank.getCode());
+
         Object entityInstance;
         try {
             entityInstance = entityClass.newInstance();
@@ -37,37 +42,40 @@ public class ObjectService {
             throw new ObjectServiceException(e.getMessage());
         }
 
-        Collection<EntityField> entityFields = entityBlank.getFields();
-
-        for (Map.Entry<String, Object> param : params.entrySet()) {
-            EntityField entityField =
-                    entityFields.stream()
-                            .filter(attr -> attr.getCode().equals(param.getKey()))
-                            .findFirst()
-                            .orElse(null);
-            if (null == entityField) {
-                throw new ObjectServiceException(
-                        ObjectServiceException.ExceptionCauses.ATTRIBUTE_IS_NOT_EXIST, code, param.getKey());
-            }
-        }
-
-        for (EntityField entityField : entityFields) {
-            if (!params.containsKey(entityField.getCode())) {
-                continue;
-            }
-
-            Object value = params.get(entityField.getCode());
-            if (entityField.getType().getFieldClass().equals(value.getClass())) {
-                try {
-                    Field field = entityClass.getDeclaredField(entityField.getCode());
-                    field.setAccessible(true);
-                    field.set(entityInstance, value);
-                } catch (NoSuchFieldException | IllegalAccessException e) {
-                    throw new RuntimeException(e.getMessage());
-                }
-            }
-        }
+        Map<String, Object> values = getValues(entityBlank, params);
+        setValues(entityInstance, values);
 
         sessionFactory.getCurrentSession().persist(entityInstance);
     }
+
+    private Map<String, Object> getValues(EntityClass entityBlank, Map<String, Object> params) {
+        Map<String, Object> values = Maps.newHashMap();
+
+        Collection<EntityField> entityFields = entityBlank.getFields();
+        for (Map.Entry<String, Object> param : params.entrySet()) {
+            EntityField entityField = entityFields.stream()
+                    .filter(attr -> attr.getCode().equals(param.getKey()))
+                    .findFirst().orElseThrow(() -> new ObjectServiceException(
+                            ObjectServiceException.ExceptionCauses.ATTRIBUTE_IS_NOT_EXIST,
+                            entityBlank.getCode(), param.getKey()));
+            Object value = resolvingService.resolve(entityField, param.getValue());
+            values.put(entityField.getCode(), value);
+        }
+        return values;
+    }
+
+    private void setValues(Object entityInstance, Map<String, Object> values) {
+        Class entityClass = entityInstance.getClass();
+        for (Map.Entry<String, Object> param : values.entrySet()) {
+            try {
+                Field field = entityClass.getDeclaredField(param.getKey());
+                field.setAccessible(true);
+                field.set(entityInstance, param.getValue());
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                throw new ObjectServiceException(e.getMessage());
+            }
+        }
+    }
+
+
 }

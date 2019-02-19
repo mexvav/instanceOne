@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Entity for storage information about runtime-created entity
+ * Entity for storage information about runtime-built entity
  */
 @Entity
 @Table(name = Constants.EntityDescription.TABLE)

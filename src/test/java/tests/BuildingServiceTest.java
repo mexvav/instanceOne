@@ -4,7 +4,10 @@ import core.factories.EntityClassFactory;
 import core.factories.EntityFieldFactory;
 import core.jpa.entity.EntityClass;
 import core.jpa.entity.building.BuildingService;
-import core.jpa.entity.fields.EntityField;
+import core.jpa.entity.field.EntityField;
+import core.jpa.entity.field.fields.DateEntityField;
+import core.jpa.entity.field.fields.IntegerEntityField;
+import core.jpa.entity.field.fields.StringEntityField;
 import core.utils.Constants;
 import core.utils.ErrorUtils;
 import org.junit.jupiter.api.Assertions;
@@ -36,9 +39,9 @@ class BuildingServiceTest {
      * <li>create "entityClass" of {@link EntityClass}</li>
      * <li>add "entityFields" of {@link EntityField} to "entityClass", field types:
      * <ul>
-     * <li>{@link core.jpa.entity.fields.types.StringEntityFieldType}</li>
-     * <li>{@link core.jpa.entity.fields.types.DateEntityFieldType}</li>
-     * <li>{@link core.jpa.entity.fields.types.IntegerEntityFieldType}</li>
+     * <li>{@link StringEntityField}</li>
+     * <li>{@link DateEntityField}</li>
+     * <li>{@link IntegerEntityField}</li>
      * </ul>
      * </li>
      * <li>build "entity" from "entityClass"</li>

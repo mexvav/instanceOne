@@ -4,7 +4,7 @@ import core.jpa.Constants;
 import core.jpa.entity.EntityClass;
 import core.jpa.entity.building.BuildingException;
 import core.jpa.entity.entities.AbstractEntity;
-import core.jpa.entity.fields.EntityField;
+import core.jpa.entity.field.EntityField;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.dynamic.DynamicType.Builder;
@@ -27,7 +27,7 @@ public class EntityClassBuilder extends AbstractBuilder<EntityClass> {
     }
 
     /**
-     * Building entity from entity blank. Param ctClass is ignored
+     * Building entity from entity blank
      *
      * @param entityClass blank for entity class
      * @return Class with annotation Entity and Table

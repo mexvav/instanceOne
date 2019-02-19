@@ -3,10 +3,11 @@ package core.jpa.mapping.mappers.json;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import core.jpa.Constants;
-import core.jpa.entity.fields.EntityField;
-import core.jpa.entity.fields.types.EntityFieldType;
+import core.jpa.entity.field.EntityField;
+import core.jpa.interfaces.HasLength;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 @SuppressWarnings("unused")
 public class EntityFieldSerializer extends AbstractJsonCustomSerializer<EntityField> {
@@ -29,16 +30,29 @@ public class EntityFieldSerializer extends AbstractJsonCustomSerializer<EntityFi
         jsonGenerator.writeStartObject();
 
         jsonGenerator.writeStringField(Constants.HasCode.CODE, entityField.getCode());
+        jsonGenerator.writeStringField(Constants.EntityField.TYPE, entityField.getType());
         writeBooleanFieldIfTrue(jsonGenerator, Constants.EntityField.REQUIRED, entityField.isRequired());
         writeBooleanFieldIfTrue(jsonGenerator, Constants.EntityField.UNIQUE,  entityField.isUnique());
 
-        EntityFieldType entityFieldType = entityField.getType();
-        if (entityFieldType.getClass().getDeclaredFields().length > 1) {
-            jsonGenerator.writeObjectField(Constants.EntityField.TYPE, entityFieldType);
-        } else {
-            jsonGenerator.writeStringField(Constants.EntityField.TYPE, entityFieldType.getCode());
-        }
+        setLength(jsonGenerator, entityField);
 
         jsonGenerator.writeEndObject();
+    }
+
+    /**
+     * Set length for json
+     *
+     * @param jsonGenerator jsonGenerator
+     * @param entityField   field for column
+     */
+    private void setLength(JsonGenerator jsonGenerator, EntityField entityField) throws IOException{
+        if (!Arrays.asList(entityField.getClass().getInterfaces()).contains(HasLength.class)) {
+            return;
+        }
+        int length = ((HasLength) entityField).getLength();
+        if (length == Constants.HasLength.DEFAUIT) {
+            return;
+        }
+        jsonGenerator.writeNumberField(Constants.HasLength.LENGTH,length);
     }
 }

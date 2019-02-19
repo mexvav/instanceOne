@@ -3,6 +3,10 @@ package core.rest;
 import com.google.common.collect.Maps;
 import core.jpa.entity.EntityClass;
 import core.jpa.entity.EntityService;
+import core.jpa.entity.field.fields.DateEntityField;
+import core.jpa.entity.field.EntityField;
+import core.jpa.entity.field.fields.IntegerEntityField;
+import core.jpa.entity.field.fields.StringEntityField;
 import core.jpa.mapping.MappingService;
 import core.jpa.object.ObjectService;
 import org.hibernate.SessionFactory;
@@ -37,7 +41,18 @@ public class RestControllerEntity {
 
     @PostMapping("/create")
     public String createEntity(@RequestBody String jsonEntity) {
-        EntityClass entityClass = mappingService.mapping(jsonEntity, EntityClass.class);
+        //EntityClass entityClass = mappingService.mapping(jsonEntity, EntityClass.class);
+        EntityClass entityClass = new EntityClass();
+        entityClass.setCode("zzz");
+
+        EntityField field1 = new StringEntityField();
+        field1.setCode("z1");
+        EntityField field2 = new DateEntityField();
+        field2.setCode("z2");
+        EntityField field3 = new IntegerEntityField();
+        field3.setCode("z3");
+
+        entityClass.addFields(field1, field2, field3);
         entityService.createEntity(entityClass);
         return "true";
     }

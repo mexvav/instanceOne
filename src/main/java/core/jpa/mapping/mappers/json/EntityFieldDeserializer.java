@@ -5,14 +5,16 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import core.jpa.Constants;
-import core.jpa.entity.fields.EntityField;
-import core.jpa.entity.fields.types.EntityFieldType;
-import core.jpa.entity.fields.types.EntityFieldTypeFactoty;
+import core.jpa.entity.field.EntityField;
+import core.jpa.entity.field.EntityFieldFactoty;
+import core.jpa.interfaces.HasLength;
 
 import java.io.IOException;
 
 @SuppressWarnings("unused")
 public class EntityFieldDeserializer extends AbstractJsonCustomDeserializer<EntityField> {
+
+    private EntityFieldFactoty entityFieldFactoty = new EntityFieldFactoty();
 
     public EntityFieldDeserializer() {
         this(null);
@@ -35,8 +37,10 @@ public class EntityFieldDeserializer extends AbstractJsonCustomDeserializer<Enti
             return null;
         }
 
+        JsonNode type = node.get(Constants.EntityField.TYPE);
         JsonNode code = node.get(Constants.HasCode.CODE);
-        EntityField entityField = new EntityField(code.asText());
+        EntityField entityField = entityFieldFactoty.createByType(type.asText());
+        entityField.setCode(code.asText());
 
         if (node.has(Constants.EntityField.REQUIRED)) {
             entityField.setRequired(node.get(Constants.EntityField.REQUIRED).asBoolean());
@@ -46,9 +50,9 @@ public class EntityFieldDeserializer extends AbstractJsonCustomDeserializer<Enti
             entityField.setUnique(node.get(Constants.EntityField.UNIQUE).asBoolean());
         }
 
-        JsonNode type = node.get(Constants.EntityField.TYPE);
-        EntityFieldType entityFieldType = getValue(deserializationContext, type, EntityFieldType.class);
-        entityField.setType(entityFieldType);
+        if(node.has(Constants.HasLength.LENGTH)){
+            ((HasLength)entityField).setLength(node.get(Constants.HasLength.LENGTH).asInt());
+        }
 
         return entityField;
     }

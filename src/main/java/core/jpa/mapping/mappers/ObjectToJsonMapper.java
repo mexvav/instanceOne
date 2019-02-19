@@ -2,11 +2,12 @@ package core.jpa.mapping.mappers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import core.jpa.mapping.MappingException;
+import core.jpa.mapping.MappingService;
 
 public class ObjectToJsonMapper extends AbstractJsonMapper<Object, String> {
 
     @Override
-    public Class<Object> getFromClass() {
+    public Class<Object> getSuitableClass() {
         return Object.class;
     }
 

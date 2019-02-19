@@ -45,20 +45,21 @@ public class ReloadableSessionFactoryBuilder {
         initSessionFactory();
     }
 
+    /**
+     * Build {@link ReloadableSessionFactory}
+     */
     public ReloadableSessionFactory build() {
-        return (ReloadableSessionFactory)
-                Proxy.newProxyInstance(
-                        this.getClass().getClassLoader(),
-                        new Class[]{ReloadableSessionFactory.class},
-                        (proxy, method, args) -> {
-                            if (Arrays.asList(ReloadableSessionFactory.class.getDeclaredMethods())
-                                    .contains(method)) {
-                                return this.getClass()
-                                        .getDeclaredMethod(method.getName(), method.getParameterTypes())
-                                        .invoke(this, args);
-                            }
-                            return method.invoke(sessionFactory, args);
-                        });
+        return (ReloadableSessionFactory) Proxy.newProxyInstance(
+                this.getClass().getClassLoader(), new Class[]{ReloadableSessionFactory.class},
+                (proxy, method, args) -> {
+                    if (Arrays.asList(ReloadableSessionFactory.class.getDeclaredMethods())
+                            .contains(method)) {
+                        return this.getClass()
+                                .getDeclaredMethod(method.getName(), method.getParameterTypes())
+                                .invoke(this, args);
+                    }
+                    return method.invoke(sessionFactory, args);
+                });
     }
 
     /**

@@ -2,7 +2,7 @@ package core.factories;
 
 import com.google.common.collect.Maps;
 import core.jpa.entity.EntityClass;
-import core.jpa.entity.fields.EntityField;
+import core.jpa.entity.field.EntityField;
 
 import java.util.Map;
 
@@ -16,6 +16,6 @@ public class ObjectFactory {
     }
 
     public static Object createValueForField(EntityField entityField) {
-        return EntityFieldFactory.valueEntityField(entityField);
+        return EntityFieldFactory.valueEntityField(entityField).apply(entityField);
     }
 }

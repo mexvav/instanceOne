@@ -3,10 +3,10 @@ package core.factories;
 import com.google.common.collect.Maps;
 import core.jpa.Constants;
 import core.jpa.entity.EntityClass;
-import core.jpa.entity.fields.EntityField;
-import core.jpa.entity.fields.types.DateEntityFieldType;
-import core.jpa.entity.fields.types.IntegerEntityFieldType;
-import core.jpa.entity.fields.types.StringEntityFieldType;
+import core.jpa.entity.field.fields.DateEntityField;
+import core.jpa.entity.field.EntityField;
+import core.jpa.entity.field.fields.IntegerEntityField;
+import core.jpa.entity.field.fields.StringEntityField;
 import core.utils.EntityFieldUtils;
 import core.utils.RandomUtils;
 
@@ -16,29 +16,29 @@ import java.util.function.Function;
 public class EntityFieldFactory {
 
     /**
-     * Get {@link EntityField} with {@link StringEntityFieldType}
+     * Get {@link StringEntityField}
      */
     public static EntityField stringEntityField() {
-        EntityField entityField = new EntityField(RandomUtils.getCode());
-        entityField.setType(new StringEntityFieldType());
+        EntityField entityField = new StringEntityField();
+        entityField.setCode(RandomUtils.getCode());
         return entityField;
     }
 
     /**
-     * Get {@link EntityField} with {@link DateEntityFieldType}
+     * Get {@link DateEntityField}
      */
     public static EntityField dateEntityField() {
-        EntityField entityField = new EntityField(RandomUtils.getCode());
-        entityField.setType(new DateEntityFieldType());
+        EntityField entityField = new DateEntityField();
+        entityField.setCode(RandomUtils.getCode());
         return entityField;
     }
 
     /**
-     * Get {@link EntityField} with {@link IntegerEntityFieldType}
+     * Get {@link IntegerEntityField}
      */
     public static EntityField integerEntityField() {
-        EntityField entityField = new EntityField(RandomUtils.getCode());
-        entityField.setType(new IntegerEntityFieldType());
+        EntityField entityField = new IntegerEntityField();
+        entityField.setCode(RandomUtils.getCode());
         return entityField;
     }
 
@@ -56,8 +56,8 @@ public class EntityFieldFactory {
     /**
      * Get value for {@link EntityField}
      */
-    public static Object valueEntityField(EntityField entityField) {
-        return entityFieldValueGenerators().get(entityField.getType().getCode());
+    public static Function<EntityField, Object> valueEntityField(EntityField entityField) {
+        return entityFieldValueGenerators().get(entityField.getType());
     }
 
     /**

@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import core.jpa.mapping.MappingException;
+import core.jpa.mapping.mappers.AbstractJsonMapper;
+import core.utils.suitable.HasSuitableObjectsByClass;
+import core.utils.suitable.SuitableObjectByClass;
 
 import java.io.IOException;
 
@@ -16,6 +19,14 @@ public abstract class AbstractJsonCustomDeserializer<T> extends StdDeserializer<
         super(t);
     }
 
+    @Override
+    public void init(JsonCustomizerFactory hasSuitableClassObjects) {
+        hasSuitableClassObjects.initSuitableObject( this);
+    }
+
+    /**
+     * Get value, use standard Deserializer
+     */
     @SuppressWarnings("unchecked")
     protected <R> R getValue(DeserializationContext deserializationContext, JsonNode node, Class<R> type) {
         try {

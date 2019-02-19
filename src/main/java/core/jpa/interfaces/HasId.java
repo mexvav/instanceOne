@@ -2,7 +2,17 @@ package core.jpa.interfaces;
 
 public interface HasId {
 
+    /**
+     * Get unique id
+     *
+     * @return id
+     */
     Long getId();
 
-    void setId(Long code);
+    /**
+     * Set unique id
+     *
+     * @param id unique id
+     */
+    void setId(Long id);
 }

@@ -1,29 +1,48 @@
 package core.jpa.entity.building;
 
-import com.google.common.collect.Sets;
-import core.jpa.entity.building.builders.Builder;
-import core.utils.ClassUtils;
+import core.utils.suitable.AbstractHasSuitableObjectsByClass;
 import net.bytebuddy.dynamic.DynamicType;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
-import org.reflections.Reflections;
 import org.springframework.stereotype.Component;
 
-import java.lang.reflect.Modifier;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.function.Consumer;
 
 /**
- * Service for build Class in Runtime
+ * Service for building entity class in Runtime
  */
 @Component
-public class BuildingService {
-
-    private Set<Builder> builders;
+public class BuildingService extends AbstractHasSuitableObjectsByClass<Builder> {
 
     public BuildingService() {
-        initializeBuilders();
+        initializeSuitableObjects();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected String getPackage(){
+        return getObjectClass().getPackage().getName();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected Class<Builder> getObjectClass(){
+        return Builder.class;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected Consumer<Class<? extends Builder>> getSuitableObjectClassConsumer(){
+        return (builderClass) -> {
+            try {
+                Builder builder = builderClass.newInstance();
+                builder.init(this);
+            } catch (InstantiationException | IllegalAccessException e) {
+                throw new BuildingException(e.getMessage());
+            }
+        };
     }
 
     /**
@@ -53,71 +72,7 @@ public class BuildingService {
      */
     @SuppressWarnings("unchecked")
     public DynamicType.Builder build(final DynamicType.Builder classBuilder, Object buildObject) {
-        Builder builder = getBuilder(buildObject);
+        Builder builder = getSuitableObject(buildObject);
         return builder.build(classBuilder, buildObject);
-    }
-
-    /**
-     * Get suitable builder
-     *
-     * @param buildObject object for building
-     * @throws BuildingException if suitable builder not found
-     */
-    @SuppressWarnings("unchecked")
-    public Builder getBuilder(final Object buildObject) {
-        Set<Builder> suitableBuilders =
-                getBuilders().stream()
-                        .filter(builder -> builder.getSuitableClass().isAssignableFrom(buildObject.getClass()))
-                        .collect(Collectors.toSet());
-        if (suitableBuilders.isEmpty()) {
-            throw new BuildingException(
-                    BuildingException.ExceptionCauses.SUITABLE_BUILDER_NOT_FOUND,
-                    buildObject.getClass().getName());
-        }
-        if (suitableBuilders.size() == 1) {
-            return suitableBuilders.iterator().next();
-        }
-        Map<Class, Integer> fromClasses = ClassUtils.getHierarchyClass(buildObject.getClass());
-        return suitableBuilders.stream()
-                .min(Comparator.comparingInt(b -> fromClasses.get(b.getSuitableClass())))
-                .get();
-    }
-
-    /**
-     * Register {@link Builder} for building Entity in chain building chain
-     *
-     * @param builder - initialized builder
-     */
-    public void initBuilder(Builder builder) {
-        getBuilders().add(builder);
-    }
-
-    /**
-     * Get all builders
-     */
-    private Set<Builder> getBuilders() {
-        if (null == builders) {
-            builders = Sets.newHashSet();
-        }
-        return builders;
-    }
-
-    /**
-     * Initialize all default builders
-     */
-    private void initializeBuilders() {
-        Reflections reflections = new Reflections(this.getClass().getPackage().getName());
-        Set<Class<? extends Builder>> builders = reflections.getSubTypesOf(Builder.class);
-        builders.forEach(
-                builder -> {
-                    if (!Modifier.isAbstract(builder.getModifiers()) && !builder.isInterface()) {
-                        try {
-                            Builder builderInstance = builder.newInstance();
-                            builderInstance.init(this);
-                        } catch (InstantiationException | IllegalAccessException e) {
-                            throw new BuildingException(e.getMessage());
-                        }
-                    }
-                });
     }
 }

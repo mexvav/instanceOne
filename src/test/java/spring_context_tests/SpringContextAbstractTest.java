@@ -3,6 +3,7 @@ package spring_context_tests;
 import core.Application;
 import core.assertions.SpringContextAssertions;
 import core.extentions.HardClean;
+import core.extentions.conditions.AssumeSpringContext;
 import core.jpa.dao.EntityDAO;
 import core.jpa.entity.EntityService;
 import core.jpa.object.ObjectService;

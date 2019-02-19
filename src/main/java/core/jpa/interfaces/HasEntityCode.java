@@ -5,5 +5,8 @@ package core.jpa.interfaces;
  */
 public interface HasEntityCode {
 
+    /**
+     * Get entity identifier
+     */
     String getEntityCode();
 }
