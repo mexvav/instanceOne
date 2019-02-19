@@ -5,9 +5,8 @@ import core.factories.EntityFieldFactory;
 import core.jpa.dao.EntityDAO;
 import core.jpa.entity.EntityClass;
 import core.jpa.entity.EntityService;
-import core.jpa.entity.fields.EntityField;
-import core.jpa.entity.fields.types.EntityFieldType;
-import core.jpa.entity.fields.types.StringEntityFieldType;
+import core.jpa.entity.field.EntityField;
+import core.jpa.entity.field.fields.StringEntityField;
 import core.jpa.interfaces.HasLength;
 import core.jpa.object.ObjectService;
 import core.assertions.EntityFieldAssertions;
@@ -117,7 +116,7 @@ class EntityServiceTest extends SpringContextAbstractTest {
      * <b>Verifications:</b>
      * <li>is column {@link EntityField} exist in table</li>
      * <li>is column nullable if {@link EntityField#isRequired()} != true</li>
-     * <li>is column type suitable {@link EntityFieldType}</li>
+     * <li>is column type suitable {@link EntityField}</li>
      * <li>is column length equals {@link HasLength#getLength()}</li>
      * </ol>
      */
@@ -139,10 +138,9 @@ class EntityServiceTest extends SpringContextAbstractTest {
 
         EntityClass entityClass = EntityClassFactory.create();
 
-        EntityField entityField = new EntityField(RandomUtils.getCode());
-        StringEntityFieldType entityFieldType = new StringEntityFieldType();
-        entityFieldType.setLength(length);
-        entityField.setType(entityFieldType);
+        StringEntityField entityField = new StringEntityField();
+        entityField.setCode(RandomUtils.getCode());
+        entityField.setLength(length);
         entityClass.addFields(entityField);
 
         testUtils.getEntityService().createEntity(entityClass);

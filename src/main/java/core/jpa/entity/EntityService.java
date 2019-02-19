@@ -189,7 +189,8 @@ public class EntityService {
         String json = mappingService.mapping(entityClass, String.class);
         EntityDescription description = new EntityDescription();
         description.setCode(entityClass.getCode());
-        description.setDescription(json);
+        //@todo description field too small
+        //description.setDescription(json);
         dao.save(description);
     }
 

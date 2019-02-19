@@ -1,7 +1,7 @@
 package core.assertions;
 
-import core.jpa.entity.fields.EntityField;
-import core.jpa.entity.fields.types.EntityFieldType;
+import core.jpa.entity.field.EntityField;
+
 import core.jpa.interfaces.HasLength;
 import core.utils.Constants;
 import core.utils.EntityFieldUtils;
@@ -30,7 +30,6 @@ public class EntityFieldAssertions {
      * Check {@link EntityField} in table column
      * is column {@link EntityField} exist in table
      * is column nullable if {@link EntityField#isRequired()} != true
-     * is column type suitable {@link EntityFieldType}
      * is column length equals {@link HasLength#getLength()}
      *
      * @param entityField field from {@link core.jpa.entity.EntityClass}

@@ -4,7 +4,7 @@ import core.jpa.Constants;
 import core.jpa.entity.EntityClass;
 import core.jpa.entity.building.BuildingException;
 import core.jpa.entity.entities.AbstractEntity;
-import core.jpa.entity.fields.EntityField;
+import core.jpa.entity.field.EntityField;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.dynamic.DynamicType.Builder;

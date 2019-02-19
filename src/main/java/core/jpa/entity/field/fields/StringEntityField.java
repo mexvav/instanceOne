@@ -1,4 +1,4 @@
-package core.jpa.entity.fields.types;
+package core.jpa.entity.field.fields;
 
 import core.jpa.Constants;
 import core.jpa.interfaces.HasLength;
@@ -6,20 +6,24 @@ import core.jpa.interfaces.HasLength;
 import java.util.Objects;
 
 @SuppressWarnings("unused")
-public class StringEntityFieldType extends SimpleEntityFieldType implements HasLength {
+public class StringEntityField extends SimpleEntityField<String> implements HasLength {
 
     public static final String code = Constants.EntityFieldType.STRING;
 
     private int length = Constants.HasLength.DEFAUIT;
 
-    @Override
-    public String getCode() {
-        return code;
+    public StringEntityField(){
+
     }
 
     @Override
-    public Class<?> getFieldClass() {
+    public Class<String> getFieldClass() {
         return String.class;
+    }
+
+    @Override
+    public String getType() {
+        return code;
     }
 
     @Override
@@ -34,8 +38,8 @@ public class StringEntityFieldType extends SimpleEntityFieldType implements HasL
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof StringEntityFieldType)) return false;
-        StringEntityFieldType that = (StringEntityFieldType) o;
+        if (!(o instanceof StringEntityField)) return false;
+        StringEntityField that = (StringEntityField) o;
         return length == that.length
                 && Objects.equals(getCode(), that.getCode());
     }

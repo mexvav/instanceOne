@@ -12,7 +12,6 @@ public class Constants {
     public static String SEMICOLON = ";";
 
     public static class JPA {
-
         /*Database property*/
         public static final String DB_PROPERTY_DRIVER_CLASS_NAME = "datasource.driver-class-name";
         public static final String DB_PROPERTY_URL = "datasource.url";
@@ -74,12 +73,12 @@ public class Constants {
         public static final String TABLE = DB_ENTITY_PREFIX + DESCRIPTION;
     }
 
-    public static class Builder{
+    public static class Builder {
         public static final String NAME = "name";
         public static final String ENTITY_CODE_METHOD = "getEntityCode";
     }
 
-    public static class EntityDAO{
+    public static class EntityDAO {
         public static final String TABLE = "TABLE";
         public static final String COLUMN_NAME = "COLUMN_NAME";
         public static final String TYPE_NAME = "TYPE_NAME";
@@ -88,6 +87,10 @@ public class Constants {
 
         public static final String YES = "yes";
         public static final String NO = "no";
+    }
+
+    public static class EntityValue {
+        public static final String DATE_TEMPLATE = "dd.MM.yyyy";
     }
 
 }

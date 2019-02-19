@@ -7,7 +7,7 @@ import java.io.IOException;
 public class JsonToObjectMapper extends AbstractJsonMapper<String, Object> {
 
     @Override
-    public Class<String> getFromClass() {
+    public Class<String> getSuitableClass() {
         return String.class;
     }
 

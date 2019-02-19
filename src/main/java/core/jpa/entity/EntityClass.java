@@ -2,7 +2,7 @@ package core.jpa.entity;
 
 import com.google.common.collect.Sets;
 import core.jpa.Constants;
-import core.jpa.entity.fields.EntityField;
+import core.jpa.entity.field.EntityField;
 import core.jpa.interfaces.HasCode;
 import core.jpa.interfaces.HasTitle;
 

@@ -10,7 +10,6 @@ import java.util.function.Consumer;
 
 public class ReflectionUtils {
 
-
     public static <C> void actionWithSubTypes(@NotNull String packagePath, Class<C> superClass, Consumer<Class<? extends C>> consumer) {
         Reflections reflections = new Reflections(Objects.requireNonNull(packagePath));
         Set<Class<? extends C>> classes = reflections.getSubTypesOf(superClass);
@@ -20,5 +19,4 @@ public class ReflectionUtils {
             }
         });
     }
-
 }

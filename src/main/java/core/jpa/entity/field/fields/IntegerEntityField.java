@@ -1,13 +1,17 @@
-package core.jpa.entity.fields.types;
+package core.jpa.entity.field.fields;
 
 import core.jpa.Constants;
 
 import java.util.Objects;
 
 @SuppressWarnings("unused")
-public class IntegerEntityFieldType extends SimpleEntityFieldType {
+public class IntegerEntityField extends SimpleEntityField<Integer> {
 
     public static final String code = Constants.EntityFieldType.INTEGER;
+
+    public IntegerEntityField(){
+
+    }
 
     @Override
     public String getCode() {
@@ -15,20 +19,25 @@ public class IntegerEntityFieldType extends SimpleEntityFieldType {
     }
 
     @Override
-    public Class<?> getFieldClass() {
+    public String getType() {
+        return code;
+    }
+
+    @Override
+    public Class<Integer> getFieldClass() {
         return Integer.class;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof IntegerEntityFieldType)) return false;
-        IntegerEntityFieldType that = (IntegerEntityFieldType) o;
+        if (!(o instanceof IntegerEntityField)) return false;
+        IntegerEntityField that = (IntegerEntityField) o;
         return Objects.equals(getCode(), that.getCode());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code);
+        return Objects.hash(getCode());
     }
 }

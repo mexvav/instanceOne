@@ -1,7 +1,6 @@
 package core.utils;
 
-import core.jpa.entity.fields.EntityField;
-import core.jpa.entity.fields.types.EntityFieldType;
+import core.jpa.entity.field.EntityField;
 import core.jpa.interfaces.HasLength;
 
 import java.util.Arrays;
@@ -9,13 +8,12 @@ import java.util.Arrays;
 public class EntityFieldUtils {
 
     public static int getLength(EntityField entityField) {
-        EntityFieldType entityFieldType = entityField.getType();
-        FieldTestParam fieldTestParam = getFieldTestParam(entityFieldType);
+        FieldTestParam fieldTestParam = getFieldTestParam(entityField);
 
         int length = fieldTestParam.getDefaultLength();
-        if (Arrays.asList(entityFieldType.getClass().getInterfaces()).contains(HasLength.class)) {
-            length = ((HasLength) entityFieldType).getLength() != core.jpa.Constants.HasLength.DEFAUIT ?
-                    ((HasLength) entityFieldType).getLength() : length;
+        if (Arrays.asList(entityField.getClass().getInterfaces()).contains(HasLength.class)) {
+            length = ((HasLength) entityField).getLength() != core.jpa.Constants.HasLength.DEFAUIT ?
+                    ((HasLength) entityField).getLength() : length;
         }
         return length;
     }
@@ -24,16 +22,12 @@ public class EntityFieldUtils {
         return getFieldTestParam(entityField).getTableType();
     }
 
-    public static String getTableType(EntityFieldType entityFieldType) {
-        return getFieldTestParam(entityFieldType).getTableType();
-    }
-
     public static FieldTestParam getFieldTestParam(EntityField entityField) {
         return getFieldTestParam(entityField.getType());
     }
 
-    public static FieldTestParam getFieldTestParam(EntityFieldType entityFieldType) {
-        return FieldTestParam.valueOf(entityFieldType.getCode().toUpperCase());
+    public static FieldTestParam getFieldTestParam(String entityFieldType) {
+        return FieldTestParam.valueOf(entityFieldType.toUpperCase());
     }
 
     /**

@@ -2,7 +2,7 @@ package core.factories;
 
 import com.google.common.collect.Maps;
 import core.jpa.entity.EntityClass;
-import core.jpa.entity.fields.EntityField;
+import core.jpa.entity.field.EntityField;
 
 import java.util.Map;
 

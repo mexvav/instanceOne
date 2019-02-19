@@ -6,7 +6,7 @@ import core.jpa.mapping.MappingException;
 public class ObjectToJsonMapper extends AbstractJsonMapper<Object, String> {
 
     @Override
-    public Class<Object> getFromClass() {
+    public Class<Object> getSuitableClass() {
         return Object.class;
     }
 

@@ -1,9 +1,15 @@
 package core.jpa.entity.building.builders;
 
-import core.jpa.entity.fields.EntityField;
+import core.jpa.Constants;
+import core.jpa.entity.field.EntityField;
+import core.jpa.entity.field.fields.SimpleEntityField;
+import core.jpa.interfaces.HasLength;
+import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.dynamic.DynamicType.Builder;
 
 import javax.annotation.Nullable;
+import javax.persistence.Column;
+import java.util.Arrays;
 
 @SuppressWarnings("unused")
 public class EntityFieldBuilder extends AbstractBuilder<EntityField> {
@@ -15,14 +21,34 @@ public class EntityFieldBuilder extends AbstractBuilder<EntityField> {
 
     @Override
     @Nullable
-    @SuppressWarnings("unchecked")
-    public Builder build(@Nullable Builder classBuilder, @Nullable EntityField buildObject) {
+    public Builder build(@Nullable final Builder classBuilder, @Nullable EntityField entityField) {
         if (null == classBuilder) {
             return null;
         }
-        if (null == buildObject) {
+        if (null == entityField) {
             return classBuilder;
         }
-        return buildingService.getBuilder(buildObject.getType()).build(classBuilder, buildObject);
+        AnnotationDescription.Builder annotationDescription = AnnotationDescription.Builder.ofType(Column.class);
+        annotationDescription = setLength(annotationDescription, entityField);
+        return classBuilder
+                .defineField(entityField.getCode(), entityField.getFieldClass())
+                .annotateField(annotationDescription.build());
+    }
+
+    /**
+     * Set length for column in entity table
+     *
+     * @param annotationDescription annotationDescription
+     * @param entityField           field for column
+     */
+    private AnnotationDescription.Builder setLength(AnnotationDescription.Builder annotationDescription, EntityField entityField) {
+        if (!Arrays.asList(entityField.getClass().getInterfaces()).contains(HasLength.class)) {
+            return annotationDescription;
+        }
+        int length = ((HasLength) entityField).getLength();
+        if (length == Constants.HasLength.DEFAUIT) {
+            return annotationDescription;
+        }
+        return annotationDescription.define(Constants.HasLength.LENGTH, length);
     }
 }
