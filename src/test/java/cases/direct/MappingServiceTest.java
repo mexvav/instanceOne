@@ -1,4 +1,4 @@
-package tests;
+package cases.direct;
 
 import core.factories.EntityClassFactory;
 import core.factories.EntityFieldFactory;
@@ -7,10 +7,14 @@ import core.jpa.entity.field.EntityField;
 import core.jpa.entity.field.fields.DateEntityField;
 import core.jpa.entity.field.fields.IntegerEntityField;
 import core.jpa.entity.field.fields.StringEntityField;
+import core.jpa.mapping.MappingException;
 import core.jpa.mapping.MappingService;
+import core.utils.ExceptionUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.util.Date;
 
 class MappingServiceTest {
 
@@ -19,6 +23,16 @@ class MappingServiceTest {
     @BeforeAll
     static void initialize() {
         mappingService = new MappingService();
+    }
+
+    /**
+     * Test exception if suitable mapper not found
+     */
+    @Test
+    void testMappingException() {
+        ExceptionUtils.assertThrows(MappingException.class, () ->
+                        mappingService.mapping(new Date(), Class.class),
+                "Suitable mapper for mapping \"java.util.Date\" -> \"java.lang.Class\"");
     }
 
     /**
@@ -66,7 +80,7 @@ class MappingServiceTest {
      * <li>create "entityField" with type {@link StringEntityField}</li>
      * <li>mapping "entityClass" to "json"</li>
      * </ol>
-
+     *
      * <ol>
      * <b>Verifications:</b>
      * <li>is "json" equals "{"code":"%s","type":{"length":0,"code":"%s"}"</li>
@@ -81,7 +95,6 @@ class MappingServiceTest {
      * <b>Verifications:</b>
      * <li>is "entityClass" equals "mappedEntityClass"</li>
      * </ol>
-     *
      */
     @Test
     void testMappingEntityField() {

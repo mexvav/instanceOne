@@ -1,4 +1,4 @@
-package spring_context_tests;
+package cases.spring_context;
 
 import core.factories.EntityClassFactory;
 import core.factories.EntityFieldFactory;

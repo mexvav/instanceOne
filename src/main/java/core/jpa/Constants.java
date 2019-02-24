@@ -92,5 +92,4 @@ public class Constants {
     public static class EntityValue {
         public static final String DATE_TEMPLATE = "dd.MM.yyyy";
     }
-
 }

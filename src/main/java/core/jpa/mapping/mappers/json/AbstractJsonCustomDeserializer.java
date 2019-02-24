@@ -36,7 +36,7 @@ public abstract class AbstractJsonCustomDeserializer<T> extends StdDeserializer<
             nodeParser.nextToken();
             return (R) deserializer.deserialize(nodeParser, deserializationContext);
         } catch (IOException e) {
-            throw new MappingException(e.getMessage());
+            throw new MappingException(e);
         }
     }
 }

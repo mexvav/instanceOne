@@ -2,12 +2,12 @@ package core.jpa.entity;
 
 import com.google.common.collect.Maps;
 import core.jpa.Constants;
-import core.jpa.ReloadableSessionFactory;
 import core.jpa.aspects.WithReloadSessionFactory;
 import core.jpa.dao.EntityDAO;
 import core.jpa.entity.building.BuildingService;
 import core.jpa.entity.entities.EntityDescription;
 import core.jpa.mapping.MappingService;
+import core.jpa.session_factory.ReloadableSessionFactory;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -75,21 +75,17 @@ public class EntityService {
      * {@link WithReloadSessionFactory}
      */
     public void reloadService() {
-        getEntities()
-                .forEach(
-                        (code, entity) -> {
-                            if (!getCurrentEntities().containsKey(code)) {
-                                sessionFactory.getEntities().add(entity);
-                            }
-                        });
+        getEntities().forEach((code, entity) -> {
+            if (!getCurrentEntities().containsKey(code)) {
+                sessionFactory.addEntity(entity);
+            }
+        });
 
-        getCurrentEntities()
-                .forEach(
-                        (code, entity) -> {
-                            if (!getEntities().containsKey(code)) {
-                                sessionFactory.getEntities().remove(entity);
-                            }
-                        });
+        getCurrentEntities().forEach((code, entity) -> {
+            if (!getEntities().containsKey(code)) {
+                sessionFactory.removeEntity(entity);
+            }
+        });
 
         sessionFactory.reloadSessionFactory();
         reloadCurrentEntities();

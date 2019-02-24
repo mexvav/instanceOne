@@ -21,7 +21,7 @@ public class ObjectToJsonMapper extends AbstractJsonMapper<Object, String> {
         try {
             return getJsonMapper().writeValueAsString(from);
         } catch (JsonProcessingException e) {
-            throw new MappingException(e.getMessage());
+            throw new MappingException(e);
         }
     }
 }

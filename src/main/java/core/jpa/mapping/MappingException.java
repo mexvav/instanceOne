@@ -1,33 +1,53 @@
 package core.jpa.mapping;
 
+import core.jpa.exception.EntityException;
+import core.jpa.exception.ExceptionMessage;
+
 /**
  * Exception for mapping service
  */
-public class MappingException extends RuntimeException {
+public class MappingException extends EntityException {
 
-    public MappingException(String message) {
-        super(message);
+    /**
+     * {@inheritDoc}
+     */
+    public MappingException(ExceptionCauses message, String... params) {
+        super(message, params);
     }
 
-    MappingException(ExceptionCauses cause) {
-        super(cause.getCause());
+    /**
+     * {@inheritDoc}
+     */
+    public MappingException(ExceptionCauses message, Throwable cases, String... params) {
+        super(message, cases, params);
     }
 
-    MappingException(ExceptionCauses cause, String... args) {
-        super(String.format(cause.getCause(), args));
+    /**
+     * {@inheritDoc}
+     */
+    public MappingException(Throwable cases) {
+        super(cases);
     }
 
-    enum ExceptionCauses {
-        MAPPER_NOT_FOUND("Suitable mapper not found: %s -> %s");
+    public enum ExceptionCauses implements ExceptionMessage {
+        MAPPER_NOT_FOUND("mapper_not_found", "Suitable mapper not found");
 
-        private String cause;
+        private String messageCode;
+        private String defaultMessage;
 
-        ExceptionCauses(String cause) {
-            this.cause = cause;
+        ExceptionCauses(String messageCode, String defaultMessage) {
+            this.messageCode = messageCode;
+            this.defaultMessage = defaultMessage;
         }
 
-        public String getCause() {
-            return cause;
+        @Override
+        public String getMessageCode() {
+            return messageCode;
+        }
+
+        @Override
+        public String getDefaultMessage() {
+            return defaultMessage;
         }
     }
 }
