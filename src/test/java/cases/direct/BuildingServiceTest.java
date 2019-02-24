@@ -1,4 +1,4 @@
-package tests;
+package cases.direct;
 
 import core.factories.EntityClassFactory;
 import core.factories.EntityFieldFactory;
@@ -9,7 +9,6 @@ import core.jpa.entity.field.fields.DateEntityField;
 import core.jpa.entity.field.fields.IntegerEntityField;
 import core.jpa.entity.field.fields.StringEntityField;
 import core.utils.Constants;
-import core.utils.ErrorUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -65,7 +64,7 @@ class BuildingServiceTest {
         EntityField integerEntityField = EntityFieldFactory.integerEntityField();
         entityClass.addFields(stringEntityField, dateEntityField, integerEntityField);
 
-        Class<?> entity = ErrorUtils.assertNotError(
+        Class<?> entity = Assertions.assertDoesNotThrow(
                 () -> buildingService.building(entityClass), Constants.Error.BUILDING_EXCEPTION);
         Assertions.assertEquals(StringUtils.capitalize(entityClass.getCode()), entity.getSimpleName());
 

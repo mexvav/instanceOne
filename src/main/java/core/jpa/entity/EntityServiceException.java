@@ -9,6 +9,10 @@ public class EntityServiceException extends RuntimeException {
         super(message);
     }
 
+    public EntityServiceException(Throwable e) {
+        super(e);
+    }
+
     public EntityServiceException(ExceptionCauses cause) {
         super(cause.getCause());
     }

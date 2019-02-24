@@ -1,9 +1,8 @@
-package spring_context_tests;
+package cases.spring_context;
 
 import core.Application;
 import core.assertions.SpringContextAssertions;
 import core.extentions.HardClean;
-import core.extentions.conditions.AssumeSpringContext;
 import core.jpa.dao.EntityDAO;
 import core.jpa.entity.EntityService;
 import core.jpa.object.ObjectService;
@@ -28,7 +27,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 //@AssumeSpringContext
 class SpringContextAbstractTest {
 
-    protected SpringContextAssertions testUtils;
+    SpringContextAssertions testUtils;
 
     @Autowired
     SpringContextAbstractTest(EntityService entityService,
