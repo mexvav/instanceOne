@@ -18,6 +18,6 @@ import org.hibernate.SessionFactory;
  * <p>For getting collection with all loaded entity use {@link #getPersistentEntities()}</p>
  * <p>For getting current modification entity collection use {@link #getCurrentEntities()}</p>
  */
-public interface ReloadableSessionFactory extends Reloadable, SessionFactory {
+public interface ReloadableSessionFactory extends ReloadableMethods, SessionFactory {
 
 }

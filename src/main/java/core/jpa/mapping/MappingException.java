@@ -1,12 +1,12 @@
 package core.jpa.mapping;
 
-import core.jpa.exception.EntityException;
+import core.jpa.exception.LocalizedException;
 import core.jpa.exception.ExceptionMessage;
 
 /**
  * Exception for mapping service
  */
-public class MappingException extends EntityException {
+public class MappingException extends LocalizedException {
 
     /**
      * {@inheritDoc}

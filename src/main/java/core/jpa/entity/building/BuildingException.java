@@ -1,34 +1,54 @@
 package core.jpa.entity.building;
 
+import core.jpa.exception.ExceptionMessage;
+import core.jpa.exception.LocalizedException;
+
 /**
  * Exception for building Entity
  */
-public class BuildingException extends RuntimeException {
+public class BuildingException extends LocalizedException {
 
-    public BuildingException(String message) {
-        super(message);
+    /**
+     * {@inheritDoc}
+     */
+    public BuildingException(BuildingException.ExceptionCauses message, String... params) {
+        super(message, params);
     }
 
-    public BuildingException(ExceptionCauses cause) {
-        super(cause.getCause());
+    /**
+     * {@inheritDoc}
+     */
+    public BuildingException(BuildingException.ExceptionCauses message, Throwable cases, String... params) {
+        super(message, cases, params);
     }
 
-    public BuildingException(ExceptionCauses cause, String... args) {
-        super(String.format(cause.getCause(), (Object[]) args));
+    /**
+     * {@inheritDoc}
+     */
+    public BuildingException(Throwable cases) {
+        super(cases);
     }
 
-    public enum ExceptionCauses {
-        CODE_IS_EMPTY("Code is empty, use setCode(code)"),
-        SUITABLE_BUILDER_NOT_FOUND("Suitable attribute for class: %s not found");
+    public enum ExceptionCauses implements ExceptionMessage {
+        CODE_IS_EMPTY("code_is_empty", "Code is empty"),
+        SUITABLE_BUILDER_NOT_FOUND("suitable_builder_not_found", "Suitable builder not found");
 
-        private String cause;
+        private String messageCode;
+        private String defaultMessage;
 
-        ExceptionCauses(String cause) {
-            this.cause = cause;
+        ExceptionCauses(String messageCode, String defaultMessage) {
+            this.messageCode = messageCode;
+            this.defaultMessage = defaultMessage;
         }
 
-        public String getCause() {
-            return cause;
+        @Override
+        public String getMessageCode() {
+            return messageCode;
+        }
+
+        @Override
+        public String getDefaultMessage() {
+            return defaultMessage;
         }
     }
 }

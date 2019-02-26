@@ -30,15 +30,14 @@ public class WithReloadSessionFactoryAspect {
     @Around("@annotation(core.jpa.aspects.WithReloadSessionFactory)")
     public Object withReloadSessionFactory(ProceedingJoinPoint joinPoint) {
         if (null == entityService) {
-            throw new EntityServiceException("There is not exist EntityService component");
+            throw new EntityServiceException(EntityServiceException.ExceptionCauses.ENTITY_SERVICE_NOT_EXIST);
         }
-        return entityService.actionWithReloadSessionFactory(
-                () -> {
-                    try {
-                        return joinPoint.proceed();
-                    } catch (Throwable e) {
-                        throw new EntityServiceException(e.getMessage());
-                    }
-                });
+        return entityService.actionWithReloadSessionFactory(() -> {
+            try {
+                return joinPoint.proceed();
+            } catch (Throwable e) {
+                throw new EntityServiceException(e);
+            }
+        });
     }
 }

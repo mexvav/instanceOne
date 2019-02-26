@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 /**
- * <b>Version of {@link SessionFactory}, allows to load new entity in runtime</b>
+ * <b>Methods for {@link SessionFactory}, allows to load new entity in runtime</b>
  *
  * <ul>
  * For loading entity by classes with metadata for entity,
@@ -22,7 +22,7 @@ import java.util.Set;
  * <p>For getting collection with all loaded entity use {@link #getPersistentEntities()}</p>
  * <p>For getting current modification entity collection use {@link #getCurrentEntities()}</p>
  */
-interface Reloadable {
+interface ReloadableMethods {
 
     /**
      * <b>Get {@link PlatformTransactionManager} for current {@link SessionFactory}</b>

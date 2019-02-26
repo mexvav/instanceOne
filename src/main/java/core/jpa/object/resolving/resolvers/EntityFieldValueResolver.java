@@ -1,6 +1,5 @@
 package core.jpa.object.resolving.resolvers;
 
-import core.jpa.entity.building.BuildingService;
 import core.jpa.entity.field.EntityField;
 import core.jpa.object.resolving.ResolvingService;
 import core.utils.suitable.SuitableObjectByClass;

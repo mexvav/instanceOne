@@ -39,7 +39,7 @@ public class ObjectService {
         try {
             entityInstance = entityClass.newInstance();
         } catch (InstantiationException | IllegalAccessException e) {
-            throw new ObjectServiceException(e.getMessage());
+            throw new ObjectServiceException(e);
         }
 
         Map<String, Object> values = getValues(entityBlank, params);
@@ -56,7 +56,7 @@ public class ObjectService {
             EntityField entityField = entityFields.stream()
                     .filter(attr -> attr.getCode().equals(param.getKey()))
                     .findFirst().orElseThrow(() -> new ObjectServiceException(
-                            ObjectServiceException.ExceptionCauses.ATTRIBUTE_IS_NOT_EXIST,
+                            ObjectServiceException.ExceptionCauses.FIELD_IS_NOT_EXIST,
                             entityBlank.getCode(), param.getKey()));
             Object value = resolvingService.resolve(entityField, param.getValue());
             values.put(entityField.getCode(), value);
@@ -72,7 +72,7 @@ public class ObjectService {
                 field.setAccessible(true);
                 field.set(entityInstance, param.getValue());
             } catch (NoSuchFieldException | IllegalAccessException e) {
-                throw new ObjectServiceException(e.getMessage());
+                throw new ObjectServiceException(e);
             }
         }
     }

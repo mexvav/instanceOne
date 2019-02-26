@@ -40,21 +40,21 @@ public class ReloadableSessionFactoryTest {
         reloadableSessionFactory = builder.build();
     }
 
-
     @Test
-    public void testReloadSessionFactory()  {
-
+    public void testReloadSessionFactory() {
         Mockito.verify(configuration, Mockito.times(1)).buildSessionFactory(Mockito.any());
         Assertions.assertTrue(reloadableSessionFactory.getCurrentEntities().isEmpty());
 
-        //@TODO ReloadableSessionFactory.getCurrentEntities() must by unmutable. add methods 'addEntity', 'removeEntity'
-        //@TODO 'addEntity' throws if null
         reloadableSessionFactory.getCurrentEntities().add(null);
         Assertions.assertFalse(reloadableSessionFactory.getCurrentEntities().isEmpty());
 
         reloadableSessionFactory.reloadSessionFactory();
         Mockito.verify(configuration, Mockito.times(2)).buildSessionFactory(Mockito.any());
+    }
 
+    @Test
+    public void testAddEntity() {
+        //reloadableSessionFactory.addEntity(null);
 
     }
 
