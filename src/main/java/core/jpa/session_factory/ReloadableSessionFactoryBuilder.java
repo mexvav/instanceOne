@@ -11,6 +11,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.ResourceTransactionManager;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.lang.reflect.Proxy;
@@ -21,7 +22,7 @@ import java.util.*;
  */
 public class ReloadableSessionFactoryBuilder {
 
-    private ProxyReloadableSessionFactory reloadableSessionFactory;
+    private ProxyReloadableMethodsSessionFactory reloadableSessionFactory;
 
     /**
      * @param properties      - hibernate property
@@ -32,7 +33,7 @@ public class ReloadableSessionFactoryBuilder {
             StandardServiceRegistry serviceRegistry,
             String... packagesToScan) {
 
-        this.reloadableSessionFactory = new ProxyReloadableSessionFactory(properties, serviceRegistry, packagesToScan);
+        this.reloadableSessionFactory = new ProxyReloadableMethodsSessionFactory(properties, serviceRegistry, packagesToScan);
     }
 
     /**
@@ -42,9 +43,9 @@ public class ReloadableSessionFactoryBuilder {
         return (ReloadableSessionFactory) Proxy.newProxyInstance(
                 this.getClass().getClassLoader(), new Class[]{ReloadableSessionFactory.class},
                 (proxy, method, args) -> {
-                    if (Arrays.asList(Reloadable.class.getDeclaredMethods())
+                    if (Arrays.asList(ReloadableMethods.class.getDeclaredMethods())
                             .contains(method)) {
-                        return ProxyReloadableSessionFactory.class
+                        return ProxyReloadableMethodsSessionFactory.class
                                 .getDeclaredMethod(method.getName(), method.getParameterTypes())
                                 .invoke(reloadableSessionFactory, args);
                     }
@@ -53,9 +54,9 @@ public class ReloadableSessionFactoryBuilder {
     }
 
     /**
-     * Proxy class for implementation Reloadable
+     * Proxy class, implemented {@link ReloadableMethods} for created {@link ReloadableSessionFactory}
      */
-    private static class ProxyReloadableSessionFactory implements Reloadable {
+    private static class ProxyReloadableMethodsSessionFactory implements ReloadableMethods {
         private Properties properties;
         private StandardServiceRegistry serviceRegistry;
         private Set<String> packagesToScan;
@@ -66,7 +67,7 @@ public class ReloadableSessionFactoryBuilder {
         private SessionFactory sessionFactory;
         private HibernateTransactionManager transactionManager;
 
-        ProxyReloadableSessionFactory(
+        ProxyReloadableMethodsSessionFactory(
                 Properties properties,
                 StandardServiceRegistry serviceRegistry,
                 String... packagesToScan) {
@@ -76,54 +77,89 @@ public class ReloadableSessionFactoryBuilder {
             initSessionFactory();
         }
 
-        @Override
-        public PlatformTransactionManager getPlatformTransactionManager() {
-            return (PlatformTransactionManager) Proxy.newProxyInstance(
-                            this.getClass().getClassLoader(),
-                            new Class[]{
-                                    ResourceTransactionManager.class,
-                                    BeanFactoryAware.class,
-                                    InitializingBean.class,
-                                    PlatformTransactionManager.class,
-                                    Serializable.class
-                            },
-                            (proxy, method, args) -> method.invoke(transactionManager, args));
-        }
-
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public Set<Class<?>> getCurrentEntities() {
             return Collections.unmodifiableSet(getModificationCurrentEntities());
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public Set<Class<?>> getPersistentEntities() {
             return Collections.unmodifiableSet(getModificationPersistentEntities());
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void addEntity(@NotNull Class<?> entity) {
-            getModificationCurrentEntities().add(Objects.requireNonNull(entity));
+            Entity entityAnnotation = Objects.requireNonNull(entity).getAnnotation(Entity.class);
+            if(null == entityAnnotation){
+
+            }
+            getModificationCurrentEntities().add(entity);
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void removeEntity(@NotNull Class<?> entity) {
             getModificationCurrentEntities().remove(Objects.requireNonNull(entity));
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
-        public void addEntityPackage(String entityPackage) {
-            packagesToScan.add(entityPackage);
+        public void addEntityPackage(@NotNull String entityPackage) {
+            packagesToScan.add(Objects.requireNonNull(entityPackage));
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void reloadSessionFactory() {
             initSessionFactory();
         }
 
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public PlatformTransactionManager getPlatformTransactionManager() {
+            return (PlatformTransactionManager) Proxy.newProxyInstance(
+                    this.getClass().getClassLoader(),
+                    new Class[]{
+                            ResourceTransactionManager.class,
+                            BeanFactoryAware.class,
+                            InitializingBean.class,
+                            PlatformTransactionManager.class,
+                            Serializable.class
+                    },
+                    (proxy, method, args) -> method.invoke(transactionManager, args));
+        }
+
+        /**
+         * Get actual session factory
+         */
         SessionFactory getTargetSessionFactory() {
             return sessionFactory;
         }
 
+
+        /**
+         * <b>Get all non persistent classes with metadata for entity,
+         * annotated {@link javax.persistence.Entity}</b>
+         *
+         * @return modifiable set of classes with annotation {@link javax.persistence.Entity}
+         */
         private Set<Class<?>> getModificationCurrentEntities() {
             if (null == currentEntities) {
                 currentEntities = Sets.newHashSet();
@@ -131,6 +167,12 @@ public class ReloadableSessionFactoryBuilder {
             return currentEntities;
         }
 
+        /**
+         * <b>Get all persistent classes with metadata for entity,
+         * annotated {@link javax.persistence.Entity}</b>
+         *
+         * @return modifiable set of classes with annotation {@link javax.persistence.Entity}
+         */
         private Set<Class<?>> getModificationPersistentEntities() {
             if (null == persistentEntities) {
                 persistentEntities = Sets.newHashSet();
@@ -138,6 +180,10 @@ public class ReloadableSessionFactoryBuilder {
             return persistentEntities;
         }
 
+        /**
+         * Scanning packages ({@link #packagesToScan}) for classes with metadata for entity,
+         * annotated {@link javax.persistence.Entity}</b>
+         */
         private void scanEntityInPackages() {
             for (String packageToScan : packagesToScan) {
                 try {
@@ -148,20 +194,29 @@ public class ReloadableSessionFactoryBuilder {
             }
         }
 
+        /**
+         * Scanning single package for classes with metadata for entity,
+         * annotated {@link javax.persistence.Entity}
+         *
+         * @param packageToScan package for scanning
+         */
         private void scanEntityInPackage(@NotNull String packageToScan) {
-            Reflections reflections = new Reflections(packageToScan);
+            Reflections reflections = new Reflections(Objects.requireNonNull(packageToScan));
             Set<Class<?>> entities = reflections.getTypesAnnotatedWith(javax.persistence.Entity.class);
             getModificationCurrentEntities().addAll(entities);
         }
 
+        /**
+         * Initializing session factory
+         */
         private void initSessionFactory() {
             scanEntityInPackages();
-            Configuration configuration = new Configuration();
-            configuration.addProperties(properties);
             if (getCurrentEntities().equals(getPersistentEntities())) {
                 return;
             }
 
+            Configuration configuration = new Configuration();
+            configuration.addProperties(properties);
             getModificationCurrentEntities().forEach(configuration::addAnnotatedClass);
 
             this.sessionFactory = configuration.buildSessionFactory(serviceRegistry);

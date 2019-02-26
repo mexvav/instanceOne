@@ -22,7 +22,7 @@ public class integerFieldValueResolver extends AbstractFieldValueResolver<Intege
                 return Integer.valueOf((String)object);
             }
             catch (NumberFormatException e){
-                throw new ObjectServiceException(e.getMessage());
+                throw new ObjectServiceException(e);
             }
         }
         throw new ObjectServiceException(

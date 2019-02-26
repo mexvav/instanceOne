@@ -1,39 +1,36 @@
-package core.jpa.object;
+package core.jpa.session_factory;
 
 import core.jpa.exception.ExceptionMessage;
 import core.jpa.exception.LocalizedException;
 
 /**
- * Exception for object service
+ * Exception for mapping service
  */
-public class ObjectServiceException extends LocalizedException {
+public class ReloadableSessionFactoryException extends LocalizedException {
 
     /**
      * {@inheritDoc}
      */
-    public ObjectServiceException(ObjectServiceException.ExceptionCauses message, String... params) {
+    public ReloadableSessionFactoryException(ExceptionCauses message, String... params) {
         super(message, params);
     }
 
     /**
      * {@inheritDoc}
      */
-    public ObjectServiceException(ObjectServiceException.ExceptionCauses message, Throwable cases, String... params) {
+    public ReloadableSessionFactoryException(ExceptionCauses message, Throwable cases, String... params) {
         super(message, cases, params);
     }
 
     /**
      * {@inheritDoc}
      */
-    public ObjectServiceException(Throwable cases) {
+    public ReloadableSessionFactoryException(Throwable cases) {
         super(cases);
     }
 
     public enum ExceptionCauses implements ExceptionMessage {
-        FIELD_IS_NOT_EXIST("field_is_not_exist", "Entity is not contains field"),
-        RESOLVER_NOT_FOUND("resolver_not_found", "Suitable resolver is not found"),
-        RESOLVING_IS_FAILED("resolving_is_failed", "Resolving value is failed"),
-        DATE_RESOLVING_IS_FAILED("date_resolving_is_failed", "Resolving value for Date type is failed");
+        MAPPER_NOT_FOUND("mapper_not_found", "Suitable mapper not found");
 
         private String messageCode;
         private String defaultMessage;

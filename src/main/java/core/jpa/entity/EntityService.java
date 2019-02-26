@@ -66,7 +66,8 @@ public class EntityService {
         } catch (Throwable e) {
             this.entities = entities;
             this.entitiesBlank = entitiesBlank;
-            throw new EntityServiceException(e.getMessage());
+            throw new EntityServiceException(
+                    EntityServiceException.ExceptionCauses.SERVICE_RELOAD_ERROR, e, e.getMessage());
         }
     }
 

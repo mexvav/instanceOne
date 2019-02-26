@@ -1,7 +1,7 @@
 package core.jpa.entity.field;
 
 import core.jpa.entity.EntityServiceException;
-import core.jpa.entity.building.BuildingException;
+import core.jpa.mapping.MappingException;
 import core.utils.suitable.AbstractHasSuitableObjectsByCode;
 
 import java.util.function.Consumer;
@@ -27,7 +27,7 @@ public class EntityFieldFactoty extends AbstractHasSuitableObjectsByCode<EntityF
                 EntityField entityField = entityFieldClass.newInstance();
                 initSuitableObject(entityField);
             } catch (InstantiationException | IllegalAccessException e) {
-                throw new BuildingException(e.getMessage());
+                throw new MappingException(e);
             }
         };
     }
@@ -41,11 +41,11 @@ public class EntityFieldFactoty extends AbstractHasSuitableObjectsByCode<EntityF
         try {
             return getEntityFieldClassByType(code).newInstance();
         } catch (InstantiationException | IllegalAccessException e) {
-            throw new EntityServiceException(e.getMessage());
+            throw new EntityServiceException(e);
         }
     }
 
-    public Class<? extends EntityField> getEntityFieldClassByType(String code) {
+    private Class<? extends EntityField> getEntityFieldClassByType(String code) {
         return getSuitableObject(code).getClass();
     }
 }

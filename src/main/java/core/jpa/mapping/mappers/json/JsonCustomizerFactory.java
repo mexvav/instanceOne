@@ -3,7 +3,7 @@ package core.jpa.mapping.mappers.json;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import core.jpa.entity.building.BuildingException;
+import core.jpa.mapping.MappingException;
 import core.utils.suitable.AbstractHasSuitableObjectsByClass;
 
 import java.util.function.Consumer;
@@ -15,7 +15,7 @@ public class JsonCustomizerFactory extends AbstractHasSuitableObjectsByClass<Jso
             JsonCustomizer.class.getName(),
             new Version(1, 0, 0, null, null, null));
 
-    public JsonCustomizerFactory(){
+    public JsonCustomizerFactory() {
         initializeSuitableObjects();
     }
 
@@ -29,33 +29,33 @@ public class JsonCustomizerFactory extends AbstractHasSuitableObjectsByClass<Jso
     @Override
     @SuppressWarnings("unchecked")
     public void initSuitableObject(JsonCustomizer hasSuitableClassObject) {
-        if(hasSuitableClassObject instanceof AbstractJsonCustomSerializer){
+        if (hasSuitableClassObject instanceof AbstractJsonCustomSerializer) {
             module.addSerializer(hasSuitableClassObject.getSuitableClass(),
-                    (AbstractJsonCustomSerializer)hasSuitableClassObject);
+                    (AbstractJsonCustomSerializer) hasSuitableClassObject);
         }
-        if(hasSuitableClassObject instanceof AbstractJsonCustomDeserializer){
+        if (hasSuitableClassObject instanceof AbstractJsonCustomDeserializer) {
             module.addDeserializer(hasSuitableClassObject.getSuitableClass(),
-                    (AbstractJsonCustomDeserializer)hasSuitableClassObject);
+                    (AbstractJsonCustomDeserializer) hasSuitableClassObject);
         }
         getJsonMapper().registerModule(module);
     }
 
-    protected String getPackage(){
+    protected String getPackage() {
         return getObjectClass().getPackage().getName();
     }
 
-    protected Class<JsonCustomizer> getObjectClass(){
+    protected Class<JsonCustomizer> getObjectClass() {
         return JsonCustomizer.class;
     }
 
     @SuppressWarnings("unchecked")
-    protected Consumer<Class<? extends JsonCustomizer>> getSuitableObjectClassConsumer(){
+    protected Consumer<Class<? extends JsonCustomizer>> getSuitableObjectClassConsumer() {
         return (jsonCustomizerClass) -> {
             try {
                 JsonCustomizer jsonCustomizer = jsonCustomizerClass.newInstance();
                 jsonCustomizer.init(this);
             } catch (InstantiationException | IllegalAccessException e) {
-                throw new BuildingException(e.getMessage());
+                throw new MappingException(e);
             }
         };
     }

@@ -31,7 +31,7 @@ public class MappingService extends AbstractHasSuitableObjectsByClass<Mapper> {
                 Mapper mapper = mapperClass.newInstance();
                 mapper.init(this);
             } catch (InstantiationException | IllegalAccessException e) {
-                throw new BuildingException(e.getMessage());
+                throw new MappingException(e);
             }
         };
     }

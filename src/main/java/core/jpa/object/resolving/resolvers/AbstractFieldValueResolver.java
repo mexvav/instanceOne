@@ -4,9 +4,9 @@ import core.jpa.entity.field.EntityField;
 import core.jpa.object.resolving.ResolvingService;
 
 
-public abstract class AbstractFieldValueResolver<R, T extends EntityField<R>>  implements EntityFieldValueResolver<R, T>{
+public abstract class AbstractFieldValueResolver<R, T extends EntityField<R>> implements EntityFieldValueResolver<R, T> {
 
-    ResolvingService resolvingService;
+    private ResolvingService resolvingService;
 
     @Override
     public void init(ResolvingService resolvingService) {

@@ -1,6 +1,5 @@
 package core.jpa.entity.building;
 
-import core.jpa.entity.building.BuildingService;
 import core.utils.suitable.SuitableObjectByClass;
 import net.bytebuddy.dynamic.DynamicType;
 

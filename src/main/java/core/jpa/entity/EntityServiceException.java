@@ -1,41 +1,57 @@
 package core.jpa.entity;
 
+import core.jpa.exception.ExceptionMessage;
+import core.jpa.exception.LocalizedException;
+
 /**
  * Exception for entity builder
  */
-public class EntityServiceException extends RuntimeException {
+public class EntityServiceException extends LocalizedException {
 
-    public EntityServiceException(String message) {
-        super(message);
+    /**
+     * {@inheritDoc}
+     */
+    public EntityServiceException(EntityServiceException.ExceptionCauses message, String... params) {
+        super(message, params);
     }
 
-    public EntityServiceException(Throwable e) {
-        super(e);
+    /**
+     * {@inheritDoc}
+     */
+    public EntityServiceException(EntityServiceException.ExceptionCauses message, Throwable cases, String... params) {
+        super(message, cases, params);
     }
 
-    public EntityServiceException(ExceptionCauses cause) {
-        super(cause.getCause());
+    /**
+     * {@inheritDoc}
+     */
+    public EntityServiceException(Throwable cases) {
+        super(cases);
     }
 
-    public EntityServiceException(ExceptionCauses cause, String... args) {
-        super(String.format(cause.getCause(), (Object[]) args));
-    }
+    public enum ExceptionCauses implements ExceptionMessage {
+        ENTITY_IS_NOT_EXIST("entity_is_not_exist", "Entity is not exist"),
+        ENTITY_FIELD_TYPE_NOT_FOUND("entity_field_type_not_found", "Entity not found"),
+        SERVICE_RELOAD_ERROR("service_reload_error", "Entity service can't reload"),
+        SESSION_FACTORY_IS_NOT_RELOADABLE("session_factory_is_not_reloadable", "SessionFactory is not reloadable"),
+        ENTITY_SERVICE_NOT_EXIST("entity_service_not_exist", "There is not exist EntityService component");;
 
-    public enum ExceptionCauses {
-        ENTITY_IS_NOT_EXIST("Entity by code '%s' is not exist"),
-        ENTITY_FIELD_TYPE_NOT_FOUND("Entity type by code '%s' not found"),
-        SERVICE_RELOAD_ERROR("Entity service can't reload, cause: %s"),
-        SESSION_FACTORY_IS_NOT_RELOADABLE("SessionFactory is not reloadable"),
-        ;
+        private String messageCode;
+        private String defaultMessage;
 
-        private String cause;
-
-        ExceptionCauses(String cause) {
-            this.cause = cause;
+        ExceptionCauses(String messageCode, String defaultMessage) {
+            this.messageCode = messageCode;
+            this.defaultMessage = defaultMessage;
         }
 
-        public String getCause() {
-            return cause;
+        @Override
+        public String getMessageCode() {
+            return messageCode;
+        }
+
+        @Override
+        public String getDefaultMessage() {
+            return defaultMessage;
         }
     }
 }

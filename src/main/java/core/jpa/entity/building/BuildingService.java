@@ -34,13 +34,14 @@ public class BuildingService extends AbstractHasSuitableObjectsByClass<Builder> 
     /**
      * {@inheritDoc}
      */
+    @SuppressWarnings("unchecked")
     protected Consumer<Class<? extends Builder>> getSuitableObjectClassConsumer(){
         return (builderClass) -> {
             try {
                 Builder builder = builderClass.newInstance();
                 builder.init(this);
             } catch (InstantiationException | IllegalAccessException e) {
-                throw new BuildingException(e.getMessage());
+                throw new BuildingException(e);
             }
         };
     }
@@ -58,7 +59,7 @@ public class BuildingService extends AbstractHasSuitableObjectsByClass<Builder> 
                     .load(this.getClass().getClassLoader(), ClassLoadingStrategy.Default.INJECTION)
                     .getLoaded();
         } catch (Exception e) {
-            throw new BuildingException(e.getMessage());
+            throw new BuildingException(e);
         }
     }
 
