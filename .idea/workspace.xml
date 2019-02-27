@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d38d89-65c8-4651-b4a9-82579f3f634d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactoryException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/aspects/WithReloadSessionFactoryAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/aspects/WithReloadSessionFactoryAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityServiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityServiceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/Builder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/entity/field/EntityFieldFactoty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/entity/field/EntityFieldFactoty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/exception/EntityException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/exception/LocalizedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/JsonCustomizerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/JsonCustomizerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectServiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectServiceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/ResolvingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/ResolvingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/AbstractFieldValueResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/AbstractFieldValueResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/EntityFieldValueResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/EntityFieldValueResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/integerFieldValueResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/integerFieldValueResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/Reloadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactoryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactoryBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/exception_message.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/exception_message.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cases/mock/ReloadableSessionFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cases/mock/ReloadableSessionFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/object/ObjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/object/ObjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/object/processing/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/object/processing/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/entity/EntityServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/entity/EntityServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/mapping/MappingServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/mapping/MappingServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/object/ObjectServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/object/ObjectServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/object/resolving/resolvers/DateFieldValueResolverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/object/resolving/resolvers/DateFieldValueResolverTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,94 +24,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/exception_message.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/object/ObjectService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="24" selection-start-line="22" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="193">
+              <caret line="26" column="53" lean-forward="true" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectServiceException.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.3.2/junit-platform-commons-1.3.2.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="199">
+              <caret line="248" selection-start-line="248" selection-end-line="248" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/object/processing/ProcessingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/ResolvingService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+            <state relative-caret-position="215">
+              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/AbstractFieldValueResolver.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/core/object/ObjectServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/DateFieldValueResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/EntityFieldValueResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/integerFieldValueResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/StringFieldValueResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="56" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="56" />
+            <state relative-caret-position="260">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -162,57 +88,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/aspects/WithReloadSessionFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/error_messages.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/core/utils/EntityException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/exception/Exceptions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/exception/ExceptionMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/AbstractJsonCustomDeserializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/ObjectToJsonMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/JsonToObjectMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/exception/EntityException.java" />
-        <option value="$PROJECT_DIR$/src/test/java/core/utils/ErrorUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/core/utils/ExceptionUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/BuildingServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/spring_context_tests/SpringContextAbstractTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/MappingServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/EntityServiceTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/ClassTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/ReloadableSessionFactoryTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/direct/BuildingServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cases/direct/BuildingServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/ReloadableSessionFactoryBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/Reloadable.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cases/spring_context/EntityServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableMethods.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactoryBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactoryException.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cases/mock/ReloadableSessionFactoryTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/exception/LocalizationException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/exception/LocalizedException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityServiceException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/aspects/WithReloadSessionFactoryAspect.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/EntityClassBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/field/EntityFieldFactoty.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/JsonCustomizerFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/Builder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/processors/GetEntityProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/processors/SetResultProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/processors/SaveProcessor.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test_core/assertions/SpringContextUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test_core/assertions/EntityFieldAssertions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test_core/assertions/Assertions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/entity/building/BuildingServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test_core/assertions/EntityAssertions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/dao/DbStatDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/dao/AbstractDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/dao/DbDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/ProcessingService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test_core/utils/SpringContextUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test_core/SpringContextAbstractTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/dao/Constants.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test_core/assertions/SpringContextAssertions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/entity/EntityService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test_core/assertions/ObjectAssertions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/processors/PrepareObjectProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/ProcessorContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/processors/GetObjectProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/processors/RemoveObjectProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/dao/ObjectDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/processors/SetValuesProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/validation/validators/Validator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/validation/validators/RequiredFieldValidationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/validation/validators/RequiredFieldValidator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/validation/validators/RequiredFieldValidatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/validation/ValidationException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/validation/validators/HasLengthValidator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/validation/validators/RequiredValidatorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/validation/validators/HasLengthValidatorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/validation/ValidationServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/resolving/ResolvingServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/StringFieldValueResolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/EntityFieldValueResolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/integerFieldValueResolver.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/resolving/resolvers/StringFieldValueResolverTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/IntegerFieldValueResolver.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/resolving/resolvers/IntegerFieldValueResolverTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/ObjectServiceException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/resolving/ResolvingException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/DateFieldValueResolver.java" />
         <option value="$PROJECT_DIR$/src/main/resources/exception_message.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectServiceException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/ResolvingService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/integerFieldValueResolver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/EntityFieldValueResolver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/AbstractFieldValueResolver.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/resolving/resolvers/DateFieldValueResolverTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/entity/EntityServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/mapping/MappingServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/processing/Process.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/object/ObjectService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/core/object/ObjectServiceTest.java" />
       </list>
     </option>
   </component>
@@ -238,10 +164,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="669" />
+    <option name="x" value="696" />
     <option name="y" value="25" />
-    <option name="width" value="1251" />
-    <option name="height" value="1055" />
+    <option name="width" value="1224" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -301,7 +227,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -311,138 +237,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="aspects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="building" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="building" type="462c0819:PsiDirectoryNode" />
-              <item name="builders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="field" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="field" type="462c0819:PsiDirectoryNode" />
-              <item name="fields" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
               <item name="object" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -453,33 +247,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
               <item name="object" type="462c0819:PsiDirectoryNode" />
-              <item name="resolving" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="object" type="462c0819:PsiDirectoryNode" />
-              <item name="resolving" type="462c0819:PsiDirectoryNode" />
-              <item name="resolvers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instance-one.core" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="instanceOne" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="session_factory" type="462c0819:PsiDirectoryNode" />
+              <item name="processing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -511,7 +280,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cases" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -520,8 +289,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cases" type="462c0819:PsiDirectoryNode" />
-              <item name="mock" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="object" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
@@ -561,6 +330,213 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="function" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="sun" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="sun" type="462c0819:PsiDirectoryNode" />
+              <item name="reflect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-api:5.3.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-api:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-api-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-api:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-api-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-engine-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-engine-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-engine-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="descriptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-engine:5.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-engine-5.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="execution" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-commons:1.3.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-commons:1.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-platform-commons-1.3.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-commons:1.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-platform-commons-1.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-commons:1.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-platform-commons-1.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-engine:1.3.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-engine:1.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-platform-engine-1.3.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-engine:1.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-platform-engine-1.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-engine:1.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-platform-engine-1.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.platform:junit-platform-engine:1.3.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-platform-engine-1.3.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
+              <item name="hierarchical" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-5.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-5.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-5.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="aop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="instanceOne" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:5.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-5.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="aop" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -569,7 +545,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551010672426" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551613838490" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -581,15 +557,18 @@
       <recent name="core.Constants.JPA" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="core.utils" />
-      <recent name="core" />
+      <recent name="core.object" />
+      <recent name="core.session_factory" />
+      <recent name="core.entity" />
+      <recent name="test_core" />
+      <recent name="core.entity.building" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="core.jpa.session_factory" />
-      <recent name="tests" />
-      <recent name="core.jpa.entity.field.fields" />
-      <recent name="core.utils.suitable" />
-      <recent name="core.utils" />
+      <recent name="core.object.resolving.resolvers" />
+      <recent name="core.object.validation.validators" />
+      <recent name="core.object.processing.processors" />
+      <recent name="core.jpa.object.processing.processors" />
+      <recent name="core.jpa.object.processing" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/spring_context_tests" />
@@ -608,84 +587,79 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.compile_without_tests">
-    <configuration name="EntityServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ObjectServiceTest.testGetObject">
+    <configuration name="DateFieldValueResolverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="instance-one.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cases.spring_context.*" />
+          <option name="PATTERN" value="core.object.resolving.resolvers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cases.spring_context" />
-      <option name="MAIN_CLASS_NAME" value="cases.spring_context.EntityServiceTest" />
-      <option name="METHOD_NAME" value="testEntityLifeCircle" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:cases.spring_context.EntityServiceTest]" />
-      </uniqueIds>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EntityServiceTest.testEntityLifeCircle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="instance-one.core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cases.spring_context.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cases.spring_context" />
-      <option name="MAIN_CLASS_NAME" value="cases.spring_context.EntityServiceTest" />
-      <option name="METHOD_NAME" value="testEntityLifeCircle" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReloadableSessionFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="instance-one.core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cases.mock.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cases.mock" />
-      <option name="MAIN_CLASS_NAME" value="cases.mock.ReloadableSessionFactoryTest" />
+      <option name="PACKAGE_NAME" value="core.object.resolving.resolvers" />
+      <option name="MAIN_CLASS_NAME" value="core.object.resolving.resolvers.DateFieldValueResolverTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReloadableSessionFactoryTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DateFieldValueResolverTest.testResolvingFromString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="instance-one.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cases.mock.*" />
+          <option name="PATTERN" value="core.object.resolving.resolvers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cases.mock" />
-      <option name="MAIN_CLASS_NAME" value="cases.mock.ReloadableSessionFactoryTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="PACKAGE_NAME" value="core.object.resolving.resolvers" />
+      <option name="MAIN_CLASS_NAME" value="core.object.resolving.resolvers.DateFieldValueResolverTest" />
+      <option name="METHOD_NAME" value="testResolvingFromString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReloadableSessionFactoryTest.testReloadSessionFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegerFieldValueResolverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="instance-one.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cases.mock.*" />
+          <option name="PATTERN" value="core.object.resolving.resolvers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cases.mock" />
-      <option name="MAIN_CLASS_NAME" value="cases.mock.ReloadableSessionFactoryTest" />
-      <option name="METHOD_NAME" value="testReloadSessionFactory" />
+      <option name="PACKAGE_NAME" value="core.object.resolving.resolvers" />
+      <option name="MAIN_CLASS_NAME" value="core.object.resolving.resolvers.IntegerFieldValueResolverTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObjectServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instance-one.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.object.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core.object" />
+      <option name="MAIN_CLASS_NAME" value="core.object.ObjectServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObjectServiceTest.testGetObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instance-one.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.object.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core.object" />
+      <option name="MAIN_CLASS_NAME" value="core.object.ObjectServiceTest" />
+      <option name="METHOD_NAME" value="testGetObject" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -719,20 +693,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.EntityServiceTest" />
-      <item itemvalue="JUnit.EntityServiceTest.testEntityLifeCircle" />
-      <item itemvalue="JUnit.ReloadableSessionFactoryTest" />
-      <item itemvalue="JUnit.ReloadableSessionFactoryTest.test" />
-      <item itemvalue="JUnit.ReloadableSessionFactoryTest.testReloadSessionFactory" />
+      <item itemvalue="JUnit.IntegerFieldValueResolverTest" />
+      <item itemvalue="JUnit.DateFieldValueResolverTest.testResolvingFromString" />
+      <item itemvalue="JUnit.DateFieldValueResolverTest" />
       <item itemvalue="Maven.compile_without_tests" />
+      <item itemvalue="JUnit.ObjectServiceTest.testGetObject" />
+      <item itemvalue="JUnit.ObjectServiceTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EntityServiceTest" />
-        <item itemvalue="JUnit.EntityServiceTest.testEntityLifeCircle" />
-        <item itemvalue="JUnit.ReloadableSessionFactoryTest.testReloadSessionFactory" />
-        <item itemvalue="JUnit.ReloadableSessionFactoryTest.test" />
-        <item itemvalue="JUnit.ReloadableSessionFactoryTest" />
+        <item itemvalue="JUnit.ObjectServiceTest.testGetObject" />
+        <item itemvalue="JUnit.ObjectServiceTest" />
+        <item itemvalue="JUnit.DateFieldValueResolverTest" />
+        <item itemvalue="JUnit.IntegerFieldValueResolverTest" />
+        <item itemvalue="JUnit.DateFieldValueResolverTest.testResolvingFromString" />
       </list>
     </recent_temporary>
   </component>
@@ -750,35 +724,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ReloadableSessionFactoryTest_test - 2019.02.22 at 03h 38m 42s.xml">
-      <configuration name="ReloadableSessionFactoryTest.test" configurationId="JUnit" />
+    <history-entry file="DateFieldValueResolverTest - 2019.03.03 at 04h 46m 27s.xml">
+      <configuration name="DateFieldValueResolverTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReloadableSessionFactoryTest_test - 2019.02.23 at 03h 17m 06s.xml">
-      <configuration name="ReloadableSessionFactoryTest.test" configurationId="JUnit" />
+    <history-entry file="DateFieldValueResolverTest - 2019.03.03 at 04h 48m 40s.xml">
+      <configuration name="DateFieldValueResolverTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReloadableSessionFactoryTest_test - 2019.02.23 at 03h 17m 29s.xml">
-      <configuration name="ReloadableSessionFactoryTest.test" configurationId="JUnit" />
+    <history-entry file="IntegerFieldValueResolverTest - 2019.03.03 at 04h 53m 40s.xml">
+      <configuration name="IntegerFieldValueResolverTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReloadableSessionFactoryTest_test - 2019.02.23 at 03h 17m 55s.xml">
-      <configuration name="ReloadableSessionFactoryTest.test" configurationId="JUnit" />
+    <history-entry file="DateFieldValueResolverTest - 2019.03.03 at 04h 54m 23s.xml">
+      <configuration name="DateFieldValueResolverTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReloadableSessionFactoryTest_test - 2019.02.23 at 03h 18m 45s.xml">
-      <configuration name="ReloadableSessionFactoryTest.test" configurationId="JUnit" />
+    <history-entry file="DateFieldValueResolverTest - 2019.03.03 at 04h 56m 31s.xml">
+      <configuration name="DateFieldValueResolverTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReloadableSessionFactoryTest_testReloadSessionFactory - 2019.02.23 at 03h 20m 27s.xml">
-      <configuration name="ReloadableSessionFactoryTest.testReloadSessionFactory" configurationId="JUnit" />
+    <history-entry file="ObjectServiceTest_testGetObject - 2019.03.03 at 16h 40m 26s.xml">
+      <configuration name="ObjectServiceTest.testGetObject" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReloadableSessionFactoryTest_testReloadSessionFactory - 2019.02.23 at 03h 21m 58s.xml">
-      <configuration name="ReloadableSessionFactoryTest.testReloadSessionFactory" configurationId="JUnit" />
+    <history-entry file="ObjectServiceTest - 2019.03.03 at 16h 41m 18s.xml">
+      <configuration name="ObjectServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testEntityLifeCircle - 2019.02.24 at 15h 32m 57s.xml">
-      <configuration name="EntityServiceTest.testEntityLifeCircle" configurationId="JUnit" />
+    <history-entry file="ObjectServiceTest_testGetObject - 2019.03.03 at 16h 43m 37s.xml">
+      <configuration name="ObjectServiceTest.testGetObject" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest_testEntityLifeCircle - 2019.02.24 at 15h 40m 15s.xml">
-      <configuration name="EntityServiceTest.testEntityLifeCircle" configurationId="JUnit" />
+    <history-entry file="ObjectServiceTest_testGetObject - 2019.03.03 at 16h 45m 08s.xml">
+      <configuration name="ObjectServiceTest.testGetObject" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntityServiceTest - 2019.02.24 at 15h 40m 26s.xml">
-      <configuration name="EntityServiceTest" configurationId="JUnit" />
+    <history-entry file="ObjectServiceTest_testGetObject - 2019.03.03 at 16h 48m 03s.xml">
+      <configuration name="ObjectServiceTest.testGetObject" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -791,10 +765,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="669" y="25" width="1251" height="1055" extended-state="4" />
-    <editor active="true" />
+    <frame x="696" y="25" width="1224" height="1053" extended-state="4" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27791563" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28003383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24971752" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -803,8 +776,8 @@
       <window_info id="Favorites" order="6" side_tool="true" weight="0.3299435" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32618025" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989496" visible="true" weight="0.32725322" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49789914" weight="0.277897" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989496" weight="0.32580644" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49789914" visible="true" weight="0.27741936" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.31008583" />
@@ -812,31 +785,32 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5021008" side_tool="true" weight="0.28218883" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32938644" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3251073" />
+      <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32939914" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.2486631" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.2484815" />
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.24755381" />
-      <window_info anchor="right" id="Maven" order="4" sideWeight="0.4968051" weight="0.5459057" />
+      <window_info anchor="right" id="Maven" order="4" sideWeight="0.4936306" weight="0.5436409" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" x="0" y="0" width="241" height="853" id="Documentation" order="8" sideWeight="0.50319487" side_tool="true" weight="0.5483871" />
+      <window_info anchor="right" x="0" y="0" width="241" height="853" id="Documentation" order="8" sideWeight="0.5063694" side_tool="true" weight="0.5431472" />
     </layout>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/core/Application.java</url>
-          <line>51</line>
+          <url>file://$PROJECT_DIR$/src/main/java/core/object/validation/validators/HasLengthValidator.java</url>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/core/Application.java</url>
-          <line>37</line>
+          <url>file://$PROJECT_DIR$/src/main/java/core/object/ObjectService.java</url>
+          <line>26</line>
           <properties />
-          <option name="timeStamp" value="38" />
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -852,6 +826,26 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>getSession().save(object)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getSession().load(&quot;ksxcimsjwi&quot;, id);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(HasEntityCode)getSession().get(&quot;Ksxcimsjwi&quot;, id)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(HasEntityCode)getSession().get(entityClass, id)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Arrays.asList(Reloadable.class.getDeclaredMethods()).contains(method)</expression-string>
         <language-id>JAVA</language-id>
@@ -876,28 +870,6 @@
         <expression-string>this.getPhysicalConnectionHandlingMode()</expression-string>
         <language-id>JAVA</language-id>
         <custom-info>org.hibernate.boot.internal.SessionFactoryOptionsBuilder</custom-info>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>jdbcServices.getJdbcEnvironment().getDialect()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>configurationSettings.putAll(jdbcServices.getJdbcEnvironment().getDialect()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>buildingOptions.getServiceRegistry().getService(JdbcServices.class)</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>org.hibernate.boot.internal.MetadataBuilderImpl.MetadataBuildingOptionsImpl</custom-info>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>buildingOptions.getServiceRegistry().getService()</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>org.hibernate.boot.internal.MetadataBuilderImpl.MetadataBuildingOptionsImpl</custom-info>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
     </expressions>
@@ -955,364 +927,395 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/powermock/powermock-module-junit4/2.0.0/powermock-module-junit4-2.0.0.jar!/org/powermock/modules/junit4/internal/impl/PowerMockJUnit44RunnerDelegateImpl.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/boot/internal/MetadataBuilderImpl.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/boot/internal/SessionFactoryOptionsBuilder.class" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/cases/direct/MappingServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/validation/validators/RequiredValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="22" selection-start-line="22" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="300">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/ClassTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/cases/direct/BuildingServiceTest.java">
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/function/Function.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1011">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="51" />
+        <state relative-caret-position="201">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/cfg/Configuration.class" />
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/Set.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/test_core/factories/ObjectFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="368" column="12" selection-start-line="368" selection-start-column="12" selection-end-line="368" selection-end-column="12" />
+        <state relative-caret-position="210">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/Settings.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/test_core/factories/EntityFieldFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="-5">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" selection-start-line="31" selection-end-line="38" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cases/spring_context/EntityServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="67" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="3411" column="36" selection-start-line="3411" selection-start-column="36" selection-end-line="3411" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactoryBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/exception/ExceptionMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/interfaces/HasLength.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/session_factory/ReloadableSessionFactoryException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/entity/building/builders/EntityFieldBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="-199">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/entity/EntityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test_core/utils/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/entity/field/EntityFieldFactoty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cases/mock/ReloadableSessionFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
-          <folding>
-            <element signature="e#15711#15712#0" expanded="true" />
-            <element signature="e#15747#15748#0" expanded="true" />
-            <element signature="e#16192#16193#0" expanded="true" />
-            <element signature="e#16227#16228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/lang/RuntimeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/exception/LocalizedException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/field/fields/AbstractEntityField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/field/EntityField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/AbstractEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/entities/EntityDescription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/aspects/WithReloadSessionFactoryAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/AbstractBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-          <folding>
-            <element signature="e#807#837#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/EntityFieldBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/Objects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430">
-          <caret line="200" column="24" selection-start-line="200" selection-start-column="24" selection-end-line="200" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/field/EntityFieldFactoty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="45" column="5" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/mappers/json/JsonCustomizerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/builders/EntityClassBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/Builder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="47" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/building/BuildingException.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/test_core/utils/EntityFieldUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="13" column="58" lean-forward="true" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+          <caret line="15" column="8" selection-start-line="14" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="621" column="15" selection-start-line="621" selection-start-column="15" selection-end-line="621" selection-end-column="15" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#22786#22787#0" expanded="true" />
+            <element signature="e#22821#22822#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/entity/EntityServiceException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/entity/field/fields/StringEntityField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="15">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/entity/field/fields/IntegerEntityField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/validation/ValidationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/validation/validators/HasLengthValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/object/validation/validators/RequiredValidatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/validation/ValidationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/object/validation/ValidationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="14" selection-start-line="14" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/EntityFieldValueResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/AbstractFieldValueResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/object/validation/validators/HasLengthValidatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" selection-start-line="14" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/StringFieldValueResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/resolving/ResolvingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/object/resolving/ResolvingServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#664#694#0" expanded="true" />
+            <element signature="e#765#795#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/IntegerFieldValueResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="773" column="15" selection-start-line="773" selection-start-column="15" selection-end-line="773" selection-end-column="15" />
+          <folding>
+            <element signature="e#33584#33585#0" expanded="true" />
+            <element signature="e#33655#33656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-159">
+          <caret line="1768" column="22" selection-start-line="1768" selection-start-column="22" selection-end-line="1768" selection-end-column="22" />
+          <folding>
+            <element signature="e#71057#71058#0" expanded="true" />
+            <element signature="e#71104#71105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/ObjectServiceException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/resolving/resolvers/DateFieldValueResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/exception_message.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="24" selection-start-line="22" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="360">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/mapping/MappingException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/resolving/ResolvingException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="56" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="56" />
+        <state relative-caret-position="450">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectServiceException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="1590">
+          <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/object/resolving/resolvers/StringFieldValueResolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/ObjectService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/object/resolving/resolvers/IntegerFieldValueResolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" selection-start-line="25" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/mapping/MappingServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/entity/building/BuildingServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/entity/EntityServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="88" column="7" lean-forward="true" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/object/resolving/resolvers/DateFieldValueResolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/processing/Process.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/dao/ObjectDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#976#977#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2.jar!/org/junit/platform/engine/support/hierarchical/HierarchicalTestExecutor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/ResolvingService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2.jar!/org/junit/platform/engine/support/hierarchical/SameThreadHierarchicalTestExecutorService.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.3.2/junit-jupiter-engine-5.3.2.jar!/org/junit/jupiter/engine/execution/ExecutableInvoker.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+        <state relative-caret-position="199">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/StringFieldValueResolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/ObjectService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="193">
+          <caret line="26" column="53" lean-forward="true" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/integerFieldValueResolver.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.3.2/junit-platform-commons-1.3.2.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+        <state relative-caret-position="199">
+          <caret line="248" selection-start-line="248" selection-end-line="248" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/EntityFieldValueResolver.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2.jar!/org/junit/platform/engine/support/hierarchical/ThrowableCollector.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="390">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/DateFieldValueResolver.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.3.2/junit-jupiter-engine-5.3.2.jar!/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/jpa/object/resolving/resolvers/AbstractFieldValueResolver.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2.jar!/org/junit/platform/engine/support/hierarchical/NodeTestTask.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="199">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../java/jdk1.8.0_144/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="1248" selection-start-line="1248" selection-end-line="1248" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/object/processing/ProcessingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/core/object/ObjectServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
