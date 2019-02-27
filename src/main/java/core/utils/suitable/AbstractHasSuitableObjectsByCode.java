@@ -11,9 +11,7 @@ public abstract class AbstractHasSuitableObjectsByCode<R extends SuitableObjectB
     /**
      * {@inheritDoc}
      */
-    public void initSuitableObject(R hasSuitableClassObject) {
-        getSuitableObjects().put(hasSuitableClassObject.getCode(), hasSuitableClassObject);
-    }
+    public abstract void initSuitableObject(R hasSuitableClassObject);
 
     /**
      * Get all {@link SuitableObjectByClass}

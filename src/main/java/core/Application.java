@@ -1,7 +1,7 @@
 package core;
 
-import core.jpa.session_factory.ReloadableSessionFactory;
-import core.jpa.session_factory.ReloadableSessionFactoryBuilder;
+import core.session_factory.ReloadableSessionFactory;
+import core.session_factory.ReloadableSessionFactoryBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
