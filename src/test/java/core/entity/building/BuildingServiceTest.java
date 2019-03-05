@@ -3,9 +3,10 @@ package core.entity.building;
 import core.entity.EntityClass;
 import core.entity.field.EntityField;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
+import test_core.AbstractSpringContextTest;
 import test_core.factories.EntityClassFactory;
 import test_core.factories.EntityFieldFactory;
 import test_core.utils.Constants;
@@ -17,13 +18,13 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Date;
 
-class BuildingServiceTest {
+class BuildingServiceTest extends AbstractSpringContextTest {
 
-    private static BuildingService buildingService;
+    private BuildingService buildingService;
 
-    @BeforeAll
-    static void initialize() {
-        buildingService = new BuildingService();
+    @Autowired
+    BuildingServiceTest(BuildingService buildingService) {
+        this.buildingService = buildingService;
     }
 
     /**

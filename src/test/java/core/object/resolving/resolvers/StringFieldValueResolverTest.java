@@ -3,20 +3,27 @@ package core.object.resolving.resolvers;
 import core.Constants;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import test_core.AbstractSpringContextTest;
 
-class StringFieldValueResolverTest {
+class StringFieldValueResolverTest extends AbstractSpringContextTest {
+
+    private StringFieldValueResolver resolver;
+
+    @Autowired
+    StringFieldValueResolverTest(StringFieldValueResolver resolver) {
+        this.resolver = resolver;
+    }
 
     @Test
     void testResolvingFromString() {
         String rawValue = "value";
-        StringFieldValueResolver resolver = new StringFieldValueResolver();
         Object value = resolver.resolve(rawValue);
         Assertions.assertEquals(rawValue, value);
     }
 
     @Test
     void testResolvingEmptyString() {
-        StringFieldValueResolver resolver = new StringFieldValueResolver();
         Object value = resolver.resolve(Constants.EMPTY);
         Assertions.assertEquals(Constants.EMPTY, value);
     }
@@ -24,14 +31,12 @@ class StringFieldValueResolverTest {
     @Test
     void testResolvingFromInteger() {
         int rawValue = 0;
-        StringFieldValueResolver resolver = new StringFieldValueResolver();
         Object value = resolver.resolve(rawValue);
         Assertions.assertEquals("0", value);
     }
 
     @Test
     void testResolvingNull() {
-        StringFieldValueResolver resolver = new StringFieldValueResolver();
         Object value = resolver.resolve(null);
         Assertions.assertNull(value);
     }

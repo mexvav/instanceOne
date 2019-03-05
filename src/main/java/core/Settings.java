@@ -1,6 +1,5 @@
 package core;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
@@ -11,8 +10,11 @@ import java.util.Properties;
 @Component
 public class Settings {
 
-    @Autowired
     private Environment env;
+
+    Settings(Environment env) {
+        this.env = env;
+    }
 
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();

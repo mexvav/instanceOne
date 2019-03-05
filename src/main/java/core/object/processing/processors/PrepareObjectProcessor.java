@@ -2,21 +2,22 @@ package core.object.processing.processors;
 
 import core.Constants;
 import core.object.ObjectServiceException;
+import core.object.processing.ProcessingService;
 import core.object.processing.ProcessorContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 import java.lang.reflect.Field;
 import java.util.Map;
 
 @SuppressWarnings("unused")
+@Component
 public class PrepareObjectProcessor extends AbstractProcessor {
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String getProcessCode() {
-        return Constants.Processing.PREPARE_OBJECT;
+    @Autowired
+    PrepareObjectProcessor(ProcessingService processingService) {
+        super(processingService, Constants.Processing.PREPARE_OBJECT);
     }
 
     /**

@@ -2,18 +2,19 @@ package core.object.resolving.resolvers;
 
 import core.entity.field.fields.IntegerEntityField;
 import core.object.resolving.ResolvingException;
+import core.object.resolving.ResolvingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Nullable;
 
 @SuppressWarnings("unused")
+@Component
 public class IntegerFieldValueResolver extends AbstractFieldValueResolver<Integer, IntegerEntityField> {
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Class<IntegerEntityField> getSuitableClass() {
-        return IntegerEntityField.class;
+    @Autowired
+    IntegerFieldValueResolver(ResolvingService resolvingService) {
+        super(resolvingService, IntegerEntityField.class);
     }
 
     /**

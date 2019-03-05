@@ -7,8 +7,13 @@ import java.beans.Transient;
 public abstract class AbstractEntityField<C> implements EntityField<C> {
 
     private String code;
+    private String type;
     private boolean required = false;
     private boolean unique = false;
+
+    AbstractEntityField(String type) {
+        this.type = type;
+    }
 
     /**
      * {@inheritDoc}
@@ -30,7 +35,9 @@ public abstract class AbstractEntityField<C> implements EntityField<C> {
      * {@inheritDoc}
      */
     @Override
-    public abstract String getType();
+    public String getType() {
+        return type;
+    }
 
     /**
      * {@inheritDoc}

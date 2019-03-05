@@ -2,24 +2,28 @@ package core.object.processing;
 
 import com.google.common.collect.Maps;
 import core.entity.EntityClass;
+import core.entity.entities.Entity;
 
+import java.util.List;
 import java.util.Map;
 
+/**
+ * Context for processing
+ */
 public class ProcessorContext {
 
     private Process process;
 
     private String entityCode;
     private EntityClass entityClass;
-    private Class entity;
+    private Class<? extends Entity> entity;
 
     private Long objectId;
-    private Object object;
+    private Entity object;
+    private List<? extends Entity> objects;
 
     private Map<String, Object> params;
     private Map<String, Object> values;
-
-    private ResultObject result;
 
     public ProcessorContext() {
     }
@@ -40,14 +44,14 @@ public class ProcessorContext {
     }
 
     /**
-     * Get code for object entity
+     * Get entity unique identifier
      */
     public String getEntityCode() {
         return entityCode;
     }
 
     /**
-     * Set code for object entity
+     * Set entity unique identifier
      */
     public ProcessorContext setEntityCode(String entityCode) {
         this.entityCode = entityCode;
@@ -55,14 +59,14 @@ public class ProcessorContext {
     }
 
     /**
-     * Get {@link EntityClass} for object
+     * Get {@link EntityClass}
      */
     public EntityClass getEntityClass() {
         return entityClass;
     }
 
     /**
-     * Set {@link EntityClass} for object
+     * Set {@link EntityClass}
      */
     public ProcessorContext setEntityClass(EntityClass entityClass) {
         this.entityClass = entityClass;
@@ -72,14 +76,14 @@ public class ProcessorContext {
     /**
      * Get Entity for object processing
      */
-    public Class getEntity() {
+    public Class<? extends Entity> getEntity() {
         return entity;
     }
 
     /**
      * Set Entity for object processing
      */
-    public ProcessorContext setEntity(Class entity) {
+    public ProcessorContext setEntity(Class<? extends Entity> entity) {
         this.entity = entity;
         return this;
     }
@@ -87,7 +91,7 @@ public class ProcessorContext {
     /**
      * Get processing object
      */
-    public Object getObject() {
+    public Entity getObject() {
         return object;
     }
 
@@ -95,8 +99,23 @@ public class ProcessorContext {
     /**
      * Set processing object
      */
-    public ProcessorContext setObject(Object object) {
+    public ProcessorContext setObject(Entity object) {
         this.object = object;
+        return this;
+    }
+
+    /**
+     * Get processing objects
+     */
+    public List<? extends Entity> getObjects() {
+        return objects;
+    }
+
+    /**
+     * Set processing objects
+     */
+    public ProcessorContext setObjects(List<? extends Entity> objects) {
+        this.objects = objects;
         return this;
     }
 
@@ -133,21 +152,6 @@ public class ProcessorContext {
      */
     public ProcessorContext setValues(Map<String, Object> values) {
         this.values = values;
-        return this;
-    }
-
-    /**
-     * Get processing result
-     */
-    public ResultObject getResult() {
-        return result;
-    }
-
-    /**
-     * Set processing result
-     */
-    public ProcessorContext setResult(ResultObject result) {
-        this.result = result;
         return this;
     }
 

@@ -8,20 +8,10 @@ import java.util.Objects;
 @SuppressWarnings("unused")
 public class StringEntityField extends AbstractEntityField<String> implements HasLength {
 
-    public static final String type = Constants.EntityFieldType.STRING;
-
     private int length = Constants.HasLength.DEFAUIT;
 
-    public StringEntityField(){
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String getType() {
-        return type;
+    public StringEntityField() {
+        super(Constants.EntityFieldType.STRING);
     }
 
     /**
@@ -58,6 +48,6 @@ public class StringEntityField extends AbstractEntityField<String> implements Ha
 
     @Override
     public int hashCode() {
-        return Objects.hash(getCode(), getLength());
+        return Objects.hash(getCode(), getType(), getLength());
     }
 }

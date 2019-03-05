@@ -3,16 +3,16 @@ package core.interfaces;
 public interface HasId {
 
     /**
-     * Get unique id
+     * Get unique identifier
      *
      * @return id
      */
     Long getId();
 
     /**
-     * Set unique id
+     * Set unique identifier
      *
-     * @param id unique id
+     * @param id unique identifier
      */
     void setId(Long id);
 }

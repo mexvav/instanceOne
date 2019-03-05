@@ -5,24 +5,19 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import core.Constants;
 import core.entity.field.EntityField;
 import core.interfaces.HasLength;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.Arrays;
 
 @SuppressWarnings("unused")
+@Component
 public class EntityFieldSerializer extends AbstractJsonCustomSerializer<EntityField> {
 
-    public EntityFieldSerializer() {
-        this(null);
-    }
-
-    private EntityFieldSerializer(Class<EntityField> t) {
-        super(t);
-    }
-
-    @Override
-    public Class<EntityField> getSuitableClass() {
-        return EntityField.class;
+    @Autowired
+    private EntityFieldSerializer(JsonObjectMapperService service) {
+        super(EntityField.class, service);
     }
 
     @Override

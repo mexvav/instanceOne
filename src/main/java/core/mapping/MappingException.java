@@ -30,7 +30,8 @@ public class MappingException extends LocalizedException {
     }
 
     public enum ExceptionCauses implements ExceptionMessage {
-        MAPPER_NOT_FOUND("mapper_not_found", "Suitable mapper not found");
+        MAPPER_NOT_FOUND("mapper_not_found", "Suitable mapper not found"),
+        MAPPING_NULL("mapping_null", "Can not mapping null object");
 
         private String messageCode;
         private String defaultMessage;

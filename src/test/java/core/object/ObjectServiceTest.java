@@ -1,30 +1,27 @@
 package core.object;
 
 import com.google.common.collect.Maps;
-import core.dao.DbDAO;
-import core.dao.ObjectDAO;
 import core.entity.EntityClass;
-import core.entity.EntityService;
 import core.entity.field.EntityField;
-import core.object.processing.ResultObject;
+import core.object.processing.DataObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import test_core.SpringContextAbstractTest;
+import test_core.AbstractSpringContextTest;
 import test_core.assertions.ObjectAssertions;
 import test_core.factories.EntityClassFactory;
 import test_core.factories.EntityFieldFactory;
 import test_core.factories.ObjectFactory;
+import test_core.utils.SpringContextUtils;
 
 import java.util.Map;
 
-class ObjectServiceTest extends SpringContextAbstractTest {
+class ObjectServiceTest extends AbstractSpringContextTest {
+
+    private SpringContextUtils utils;
 
     @Autowired
-    ObjectServiceTest(EntityService entityService,
-                      ObjectService objectService,
-                      DbDAO dbDAO,
-                      ObjectDAO objectDAO) {
-        super(entityService, objectService, dbDAO, objectDAO);
+    ObjectServiceTest(SpringContextUtils utils) {
+        this.utils = utils;
     }
 
     /**
@@ -41,7 +38,7 @@ class ObjectServiceTest extends SpringContextAbstractTest {
 
         //create object
         Map<String, Object> params = ObjectFactory.createObjectParam(entityClass);
-        ResultObject object = utils.getObjectService().create(entityClass.getCode(), params);
+        DataObject object = utils.getObjectService().create(entityClass.getCode(), params);
 
         //check object
         utils.assertions().object().assertExist(object);
@@ -62,17 +59,17 @@ class ObjectServiceTest extends SpringContextAbstractTest {
 
         //create object
         Map<String, Object> params = ObjectFactory.createObjectParam(entityClass);
-        ResultObject object = utils.getObjectService().create(entityClass.getCode(), params);
+        DataObject object = utils.getObjectService().create(entityClass.getCode(), params);
 
         //getting object
-        ResultObject actionObject = utils.getObjectService().get(entityClass.getCode(), object.getId());
+        DataObject actionObject = utils.getObjectService().get(entityClass.getCode(), object.getId());
 
         //check object
         ObjectAssertions.assertEquals(params, actionObject);
     }
 
     /**
-     * Testing {@link ObjectService#remove(Object)}}
+     * Testing {@link ObjectService#remove(DataObject)}}
      */
     @Test
     void testRemoveObject() {
@@ -85,7 +82,7 @@ class ObjectServiceTest extends SpringContextAbstractTest {
 
         //create object
         Map<String, Object> params = ObjectFactory.createObjectParam(entityClass);
-        ResultObject object = utils.getObjectService().create(entityClass.getCode(), params);
+        DataObject object = utils.getObjectService().create(entityClass.getCode(), params);
         utils.assertions().object().assertExist(object);
 
         //remove object
@@ -94,7 +91,7 @@ class ObjectServiceTest extends SpringContextAbstractTest {
     }
 
     /**
-     * Testing {@link ObjectService#edit(ResultObject, Map)}}
+     * Testing {@link ObjectService#edit(DataObject, Map)}}
      */
     @Test
     void testEditObject() {
@@ -107,7 +104,7 @@ class ObjectServiceTest extends SpringContextAbstractTest {
 
         //create object
         Map<String, Object> params = ObjectFactory.createObjectParam(entityClass);
-        ResultObject object = utils.getObjectService().create(entityClass.getCode(), params);
+        DataObject object = utils.getObjectService().create(entityClass.getCode(), params);
 
         utils.assertions().object().assertExist(object);
         ObjectAssertions.assertEquals(params, object);
@@ -118,7 +115,7 @@ class ObjectServiceTest extends SpringContextAbstractTest {
         editParams.put(field.getCode(), ObjectFactory.createValueForField(field));
 
         //check object
-        ResultObject editObject = utils.getObjectService().edit(object, editParams);
+        DataObject editObject = utils.getObjectService().edit(object, editParams);
         ObjectAssertions.assertEquals(editParams, editObject);
     }
 }

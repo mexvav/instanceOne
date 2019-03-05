@@ -100,7 +100,7 @@ public class ReloadableSessionFactoryBuilder {
         public void addEntity(@NotNull Class<?> entity) {
             Entity entityAnnotation = Objects.requireNonNull(entity).getAnnotation(Entity.class);
             if(null == entityAnnotation){
-
+                //todo add
             }
             getModificationCurrentEntities().add(entity);
         }

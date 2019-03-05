@@ -2,17 +2,18 @@ package core.object.resolving;
 
 import core.entity.field.EntityField;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import test_core.AbstractSpringContextTest;
 import test_core.factories.EntityFieldFactory;
 
-class ResolvingServiceTest {
+class ResolvingServiceTest extends AbstractSpringContextTest {
 
-    private static ResolvingService resolvingService;
+    private ResolvingService resolvingService;
 
-    @BeforeAll
-    static void initialize() {
-        resolvingService = new ResolvingService();
+    @Autowired
+    ResolvingServiceTest(ResolvingService resolvingService) {
+        this.resolvingService = resolvingService;
     }
 
     @Test

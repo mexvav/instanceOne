@@ -1,53 +1,15 @@
 package core.entity.building;
 
-import core.utils.suitable.AbstractHasSuitableObjectsByClass;
+import core.utils.register.AbstractRegisteringServiceByClass;
 import net.bytebuddy.dynamic.DynamicType;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import org.springframework.stereotype.Component;
-
-import java.util.function.Consumer;
 
 /**
  * Service for building entity class in Runtime
  */
 @Component
-public class BuildingService extends AbstractHasSuitableObjectsByClass<Builder> {
-
-    public BuildingService() {
-        initializeSuitableObjects();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected String getPackage(){
-        return getObjectClass().getPackage().getName();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected Class<Builder> getObjectClass(){
-        return Builder.class;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    @SuppressWarnings("unchecked")
-    protected Consumer<Class<? extends Builder>> getSuitableObjectClassConsumer(){
-        return (builderClass) -> {
-            try {
-                Builder builder = builderClass.newInstance();
-                builder.init(this);
-            } catch (InstantiationException | IllegalAccessException e) {
-                throw new BuildingException(e);
-            }
-        };
-    }
+public class BuildingService extends AbstractRegisteringServiceByClass<Builder> {
 
     /**
      * Building Class in building chain, see {@link #build(DynamicType.Builder, Object)}
@@ -76,7 +38,7 @@ public class BuildingService extends AbstractHasSuitableObjectsByClass<Builder> 
      */
     @SuppressWarnings("unchecked")
     public DynamicType.Builder build(final DynamicType.Builder classBuilder, Object buildObject) {
-        Builder builder = getSuitableObject(buildObject);
+        Builder builder = get(buildObject);
         return builder.build(classBuilder, buildObject);
     }
 }

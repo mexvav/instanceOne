@@ -8,13 +8,17 @@ import java.io.IOException;
 
 public abstract class AbstractJsonCustomSerializer<T>  extends StdSerializer<T> implements JsonCustomizer<T>{
 
-    AbstractJsonCustomSerializer(Class<T> t) {
-        super(t);
+    private Class<T> registeredClass;
+
+    AbstractJsonCustomSerializer(Class<T> registeredClass, JsonObjectMapperService jsonObjectMapperService) {
+        super(registeredClass);
+        this.registeredClass = registeredClass;
+        jsonObjectMapperService.add(this);
     }
 
     @Override
-    public void init(JsonCustomizerFactory hasSuitableClassObjects) {
-        hasSuitableClassObjects.initSuitableObject( this);
+    public Class<T> getRegisteredClass() {
+        return registeredClass;
     }
 
     protected void writeBooleanFieldIfTrue(JsonGenerator jsonGenerator, String fieldName, Boolean value) throws IOException {

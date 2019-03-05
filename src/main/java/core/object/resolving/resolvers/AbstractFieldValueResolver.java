@@ -3,21 +3,27 @@ package core.object.resolving.resolvers;
 import core.entity.field.EntityField;
 import core.object.resolving.ResolvingService;
 
-/**
- * Abstract resolver
- */
 public abstract class AbstractFieldValueResolver<R, T extends EntityField<R>> implements EntityFieldValueResolver<R, T> {
 
-    protected ResolvingService resolvingService;
+    private ResolvingService resolvingService;
+
+    private Class<T> suitableClass;
+
+    AbstractFieldValueResolver(ResolvingService resolvingService, Class<T> suitableClass) {
+        this.resolvingService = resolvingService;
+        this.suitableClass = suitableClass;
+        resolvingService.register(this);
+    }
 
     /**
-     * Initialize resolver
-     *
-     * @param resolvingService resolving service
+     * {@inheritDoc}
      */
     @Override
-    public void init(ResolvingService resolvingService) {
-        this.resolvingService = resolvingService;
-        resolvingService.initSuitableObject(this);
+    public Class<T> getSuitableClass() {
+        return suitableClass;
+    }
+
+    protected ResolvingService getResolvingService() {
+        return resolvingService;
     }
 }

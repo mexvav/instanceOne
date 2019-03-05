@@ -23,16 +23,29 @@ public class DbDAO extends AbstractDAO {
         super(sessionFactory);
     }
 
+    /**
+     * Drop database from database
+     *
+     * @param table the table name
+     */
     @Transactional
-    public void dropTable(String code) {
-        getSession().createSQLQuery(String.format(Constants.SQL_DROP, code)).executeUpdate();
+    public void dropTable(String table) {
+        getSession().createSQLQuery(String.format(Constants.SQL_DROP, table)).executeUpdate();
     }
 
+    /**
+     * Remove all records from table
+     *
+     * @param table the table name
+     */
     @Transactional
-    public void cleanTable(String code) {
-        getSession().createQuery(String.format(Constants.HQL_CLEAN, code)).executeUpdate();
+    public void cleanTable(String table) {
+        getSession().createQuery(String.format(Constants.HQL_CLEAN, table)).executeUpdate();
     }
 
+    /**
+     * Get all table name in database
+     */
     @Transactional
     public Set<String> getAllTables() {
         Set<String> tableNames = Sets.newHashSet();
@@ -49,6 +62,11 @@ public class DbDAO extends AbstractDAO {
         return tableNames;
     }
 
+    /**
+     * Get all table column
+     *
+     * @param table the table name
+     */
     @Transactional
     public Set<Map<String, String>> getColumns(String table) {
         Set<Map<String, String>> columns = Sets.newHashSet();

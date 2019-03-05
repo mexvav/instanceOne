@@ -7,18 +7,30 @@ import javax.validation.constraints.NotNull;
 
 public abstract class AbstractProcessor implements Processor {
 
-    protected ProcessingService processingService;
+    private ProcessingService processingService;
+
+    private String process;
+
+    AbstractProcessor(ProcessingService processingService, String process) {
+        this.processingService = processingService;
+        setCode(process);
+        processingService.register(this);
+    }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void init(@NotNull ProcessingService processingService) {
-        if (null == processingService) {
-            throw new RuntimeException();
-        }
-        this.processingService = processingService;
-        processingService.initSuitableObject(this);
+    public String getCode() {
+        return process;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setCode(String code) {
+        this.process = code;
     }
 
     /**
@@ -30,5 +42,9 @@ public abstract class AbstractProcessor implements Processor {
         if (null == context) {
             throw new RuntimeException();
         }
+    }
+
+    protected ProcessingService getProcessingService() {
+        return processingService;
     }
 }

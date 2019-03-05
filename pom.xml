@@ -12,7 +12,6 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <properties.dir>${project.basedir}/../config/</properties.dir>
     </properties>
 
     <parent>
@@ -98,16 +97,18 @@
             <resource>
                 <directory>src/main/resources/</directory>
             </resource>
-            <!-- <resource> <directory>${project.basedir}/../config/</directory> </resource>-->
-         </resources>
-         <plugins>
-             <plugin>
-                 <groupId>org.springframework.boot</groupId>
-                 <artifactId>spring-boot-maven-plugin</artifactId>
-             </plugin>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources/</directory>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-         </plugins>
-
-     </build>
-
- </project>
+</project>

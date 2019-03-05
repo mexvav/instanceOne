@@ -3,6 +3,7 @@ package core.entity.building.builders;
 import core.Constants;
 import core.entity.EntityClass;
 import core.entity.building.BuildingException;
+import core.entity.building.BuildingService;
 import core.entity.entities.AbstractEntity;
 import core.entity.field.EntityField;
 import net.bytebuddy.ByteBuddy;
@@ -10,6 +11,8 @@ import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.dynamic.DynamicType.Builder;
 import net.bytebuddy.implementation.FixedValue;
 import net.bytebuddy.matcher.ElementMatchers;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Nullable;
@@ -19,11 +22,12 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @SuppressWarnings("unused")
+@Component
 public class EntityClassBuilder extends AbstractBuilder<EntityClass> {
 
-    @Override
-    public Class<EntityClass> getSuitableClass() {
-        return EntityClass.class;
+    @Autowired
+    EntityClassBuilder(BuildingService service) {
+        super(service, EntityClass.class);
     }
 
     /**
@@ -37,7 +41,6 @@ public class EntityClassBuilder extends AbstractBuilder<EntityClass> {
     @NotNull
     public Builder build(@Nullable final Builder classBuilder, @NotNull EntityClass entityClass) {
         validateEntityBlank(entityClass);
-
         Builder builder =
                 new ByteBuddy()
                         .subclass(AbstractEntity.class)
@@ -56,7 +59,7 @@ public class EntityClassBuilder extends AbstractBuilder<EntityClass> {
                         .intercept(FixedValue.value(entityClass.getCode()));
 
         for (EntityField entityField : entityClass.getFields()) {
-            builder = buildingService.build(builder, entityField);
+            builder = getBuildingService().build(builder, entityField);
         }
         return builder;
     }

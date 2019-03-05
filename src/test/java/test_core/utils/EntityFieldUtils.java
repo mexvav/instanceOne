@@ -35,6 +35,7 @@ public class EntityFieldUtils {
      * Parameters for table columns
      */
     public enum FieldTestParam {
+        BOOLEAN("bool", 1),
         STRING("varchar", 255),
         INTEGER("int4", 10),
         DATE("timestamp", 29);

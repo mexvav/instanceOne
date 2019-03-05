@@ -1,13 +1,12 @@
 package core.object;
 
-import core.object.processing.Process;
-import core.object.processing.ProcessingService;
-import core.object.processing.ProcessorContext;
-import core.object.processing.ResultObject;
+import core.object.processing.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Component
 public class ObjectService {
@@ -19,48 +18,80 @@ public class ObjectService {
         this.processingService = processingService;
     }
 
-    public ResultObject create(String entityCode, Map<String, Object> params) {
-        ProcessorContext context = new ProcessorContext()
-                .setEntityCode(entityCode)
-                .setParams(params)
-                .setProcess(Process.CREATE);
-        return processingService.processing(context);
+    /**
+     * Create object
+     *
+     * @param entityCode the code of entity
+     * @param params     the values for object
+     */
+    public DataObject create(String entityCode, Map<String, Object> params) {
+        ProcessorContext context = ContextFactory.create(entityCode, params);
+        return new DataObjectWrapper(processingService.processing(context).getObject());
     }
 
-    public ResultObject get(String entityCode, long objectId){
-        ProcessorContext context = new ProcessorContext()
-                .setEntityCode(entityCode)
-                .setObjectId(objectId)
-                .setProcess(Process.GET);
-        return processingService.processing(context);
+    /**
+     * Get object
+     *
+     * @param entityCode the code of entity
+     * @param objectId   the unique id
+     */
+    public DataObject get(String entityCode, long objectId) {
+        ProcessorContext context = ContextFactory.get(entityCode, objectId);
+        return new DataObjectWrapper(processingService.processing(context).getObject());
     }
 
-    public ResultObject edit(String entityCode, long objectId, Map<String, Object> params) {
-        ProcessorContext context = new ProcessorContext()
-                .setEntityCode(entityCode)
-                .setObjectId(objectId)
-                .setParams(params)
-                .setProcess(Process.EDIT);
-        return processingService.processing(context);
+    /**
+     * Edit object
+     *
+     * @param entityCode the code of entity
+     * @param objectId   the unique id
+     * @param params     the values for object
+     */
+    public DataObject edit(String entityCode, long objectId, Map<String, Object> params) {
+        ProcessorContext context = ContextFactory.edit(entityCode, objectId, params);
+        return new DataObjectWrapper(processingService.processing(context).getObject());
     }
 
-    public ResultObject edit(ResultObject object, Map<String, Object> params) {
+    /**
+     * Edit object
+     *
+     * @param object the editing object
+     * @param params the values for object
+     */
+    public DataObject edit(DataObject object, Map<String, Object> params) {
         return edit(object.getEntityCode(), object.getId(), params);
     }
 
-    public void remove(Object object) {
-        ProcessorContext context = new ProcessorContext()
-                .setObject(object)
-                .setProcess(Process.REMOVE);
+    /**
+     * Remove object
+     *
+     * @param object the editing object
+     */
+    public void remove(DataObject object) {
+        ProcessorContext context = ContextFactory.remove(object);
         processingService.processing(context);
     }
 
-    public void remove(String entityCode, long id) {
-        ProcessorContext context = new ProcessorContext()
-                .setEntityCode(entityCode)
-                .setObjectId(id)
-                .setProcess(Process.REMOVE);
+    /**
+     * Remove object
+     *
+     * @param entityCode the code of entity
+     * @param objectId   the unique id
+     */
+    public void remove(String entityCode, long objectId) {
+        ProcessorContext context = ContextFactory.remove(entityCode, objectId);
         processingService.processing(context);
     }
 
+    /**
+     * Search objects
+     *
+     * @param entityCode the code of entity
+     * @param params     the values for object
+     */
+    public List<DataObject> search(String entityCode, Map<String, Object> params) {
+        ProcessorContext context = ContextFactory.search(entityCode, params);
+        return processingService.processing(context).getObjects()
+                .stream().map(DataObjectWrapper::new).collect(Collectors.toList());
+    }
 }

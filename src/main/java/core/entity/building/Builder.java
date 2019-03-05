@@ -1,11 +1,11 @@
 package core.entity.building;
 
-import core.utils.suitable.SuitableObjectByClass;
+import core.utils.register.RegisteredObjectWithClass;
 import net.bytebuddy.dynamic.DynamicType;
 
 import javax.annotation.Nullable;
 
-public interface Builder<B> extends SuitableObjectByClass<B, BuildingService> {
+public interface Builder<B> extends RegisteredObjectWithClass<B, BuildingService> {
 
     /**
      * Step of class building. See {@link BuildingService#building(Object)}

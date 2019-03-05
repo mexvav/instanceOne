@@ -1,24 +1,16 @@
 package core.entity.field.fields;
 
 import core.Constants;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Objects;
 
 @SuppressWarnings("unused")
 public class IntegerEntityField extends AbstractEntityField<Integer> {
 
-    public static final String type = Constants.EntityFieldType.INTEGER;
-
-    public IntegerEntityField(){
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String getType() {
-        return type;
+    @Autowired
+    public IntegerEntityField() {
+        super(Constants.EntityFieldType.INTEGER);
     }
 
     /**
@@ -39,6 +31,6 @@ public class IntegerEntityField extends AbstractEntityField<Integer> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getCode());
+        return Objects.hash(getCode(), getType());
     }
 }

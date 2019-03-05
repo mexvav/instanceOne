@@ -4,12 +4,21 @@ import core.Constants;
 import core.object.resolving.ResolvingException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import test_core.AbstractSpringContextTest;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-class DateFieldValueResolverTest {
+class DateFieldValueResolverTest extends AbstractSpringContextTest {
+
+    private DateFieldValueResolver resolver;
+
+    @Autowired
+    DateFieldValueResolverTest(DateFieldValueResolver resolver) {
+        this.resolver = resolver;
+    }
 
     @Test
     void testResolvingFromString() {
@@ -19,7 +28,6 @@ class DateFieldValueResolverTest {
         calendar.setTime(new Date(0));
         int expectedYear = calendar.get(Calendar.YEAR);
 
-        DateFieldValueResolver resolver = new DateFieldValueResolver();
         Date actualDate = resolver.resolve(rawValue);
         calendar.setTime(actualDate);
         int actualYear = calendar.get(Calendar.YEAR);
@@ -30,16 +38,12 @@ class DateFieldValueResolverTest {
     @Test
     void testResolvingFromDate() {
         Date rawValue = new Date(0);
-
-        DateFieldValueResolver resolver = new DateFieldValueResolver();
         Date actualDate = resolver.resolve(rawValue);
-
         Assertions.assertEquals(rawValue, actualDate);
     }
 
     @Test
     void testFailResolvingFromInteger() {
-        DateFieldValueResolver resolver = new DateFieldValueResolver();
         Assertions.assertThrows(ResolvingException.class, () ->
                 resolver.resolve(0)
         );
@@ -47,7 +51,6 @@ class DateFieldValueResolverTest {
 
     @Test
     void testFailResolvingEmptyString() {
-        DateFieldValueResolver resolver = new DateFieldValueResolver();
         Assertions.assertThrows(ResolvingException.class, () ->
                 resolver.resolve(Constants.EMPTY)
         );

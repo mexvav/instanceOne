@@ -4,19 +4,20 @@ import core.entity.field.EntityField;
 import core.object.validation.validators.RequiredValidator;
 import core.object.validation.validators.Validator;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import test_core.AbstractSpringContextTest;
 import test_core.factories.EntityFieldFactory;
 
 import java.util.Set;
 
-class ValidationServiceTest {
+class ValidationServiceTest extends AbstractSpringContextTest {
 
-    private static ValidationService validationService;
+    private ValidationService validationService;
 
-    @BeforeAll
-    static void initialize() {
-        validationService = new ValidationService();
+    @Autowired
+    ValidationServiceTest(ValidationService validationService) {
+        this.validationService = validationService;
     }
 
     @Test

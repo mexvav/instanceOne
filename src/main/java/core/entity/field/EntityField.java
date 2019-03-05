@@ -1,13 +1,12 @@
 package core.entity.field;
 
 import core.Constants;
-import core.interfaces.HasCode;
-import core.utils.suitable.SuitableObjectByCode;
+import core.utils.register.RegisteredObjectWithCode;
 
 /**
  * Param blank for entity field
  */
-public interface EntityField<C> extends HasCode, SuitableObjectByCode<C, EntityFieldFactoty> {
+public interface EntityField<C> extends RegisteredObjectWithCode<C, EntityFieldFactory> {
 
     /**
      * Set field type, see {@link Constants.EntityFieldType}

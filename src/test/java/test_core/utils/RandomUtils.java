@@ -18,6 +18,15 @@ public class RandomUtils {
     private static List<String> codes;
 
     /**
+     * Generate boolean value
+     *
+     * @return random boolean value
+     */
+    public static boolean getBoolean() {
+        return getRandom().nextBoolean();
+    }
+
+    /**
      * Generate integer value
      *
      * @return random integer value

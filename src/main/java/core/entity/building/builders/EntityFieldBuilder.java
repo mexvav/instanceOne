@@ -2,21 +2,25 @@ package core.entity.building.builders;
 
 import core.Constants;
 import core.entity.building.BuildingException;
+import core.entity.building.BuildingService;
 import core.entity.field.EntityField;
 import core.interfaces.HasLength;
 import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.dynamic.DynamicType.Builder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Nullable;
 import javax.persistence.Column;
 import java.util.Arrays;
 
 @SuppressWarnings("unused")
+@Component
 public class EntityFieldBuilder extends AbstractBuilder<EntityField> {
 
-    @Override
-    public Class<EntityField> getSuitableClass() {
-        return EntityField.class;
+    @Autowired
+    EntityFieldBuilder(BuildingService service) {
+        super(service, EntityField.class);
     }
 
     /**

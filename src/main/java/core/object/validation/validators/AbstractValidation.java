@@ -4,14 +4,22 @@ import core.object.validation.ValidationService;
 
 public abstract class AbstractValidation<O> implements Validator<O> {
 
-    private ValidationService validation;
+    private ValidationService validationService;
 
-    /**
-     * {@inheritDoc}
-     */
+    private Class<O> suitableClass;
+
+    public AbstractValidation(ValidationService validationService, Class<O> suitableClass) {
+        this.validationService = validationService;
+        this.suitableClass = suitableClass;
+        validationService.register(this);
+    }
+
     @Override
-    public void init(ValidationService validation) {
-        this.validation = validation;
-        validation.initSuitableObject(this);
+    public Class<O> getSuitableClass() {
+        return suitableClass;
+    }
+
+    protected ValidationService getValidationService() {
+        return validationService;
     }
 }

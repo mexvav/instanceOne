@@ -21,6 +21,7 @@ import java.util.function.Supplier;
 public class WithReloadSessionFactoryAspect {
 
     private EntityService entityService;
+    private volatile boolean inReload = false;
 
     @Autowired
     WithReloadSessionFactoryAspect(EntityService entityService) {
@@ -28,16 +29,40 @@ public class WithReloadSessionFactoryAspect {
     }
 
     @Around("@annotation(core.aspects.WithReloadSessionFactory)")
-    public Object withReloadSessionFactory(ProceedingJoinPoint joinPoint) {
+    public synchronized Object withReloadSessionFactory(final ProceedingJoinPoint joinPoint) {
+        if (inReload) {
+            return action(joinPoint);
+        }
+        try {
+            inReload = true;
+            return actionWithReloadSessionFactory(joinPoint);
+        } finally {
+            inReload = false;
+        }
+    }
+
+    /**
+     * Make some action
+     *
+     * @param joinPoint join point
+     */
+    private Object action(final ProceedingJoinPoint joinPoint) {
+        try {
+            return joinPoint.proceed();
+        } catch (Throwable e) {
+            throw new EntityServiceException(e);
+        }
+    }
+
+    /**
+     * Make some action with reload session factory
+     *
+     * @param joinPoint join point
+     */
+    private Object actionWithReloadSessionFactory(final ProceedingJoinPoint joinPoint) {
         if (null == entityService) {
             throw new EntityServiceException(EntityServiceException.ExceptionCauses.ENTITY_SERVICE_NOT_EXIST);
         }
-        return entityService.actionWithReloadSessionFactory(() -> {
-            try {
-                return joinPoint.proceed();
-            } catch (Throwable e) {
-                throw new EntityServiceException(e);
-            }
-        });
+        return entityService.actionWithReloadSessionFactory(() -> action(joinPoint));
     }
 }

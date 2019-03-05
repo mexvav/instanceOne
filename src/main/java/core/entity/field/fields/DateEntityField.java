@@ -8,18 +8,8 @@ import java.util.Objects;
 @SuppressWarnings("unused")
 public class DateEntityField extends AbstractEntityField<Date> {
 
-    public static final String type = Constants.EntityFieldType.DATE;
-
-    public DateEntityField(){
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String getType() {
-        return type;
+    public DateEntityField() {
+        super(Constants.EntityFieldType.DATE);
     }
 
     /**
@@ -40,6 +30,6 @@ public class DateEntityField extends AbstractEntityField<Date> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getCode());
+        return Objects.hash(getCode(), getType());
     }
 }

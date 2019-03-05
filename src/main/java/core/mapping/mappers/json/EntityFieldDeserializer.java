@@ -6,27 +6,23 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import core.Constants;
 import core.entity.field.EntityField;
-import core.entity.field.EntityFieldFactoty;
+import core.entity.field.EntityFieldFactory;
 import core.interfaces.HasLength;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 @SuppressWarnings("unused")
+@Component
 public class EntityFieldDeserializer extends AbstractJsonCustomDeserializer<EntityField> {
 
-    private EntityFieldFactoty entityFieldFactoty = new EntityFieldFactoty();
+    private EntityFieldFactory entityFieldFactory;
 
-    public EntityFieldDeserializer() {
-        this(null);
-    }
-
-    private EntityFieldDeserializer(Class<EntityField> t) {
-        super(t);
-    }
-
-    @Override
-    public Class<EntityField> getSuitableClass() {
-        return EntityField.class;
+    @Autowired
+    private EntityFieldDeserializer(JsonObjectMapperService service, EntityFieldFactory entityFieldFactory) {
+        super(EntityField.class, service);
+        this.entityFieldFactory = entityFieldFactory;
     }
 
     @Override
@@ -39,7 +35,7 @@ public class EntityFieldDeserializer extends AbstractJsonCustomDeserializer<Enti
 
         JsonNode type = node.get(Constants.EntityField.TYPE);
         JsonNode code = node.get(Constants.HasCode.CODE);
-        EntityField entityField = entityFieldFactoty.createByType(type.asText());
+        EntityField entityField = entityFieldFactory.get(type.asText());
         entityField.setCode(code.asText());
 
         if (node.has(Constants.EntityField.REQUIRED)) {
@@ -50,8 +46,8 @@ public class EntityFieldDeserializer extends AbstractJsonCustomDeserializer<Enti
             entityField.setUnique(node.get(Constants.EntityField.UNIQUE).asBoolean());
         }
 
-        if(node.has(Constants.HasLength.LENGTH)){
-            ((HasLength)entityField).setLength(node.get(Constants.HasLength.LENGTH).asInt());
+        if (node.has(Constants.HasLength.LENGTH)) {
+            ((HasLength) entityField).setLength(node.get(Constants.HasLength.LENGTH).asInt());
         }
 
         return entityField;

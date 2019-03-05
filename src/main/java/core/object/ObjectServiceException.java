@@ -30,7 +30,8 @@ public class ObjectServiceException extends LocalizedException {
     }
 
     public enum ExceptionCauses implements ExceptionMessage {
-        FIELD_IS_NOT_EXIST("field_is_not_exist", "Entity is not contains field");
+        FIELD_IS_NOT_EXIST("field_is_not_exist", "Entity is not contains field"),
+        SEARCHING_OPERATON_NOT_REGISTERED("searching_operation_not_registered", "Searching operation not registered");
 
         private String messageCode;
         private String defaultMessage;

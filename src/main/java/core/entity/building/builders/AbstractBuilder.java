@@ -5,15 +5,26 @@ import core.entity.building.BuildingService;
 
 public abstract class AbstractBuilder<B> implements Builder<B> {
 
-    BuildingService buildingService;
+    private BuildingService buildingService;
+
+    private Class<B> suitableClass;
+
+    AbstractBuilder(BuildingService buildingService, Class<B> suitableClass) {
+        this.buildingService = buildingService;
+        this.suitableClass = suitableClass;
+
+        buildingService.register(this);
+    }
 
     /**
      * {@inheritDoc}
-     * @param buildingService
      */
     @Override
-    public void init(BuildingService buildingService) {
-        this.buildingService = buildingService;
-        buildingService.initSuitableObject(this);
+    public Class<B> getSuitableClass() {
+        return suitableClass;
+    }
+
+    protected BuildingService getBuildingService() {
+        return buildingService;
     }
 }

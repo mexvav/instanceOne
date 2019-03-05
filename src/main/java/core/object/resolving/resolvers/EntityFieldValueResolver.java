@@ -2,16 +2,11 @@ package core.object.resolving.resolvers;
 
 import core.entity.field.EntityField;
 import core.object.resolving.ResolvingService;
-import core.utils.suitable.SuitableObjectByClass;
+import core.utils.register.RegisteredObjectWithClass;
 
 import javax.annotation.Nullable;
 
-public interface EntityFieldValueResolver<R, T extends EntityField<R>> extends SuitableObjectByClass<T, ResolvingService> {
-
-    /**
-     * Get class concrete {@link EntityField}
-     */
-    Class<T> getSuitableClass();
+public interface EntityFieldValueResolver<R, T extends EntityField<R>> extends RegisteredObjectWithClass<T, ResolvingService> {
 
     /**
      * Resolve value for {@link EntityField}

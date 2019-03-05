@@ -1,30 +1,35 @@
 package core.object.processing.processors;
 
 import core.Constants;
+import core.dao.ObjectDAO;
+import core.object.processing.ProcessingService;
 import core.object.processing.ProcessorContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("unused")
+@Component
 public class RemoveObjectProcessor extends AbstractProcessor {
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String getProcessCode() {
-        return Constants.Processing.REMOVE_OBJECT;
+    private ObjectDAO objectDAO;
+
+    @Autowired
+    RemoveObjectProcessor(ProcessingService processingService, ObjectDAO objectDAO) {
+        super(processingService, Constants.Processing.REMOVE_OBJECT);
+        this.objectDAO = objectDAO;
     }
 
     /**
-     * Get object for processing
+     * Removing object
      *
      * @param context the values for object processing
      */
     @Override
     public void process(@NotNull final ProcessorContext context) {
         validateContext(context);
-        processingService.getObjectDAO().remove(context.getObject());
+        objectDAO.remove(context.getObject());
     }
 
     /**

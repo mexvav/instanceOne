@@ -1,19 +1,25 @@
 package core.object.processing.processors;
 
 import core.Constants;
+import core.dao.ObjectDAO;
+import core.entity.entities.Entity;
+import core.object.processing.ProcessingService;
 import core.object.processing.ProcessorContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("unused")
+@Component
 public class GetObjectProcessor extends AbstractProcessor {
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String getProcessCode() {
-        return Constants.Processing.GET_OBJECT;
+    private ObjectDAO objectDAO;
+
+    @Autowired
+    GetObjectProcessor(ProcessingService processingService, ObjectDAO objectDAO) {
+        super(processingService, Constants.Processing.GET_OBJECT);
+        this.objectDAO = objectDAO;
     }
 
     /**
@@ -22,7 +28,6 @@ public class GetObjectProcessor extends AbstractProcessor {
      * @param context the values for object processing
      */
     @Override
-    @SuppressWarnings("unchecked")
     public void process(@NotNull final ProcessorContext context) {
         validateContext(context);
         if (null != context.getObject()) {
@@ -46,12 +51,13 @@ public class GetObjectProcessor extends AbstractProcessor {
      *
      * @param context the values for object processing
      */
-    private Object getObject(@NotNull final ProcessorContext context) {
+    @SuppressWarnings("unchecked")
+    private Entity getObject(@NotNull final ProcessorContext context) {
         Object object;
         if (null == context.getObjectId()) {
             return getObjectInstance(context);
         } else {
-            return processingService.getObjectDAO().get(context.getEntity(), context.getObjectId());
+            return objectDAO.get(context.getEntity(), context.getObjectId());
         }
     }
 
@@ -60,7 +66,7 @@ public class GetObjectProcessor extends AbstractProcessor {
      *
      * @param context the values for object processing
      */
-    private Object getObjectInstance(@NotNull final ProcessorContext context) {
+    private Entity getObjectInstance(@NotNull final ProcessorContext context) {
         try {
             return context.getEntity().newInstance();
         } catch (InstantiationException | IllegalAccessException e) {

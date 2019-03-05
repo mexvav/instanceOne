@@ -1,16 +1,24 @@
 package core.object.processing.processors;
 
 import core.Constants;
+import core.dao.ObjectDAO;
+import core.object.processing.ProcessingService;
 import core.object.processing.ProcessorContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("unused")
+@Component
 public class SaveProcessor extends AbstractProcessor {
 
-    @Override
-    public String getProcessCode() {
-        return Constants.Processing.SAVE;
+    private ObjectDAO objectDAO;
+
+    @Autowired
+    SaveProcessor(ProcessingService processingService, ObjectDAO objectDAO) {
+        super(processingService, Constants.Processing.SAVE);
+        this.objectDAO = objectDAO;
     }
 
     /**
@@ -21,7 +29,7 @@ public class SaveProcessor extends AbstractProcessor {
     @Override
     public void process(@NotNull final ProcessorContext context) {
         validateContext(context);
-        processingService.getObjectDAO().save(context.getObject());
+        objectDAO.save(context.getObject());
     }
 
     /**

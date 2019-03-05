@@ -6,32 +6,39 @@ import static core.Constants.Processing.*;
  * Description of processes
  */
 public enum Process {
+
     /**
      * Creating object process
      */
     CREATE(new String[]{
             GET_ENTITY,
+            VALIDATION_PARAMS,
             GET_OBJECT,
-            SET_VALUES,
+            RESOLVING_VALUES,
             PREPARE_OBJECT,
-            SAVE,
-            SET_RESULT
+            SAVE
     }),
+
+    /**
+     * Get object
+     */
     GET(new String[]{
             GET_ENTITY,
-            GET_OBJECT,
-            SET_RESULT
+            GET_OBJECT
     }),
+
     /**
      * Edit object process
      */
     EDIT(new String[]{
             GET_ENTITY,
+            VALIDATION_PARAMS,
             GET_OBJECT,
-            SET_VALUES,
+            RESOLVING_VALUES,
             PREPARE_OBJECT,
-            SAVE,
-            SET_RESULT}),
+            SAVE
+    }),
+
     /**
      * Remove object process
      */
@@ -39,6 +46,15 @@ public enum Process {
             GET_ENTITY,
             GET_OBJECT,
             REMOVE_OBJECT
+    }),
+
+    /**
+     * Searching objects process
+     */
+    SEARCH(new String[]{
+            GET_ENTITY,
+            RESOLVING_VALUES,
+            SEARCH_OBJECTS
     });
 
     String[] processors;

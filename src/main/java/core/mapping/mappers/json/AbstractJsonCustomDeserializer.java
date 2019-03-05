@@ -12,13 +12,17 @@ import java.io.IOException;
 
 public abstract class AbstractJsonCustomDeserializer<T> extends StdDeserializer<T> implements JsonCustomizer<T> {
 
-    AbstractJsonCustomDeserializer(Class<T> t) {
-        super(t);
+    private Class<T> registeredClass;
+
+    AbstractJsonCustomDeserializer(Class<T> registeredClass, JsonObjectMapperService jsonObjectMapperService) {
+        super(registeredClass);
+        this.registeredClass = registeredClass;
+        jsonObjectMapperService.add(this);
     }
 
     @Override
-    public void init(JsonCustomizerFactory hasSuitableClassObjects) {
-        hasSuitableClassObjects.initSuitableObject( this);
+    public Class<T> getRegisteredClass() {
+        return registeredClass;
     }
 
     /**

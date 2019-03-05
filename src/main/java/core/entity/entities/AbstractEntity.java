@@ -13,7 +13,7 @@ import javax.persistence.MappedSuperclass;
  * SuperClass for runtime built Entity
  */
 @MappedSuperclass
-public abstract class AbstractEntity implements HasEntityCode, HasId {
+public abstract class AbstractEntity implements Entity {
 
     @Id
     @GeneratedValue

@@ -55,6 +55,10 @@ public class Constants {
         public static final int DEFAUIT = 0;
     }
 
+    public static class Linkable {
+        public static final String CASCADE = "cascade";
+    }
+
     public static class Entity {
         public static final String ATTRIBUTES = "attributes";
     }
@@ -69,6 +73,8 @@ public class Constants {
         public static final String DATE = "date";
         public static final String INTEGER = "integer";
         public static final String STRING = "string";
+        public static final String BOOLEAN = "boolean";
+        public static final String LINK = "link";
     }
 
     public static class EntityDescription {
@@ -96,14 +102,22 @@ public class Constants {
     public static class Processing {
         public static final String GET_ENTITY = "getEntity";
         public static final String GET_OBJECT = "getObject";
-        public static final String SET_VALUES = "setValues";
+        public static final String RESOLVING_VALUES = "setValues";
+        public static final String VALIDATION_PARAMS = "validation";
         public static final String PREPARE_OBJECT = "prepare";
+        public static final String SEARCH_OBJECTS = "searching";
         public static final String SAVE = "save";
-        public static final String SET_RESULT = "setResult";
         public static final String REMOVE_OBJECT = "remove";
     }
 
     public static class EntityValue {
         public static final String DATE_TEMPLATE = "dd.MM.yyyy";
+    }
+
+    public static class SearchingService {
+        public static final String LIKE_OPERATION = "like";
+        public static final String LESS_OPERATION = "less";
+        public static final String GREATER_OPERATION = "greater";
+
     }
 }

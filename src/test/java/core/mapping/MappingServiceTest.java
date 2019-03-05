@@ -3,21 +3,22 @@ package core.mapping;
 import core.entity.EntityClass;
 import core.entity.field.EntityField;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import test_core.AbstractSpringContextTest;
 import test_core.factories.EntityClassFactory;
 import test_core.factories.EntityFieldFactory;
 import test_core.utils.ExceptionUtils;
 
 import java.util.Date;
 
-class MappingServiceTest {
+class MappingServiceTest extends AbstractSpringContextTest {
 
-    private static MappingService mappingService;
+    private MappingService mappingService;
 
-    @BeforeAll
-    static void initialize() {
-        mappingService = new MappingService();
+    @Autowired
+    MappingServiceTest(MappingService mappingService) {
+        this.mappingService = mappingService;
     }
 
     /**

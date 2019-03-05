@@ -3,6 +3,9 @@ package core.object.resolving.resolvers;
 import core.Constants;
 import core.entity.field.fields.DateEntityField;
 import core.object.resolving.ResolvingException;
+import core.object.resolving.ResolvingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,16 +13,15 @@ import java.util.Date;
 import java.util.Locale;
 
 @SuppressWarnings("unused")
+@Component
 public class DateFieldValueResolver extends AbstractFieldValueResolver<Date, DateEntityField> {
 
-    private SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.EntityValue.DATE_TEMPLATE, Locale.ENGLISH);
+    private SimpleDateFormat dateFormat;
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Class<DateEntityField> getSuitableClass() {
-        return DateEntityField.class;
+    @Autowired
+    DateFieldValueResolver(ResolvingService resolvingService) {
+        super(resolvingService, DateEntityField.class);
+        dateFormat = new SimpleDateFormat(Constants.EntityValue.DATE_TEMPLATE, Locale.ENGLISH);
     }
 
     /**

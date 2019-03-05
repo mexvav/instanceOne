@@ -6,6 +6,7 @@ import core.aspects.WithReloadSessionFactory;
 import core.dao.DbDAO;
 import core.dao.ObjectDAO;
 import core.entity.building.BuildingService;
+import core.entity.entities.Entity;
 import core.entity.entities.EntityDescription;
 import core.mapping.MappingService;
 import core.session_factory.ReloadableSessionFactory;
@@ -14,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
@@ -28,8 +28,8 @@ public class EntityService {
     private ObjectDAO objectDAO;
     private DbDAO dbDAO;
 
-    private Map<String, Class<?>> currentEntities;
-    private Map<String, Class<?>> entities;
+    private Map<String, Class<Entity>> currentEntities;
+    private Map<String, Class<Entity>> entities;
     private Map<String, EntityClass> entitiesBlank;
 
     @Autowired
@@ -51,7 +51,6 @@ public class EntityService {
         this.dbDAO = dbDAO;
 
         reloadCurrentEntities();
-        initializeEntities();
     }
 
     /**
@@ -61,7 +60,7 @@ public class EntityService {
      */
     public <R> R actionWithReloadSessionFactory(Supplier<R> action) {
         reloadCurrentEntities();
-        Map<String, Class<?>> entities = getEntities();
+        Map<String, Class<Entity>> entities = getEntities();
         Map<String, EntityClass> entitiesBlank = getEntitiesBlank();
         try {
             R result = action.get();
@@ -101,13 +100,14 @@ public class EntityService {
      *
      * @param entityClasses - description objects for entity class
      */
+    @SuppressWarnings("unchecked")
     @WithReloadSessionFactory
     public void createEntity(final EntityClass... entityClasses) {
         for (EntityClass entityClass : entityClasses) {
             if (isEntityExist(entityClass.getCode())) {
                 continue;
             }
-            Class entity = buildingService.building(entityClass);
+            Class<Entity> entity = (Class<Entity>) buildingService.building(entityClass);
             getEntities().put(entityClass.getCode(), entity);
             getEntitiesBlank().put(entityClass.getCode(), entityClass);
             saveDescription(entityClass);
@@ -173,7 +173,7 @@ public class EntityService {
      * @param code code of entity
      * @throws EntityServiceException if entity not found
      */
-    public Class<?> getEntity(String code) {
+    public Class<Entity> getEntity(String code) {
         if (isEntityExist(code)) {
             return getEntities().get(code);
         }
@@ -190,31 +190,14 @@ public class EntityService {
         String json = mappingService.mapping(entityClass, String.class);
         EntityDescription description = new EntityDescription();
         description.setCode(entityClass.getCode());
-        //@todo description field too small
-        //description.setDescription(json);
+        description.setDescription(json);
         objectDAO.save(description);
-    }
-
-    /**
-     * Init all entities from db by {@link EntityDescription}
-     */
-    @SuppressWarnings("unchecked")
-    @WithReloadSessionFactory
-    private void initializeEntities() {
-        List<EntityDescription> entities = objectDAO.getAll(EntityDescription.entityName);
-        for (EntityDescription description : entities) {
-            EntityClass entityClass =
-                    mappingService.mapping(description.getDescription(), EntityClass.class);
-            Class entity = buildingService.building(entityClass);
-            getEntitiesBlank().put(entityClass.getCode(), entityClass);
-            getEntities().put(entityClass.getCode(), entity);
-        }
     }
 
     /**
      * Get all entities
      */
-    private Map<String, Class<?>> getEntities() {
+    private Map<String, Class<Entity>> getEntities() {
         if (null == entities) {
             entities = Maps.newHashMap();
         }
@@ -234,7 +217,7 @@ public class EntityService {
     /**
      * Get actual entities, used for {@link #actionWithReloadSessionFactory(Supplier)}
      */
-    private Map<String, Class<?>> getCurrentEntities() {
+    private Map<String, Class<Entity>> getCurrentEntities() {
         if (null == currentEntities) {
             currentEntities = Maps.newHashMap();
         }

@@ -1,16 +1,24 @@
 package core.object.processing.processors;
 
 import core.Constants;
+import core.entity.EntityService;
+import core.object.processing.ProcessingService;
 import core.object.processing.ProcessorContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("unused")
+@Component
 public class GetEntityProcessor extends AbstractProcessor {
 
-    @Override
-    public String getProcessCode() {
-        return Constants.Processing.GET_ENTITY;
+    private EntityService entityService;
+
+    @Autowired
+    GetEntityProcessor(ProcessingService processingService, EntityService entityService){
+        super(processingService, Constants.Processing.GET_ENTITY);
+        this.entityService = entityService;
     }
 
     /**
@@ -38,10 +46,10 @@ public class GetEntityProcessor extends AbstractProcessor {
         if (null == entityCode) {
             throw new RuntimeException();
         }
-        if (!processingService.getEntityService().isEntityExist(entityCode)) {
+        if (!entityService.isEntityExist(entityCode)) {
             throw new RuntimeException();
         }
-        context.setEntityClass(processingService.getEntityService().getEntityBlank(entityCode));
+        context.setEntityClass(entityService.getEntityBlank(entityCode));
     }
 
     /**
@@ -58,9 +66,9 @@ public class GetEntityProcessor extends AbstractProcessor {
         if (null == entityCode) {
             throw new RuntimeException();
         }
-        if (!processingService.getEntityService().isEntityExist(entityCode)) {
+        if (!entityService.isEntityExist(entityCode)) {
             throw new RuntimeException();
         }
-        context.setEntity(processingService.getEntityService().getEntity(entityCode));
+        context.setEntity(entityService.getEntity(entityCode));
     }
 }
